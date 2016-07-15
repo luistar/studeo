@@ -72,4 +72,4 @@ Connection to those can be customized in /src/config/app.php, by editing the fol
   * username: **moderator** password: **moderator**
 
 #Contribution guidelines
-Please, write comments, commit messages and variable/table/column names in English!
+Please, write comments, commit messages and variable/table/column names in English! Issues can be submitted in italian, too.
