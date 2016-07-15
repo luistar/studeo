@@ -70,3 +70,6 @@ Connection to those can be customized in /src/config/app.php, by editing the fol
   * username: **admin**     password: **adminadmin**
   * username: **user**      password: **useruser**
   * username: **moderator** password: **moderator**
+
+#Contribution guidelines
+Please, write comments, commit messages and name variables/tables/columns in English!
