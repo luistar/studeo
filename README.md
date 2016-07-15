@@ -12,3 +12,6 @@ Although being conceived to be used along with phpbb, Studeo will be almost comp
 as it will provide indexing by link. 
 Only the authentication and authorization system will initially depend on phpbb USERS table. 
 Other options shall be added as the project grows. 
+
+# Technology
+Studeo is built using CakePHP, Twitter Bootstrap, JQuery, MySQL.
