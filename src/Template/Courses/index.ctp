@@ -45,3 +45,91 @@
         <p><?= $this->Paginator->counter() ?></p>
     </div>
 </div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h1 class="panel-title">First year</h1>
+	</div>
+	<!-- <div class="panel-body">  -->
+		<div class="list-group">
+			<div class="list-group-item">
+				<div class="media">
+				  <div class="media-left media-top">
+				    <a href="#">
+				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <h4 class="media-heading">Programming 101</h4>
+				    Description Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description 
+				  </div>
+				  <div class="media-left media-bottom">
+				    <a href="#" class="btn btn-primary"><?= __('Details')?></a>
+				  </div>
+				</div>
+			</div>
+			<div class="list-group-item">
+				<div class="media-left media-top">
+					<a href="#">
+				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
+				    </a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Calculus I</h4>
+				    Calculus I Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description Description 
+				</div>
+				<div class="media-left media-bottom">
+					<div class="btn-group-vertical" role="group" aria-label="...">
+						<a href="#" class="btn btn-primary"><?= __('Details')?></a>
+					</div>
+				</div>
+			</div>
+			<div class="list-group-item">
+				<div class="media-left media-top">
+					<a href="#">
+				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
+				    </a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Linear Algebra</h4>
+				    Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description Description 
+				</div>
+				<div class="media-left media-bottom">
+					<div class="btn-group-vertical" role="group" aria-label="...">
+						<a href="#" class="btn btn-primary"><?= __('Details')?></a>
+					</div>
+				</div>
+			</div>
+			<div class="list-group-item">
+				<div class="media-left media-top">
+					<a href="#">
+				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
+				    </a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Physics 101</h4>
+				    Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description 
+				    Description Description Description Description Description Description Description Description Description Description 
+				</div>
+				<div class="media-left media-bottom">
+					<div class="btn-group-vertical" role="group" aria-label="...">
+						<a href="#" class="btn btn-primary"><?= __('Details')?></a>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	<!-- </div> -->
+		
+	<div class="panel-footer">
+		Some footer
+	</div>
+	
+</div>
