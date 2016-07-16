@@ -22,7 +22,7 @@ By default Studeo will look for two MySQL databases in *localhost:3306*:
 * Studeo's database.
 * phpBB's database.
 
-Connection to those can be customized in /src/config/app.php, by editing the following parts:
+Connection to those can be customized in /config/app.php, by editing the following parts:
 ```php
 'Datasources' => [
         'default' => [
@@ -70,6 +70,15 @@ Connection to those can be customized in /src/config/app.php, by editing the fol
   * username: **admin**     password: **adminadmin**
   * username: **user**      password: **useruser**
   * username: **moderator** password: **moderator**
+  
+**Please note:** if you installed phpbb locally as recommended, it may be necessary to update the config variable PHPBB_TABLE_PREFIX to match the prefix the instance of phpbb you want to use is using. This change can be made in /config/bootstrap.php, at the line
+
+```php
+/**
+ * Set global configuration variables
+ */
+Configure::write('PHPBB_TABLE_PREFIX','phpbb');
+```
 
 #Contribution guidelines
 Please, write comments, commit messages and variable/table/column names in English! Issues can be submitted in italian, too.

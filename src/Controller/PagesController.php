@@ -27,7 +27,17 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
-
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see \App\Controller\AppController::initialize()
+	 */
+	public function initialize(){
+		parent::initialize();
+		//allow unauthenticated users to perform every action on the PagesController
+		$this->Auth->allow();
+	}
+	
     /**
      * Displays a view
      *

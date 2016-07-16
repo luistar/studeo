@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
+use App\Model\Entity\PhpbbUser;
 
 /**
  * Application Controller
@@ -64,6 +66,35 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+    	
+        $this->loadComponent('Auth', [
+        	'authorize' => 'Controller',
+        	'unauthorizedRedirect' => false, //solleva forbiddenException in caso di tentativo di accesso non autorizzato
+       		/* settare unauthorizedRedirect all'url a cui rimandare in caso di operazione non consentita.
+       		 * Di default si viene rimandati alla pagina di provenienza.	 */
+      		'authError' => __('Authentication required to continue.'),
+        	'loginAction' => [
+        		'controller'=>'PhpbbUsers',
+        		'action' => 'login'
+        	],
+       		/*
+       		 'loginRedirect' => [
+     	 		'controller' => 'Articles',
+     	 		'action' => 'index'
+       		 ],
+        	*/
+        	'logoutRedirect' => [
+        		'controller' => 'Pages',
+        		'action' => 'display',
+        		'home'
+        	],
+        	'authenticate' => [
+        		'Form' => [
+        			'userModel' => 'phpbb_users',
+        			'fields'	=> ['password'=>'user_password']
+        		]
+        	],
+        ]);    	
     }
 
     /**
@@ -79,5 +110,16 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
+    
+    /**
+     * Determines whether $user is authorized to access actions in controllers.
+     * 
+     * @param PhpbbUser $user
+     * @return boolean
+     */
+    public function isAuthorized($user) 
+    {
+    	return true; //temporarily allow everyone
     }
 }
