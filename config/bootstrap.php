@@ -221,12 +221,17 @@ Type::build('datetime')
     ->useImmutable();
 
 /**
- * Carica il plugin Bootstrap helpers https://github.com/Holt59/cakephp3-bootstrap-helpers
+ * Loads Bootstrap helpers plugin: https://github.com/Holt59/cakephp3-bootstrap-helpers
  */
 Plugin::load('Bootstrap');
     
 /**
- * Personalizzazioni per l'Utiliy Inflector
+ * Inflector utility customizations
  */
 //Inflector::rules('irregular', ['phylum' => 'phyla']); // chiave singolare, valore plurale
 Inflector::rules('irregular', ['insegnamento' => 'insegnamenti']);
+
+/**
+ * Set global configuration variables
+ */
+Configure::write('PHPBB_TABLE_PREFIX','phpbb');
