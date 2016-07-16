@@ -46,6 +46,7 @@
     </div>
 </div>
 
+<?php /* Static prototybe to be removed */?>
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<h1 class="panel-title">First year</h1>
