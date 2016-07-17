@@ -39,43 +39,38 @@
           
           
           <ul class="nav navbar-nav navbar-right">
-          	<!-- parte valida una volta implementata autenticazione 
           		<?php if(!$this->request->session()->read('Auth.User')):?>
                 	<li>
                 		<?= $this->Html->link('<i class="fa fa-sign-in"></i> Login',[
-                				'controller' => 'Users',
+                				'controller' => 'PhpbbUsers',
                 				'action' => 'login'
                 		],['escape'=>false])?>
                 	</li>
                 <?php else: ?>
                 	<li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sei autenticato come <strong><?=$this->request->session()->read('Auth.User.username') ?></strong><span class="caret"></span></a>
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= __('Welcome, ')?> <strong><?=$this->request->session()->read('Auth.User.username') ?></strong><span class="caret"></span></a>
 		              <ul class="dropdown-menu">
 		              	<li>
-	                		<?= $this->Html->link('<i class="fa fa-tint fa-fw"></i> Personalizza',[
-	                				'controller' => 'Users',
+	                		<?= $this->Html->link('<i class="fa fa-tint fa-fw"></i> ' . __('Customize (TODO)'),[
+	                				'controller' => 'PhpbbUsers',
 	                				'action' => 'personalizza'
 	                		],['escape'=>false])?>
                 		</li>
 		              	<li>
-	                		<?= $this->Html->link('<i class="fa fa-key fa-fw"></i> Cambia password',[
-	                				'controller' => 'Users',
+	                		<?= $this->Html->link('<i class="fa fa-key fa-fw"></i> ' . __('Change Password (TODO)'),[
+	                				'controller' => 'PhpbbUsers',
 	                				'action' => 'changePassword'
 	                		],['escape'=>false])?>
                 		</li>
 		              	<li>
-	                		<?= $this->Html->link('<i class="fa fa-sign-out fa-fw"></i> Logout',[
-	                				'controller' => 'Users',
+	                		<?= $this->Html->link('<i class="fa fa-sign-out fa-fw"></i> ' . __('Logout'),[
+	                				'controller' => 'PhpbbUsers',
 	                				'action' => 'logout'
 	                		],['escape'=>false])?>
                 		</li>
 		              </ul>
 		            </li>
                 <?php endif;?>
-                 -->
-                 <li>
-                 	<?= $this->Html->link('Link per login/logout',[]);?>
-                 </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
