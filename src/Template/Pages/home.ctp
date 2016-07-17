@@ -14,10 +14,49 @@
 </div>
 
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-3 col-md-push-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1 class="panel-title"><?=__('Archive')?></h1>
+			</div>
+			
+			<ul class="list-group">
+				<li class="list-group-item">
+					<a href="#"><?=__('September') ?> 2016 (4)</a>
+					<ul>
+						<li> Article 1
+						<li> Article 4
+						<li> Article 3
+						<li> Article 2
+					</ul>
+				</li>
+				<li class="list-group-item">
+					<a href="#"><?=__('July') ?> 2016 (2)</a>
+				
+					<ul>
+						<li> Article 1
+						<li> Article 4
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1 class="panel-title"><?=__('Some widget')?></h1>
+			</div>
+			<div class="panel-body">
+				Some content. Bah. <strong>Bold.</strong>
+			</div>
+			<div class="panel-footer">
+				Some footer
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-9 col-md-pull-3">
 		<div class="article-preview clearfix">
 			<h3>Very important news!</h3>
-			<div class="well" style="padding:10px">
+			<div class="well" style="padding:10px"> <!-- TODO: add custom class -->
 				<?= __('Posted {0} by {1}',['5 days ago',$this->Html->link('admin',['controller'=>'PhpbbUser','action'=>'view'])])?>
 				| <i class="fa fa-tags"></i> Labels: 	<span class="label label-default">News</span>
 							<span class="label label-primary">Exams</span>
@@ -49,17 +88,6 @@
 			</p>
 			<?= $this->Html->link(__('Read more'),[],['class'=>'pull-right btn btn-primary'])?>
 		</div>
-	</div>
-	<div class="col-md-3">
-		<ul>
-			<li> This
-			<li> is
-			<li> some
-			<li> sort
-			<li> of
-			<li> <?= $this->Html->link('list',[])?>
-			<li> (sidebar example!)
-		</ul>
 	</div>
 </div>
 
