@@ -1,5 +1,12 @@
 @CHARSET "ISO-8859-1";
+/**
+ * This file contains css customizations. As the code grows larger, it may be appropriate to split this file in multiple files
+ */
 
 body{
-	margin-top:	 60px; /* margine per la navbar fissa */
+	margin-top:	 60px; /* margin for fixed-on-top navbar */
+}
+
+.article-header {
+	padding: 10px;
 }

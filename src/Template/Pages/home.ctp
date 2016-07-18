@@ -56,7 +56,7 @@
 	<div class="col-md-9 col-md-pull-3">
 		<div class="article-preview clearfix">
 			<h3>Very important news!</h3>
-			<div class="well" style="padding:10px"> <!-- TODO: add custom class -->
+			<div class="well article-header">
 				<?= __('Posted {0} by {1}',['5 days ago',$this->Html->link('admin',['controller'=>'PhpbbUser','action'=>'view'])])?>
 				| <i class="fa fa-tags"></i> Labels: 	<span class="label label-default">News</span>
 							<span class="label label-primary">Exams</span>
@@ -79,7 +79,7 @@
 		<hr>
 		<div class="article-preview clearfix">
 			<h3>Older news</h3>
-			<div class="well" style="padding:10px">
+			<div class="well article-header ">
 				<?= __('Posted {0} by {1}',['10 days ago',$this->Html->link('admin',['controller'=>'PhpbbUser','action'=>'view'])])?>
 				| <i class="fa fa-tag"></i> Label: 	<span class="label label-default">News</span>
 			</div>
