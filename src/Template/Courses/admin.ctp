@@ -33,6 +33,7 @@
 	                    <?= $this->Html->link(__('View'), ['action' => 'view', $course->id],['class'=>'btn btn-xs btn-primary']) ?>
 	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $course->id],['class'=>'btn btn-xs btn-warning']) ?>
 	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $course->id], ['confirm' => __('Are you sure you want to delete # {0}?', $course->id),'class'=>'btn btn-xs btn-danger']) ?>
+	                    <?= $this->Html->link(__('Edit groups'), ['controller'=>'Groups','action' => 'index', $course->id],['class'=>'btn btn-xs btn-info']) ?>
 	                </td>
 	            </tr>
 	            <?php endforeach; ?>
