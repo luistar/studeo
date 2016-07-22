@@ -10,3 +10,8 @@ body{
 .article-header {
 	padding: 10px;
 }
+
+.course-name {
+	//font-weight: bold;
+	font-size: 1.2em;
+}

@@ -1,13 +1,8 @@
-<nav id="actions">
-    <ul>
-        <li><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Course'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Degrees'), ['controller' => 'Degrees', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Degree'), ['controller' => 'Degrees', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div>
-    <h3><?= __('Courses') ?></h3>
+	<div class="page-header">
+    	<h1><?= __('Courses') ?></h1>
+    </div>
+    
+    <!--
     <table class="table table-bordered table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -36,6 +31,7 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
@@ -44,93 +40,27 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
-</div>
+    -->
 
-<?php /* Static prototybe to be removed */?>
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h1 class="panel-title">First year</h1>
-	</div>
-	<!-- <div class="panel-body">  -->
-		<div class="list-group">
-			<div class="list-group-item">
-				<div class="media">
-				  <div class="media-left media-top">
-				    <a href="#">
-				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
-				    </a>
-				  </div>
-				  <div class="media-body">
-				    <h4 class="media-heading">Programming 101</h4>
-				    Description Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description 
-				  </div>
-				  <div class="media-left media-bottom">
-				    <a href="#" class="btn btn-primary"><?= __('Details')?></a>
-				  </div>
-				</div>
-			</div>
-			<div class="list-group-item">
-				<div class="media-left media-top">
-					<a href="#">
-				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
-				    </a>
-				</div>
-				<div class="media-body">
-					<h4 class="media-heading">Calculus I</h4>
-				    Calculus I Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description Description 
-				</div>
-				<div class="media-left media-bottom">
-					<div class="btn-group-vertical" role="group" aria-label="...">
-						<a href="#" class="btn btn-primary"><?= __('Details')?></a>
-					</div>
-				</div>
-			</div>
-			<div class="list-group-item">
-				<div class="media-left media-top">
-					<a href="#">
-				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
-				    </a>
-				</div>
-				<div class="media-body">
-					<h4 class="media-heading">Linear Algebra</h4>
-				    Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description Description 
-				</div>
-				<div class="media-left media-bottom">
-					<div class="btn-group-vertical" role="group" aria-label="...">
-						<a href="#" class="btn btn-primary"><?= __('Details')?></a>
-					</div>
-				</div>
-			</div>
-			<div class="list-group-item">
-				<div class="media-left media-top">
-					<a href="#">
-				      <img class="media-object hidden-xs hidden-sm" src="http://placehold.it/200x100" alt="lefu">
-				    </a>
-				</div>
-				<div class="media-body">
-					<h4 class="media-heading">Physics 101</h4>
-				    Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description 
-				    Description Description Description Description Description Description Description Description Description Description 
-				</div>
-				<div class="media-left media-bottom">
-					<div class="btn-group-vertical" role="group" aria-label="...">
-						<a href="#" class="btn btn-primary"><?= __('Details')?></a>
-					</div>
-				</div>
-			</div>
-		
-		</div>
-	<!-- </div> -->
-		
-	<div class="panel-footer">
-		Some footer
-	</div>
-	
-</div>
+<div>
+	<table class="table table-striped">
+		<thead>
+			<tr style="font-size:1.2em"><th colspan="4">First year <i class="fa fa-caret-square-o-down pull-right" style="margin-right:10px; text-size:1.2em"></i></th></tr>
+			<tr>
+				<th></th><th><?=__('Course')?></th>
+				<th class="hidden-xs"><?=__('Tests')?></th><th class="hidden-xs"><?=__('Solutions')?></th></tr>
+		</thead>
+		<tbody>
+			<?php foreach ($courses as $course): ?>
+				<td class="col-md-1"><img src="http://placehold.it/64x64"/></td>
+				<td>
+					<?=$this->Html->link($course->name,['action'=>'view',$course->id],['class'=>'course-name']);?><br>
+					<i><?=$course->description?></i></td>
+				<td class="col-md-1 hidden-xs">25</td>
+				<td class="col-md-1 hidden-xs">52</td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+</div>	
+
