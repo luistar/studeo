@@ -4,19 +4,19 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Course Entity
+ * Professor Entity
  *
  * @property int $id
- * @property string $name
- * @property string $description
- * @property string $picture_path
- * @property int $degree_id
- * @property bool $isMandatory
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $office
+ * @property string $website
+ * @property string $notes
  *
- * @property \App\Model\Entity\Degree $degree
- * @property \App\Model\Entity\Group[] $groups
+ * @property \App\Model\Entity\ProfessorEmail[] $professor_emails
+ * @property \App\Model\Entity\Professorship[] $professorships
  */
-class Course extends Entity
+class Professor extends Entity
 {
 
     /**

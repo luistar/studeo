@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Courses Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Degrees
+ * @property \Cake\ORM\Association\HasMany $Groups
  *
  * @method \App\Model\Entity\Course get($primaryKey, $options = [])
  * @method \App\Model\Entity\Course newEntity($data = null, array $options = [])
@@ -39,6 +40,9 @@ class CoursesTable extends Table
         $this->belongsTo('Degrees', [
             'foreignKey' => 'degree_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('Groups', [
+            'foreignKey' => 'course_id'
         ]);
     }
 

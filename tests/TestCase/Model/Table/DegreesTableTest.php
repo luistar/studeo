@@ -25,7 +25,8 @@ class DegreesTableTest extends TestCase
      */
     public $fixtures = [
         'app.degrees',
-        'app.courses'
+        'app.courses',
+        'app.groups'
     ];
 
     /**
