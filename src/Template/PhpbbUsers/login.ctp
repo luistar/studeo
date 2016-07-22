@@ -26,7 +26,7 @@
 		<?php echo $this->Form->input('username',[
 			'placeholder'=>'Username'
 		]);
-		echo $this->Form->input('user_password',['label'=>'Password']);
+		echo $this->Form->input('user_password',['label'=>'Password','type'=>'password']);
 		echo $this->Form->button(__('Login'),['class'=>'btn btn-primary']);
 		?>
 		</fieldset>
