@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Filesystem\Folder;
 
 /**
  * Courses Controller
@@ -61,6 +62,10 @@ class CoursesController extends AppController
             }
         }
         $degrees = $this->Courses->Degrees->find('list', ['limit' => 200]);
+        /* Acquire list of icon files in /webroot/img/courses/icons */
+        $dir = new Folder(ROOT.'/webroot/img/courses/icons');
+        $icon_list = $dir->find('.*\.png');
+        $this->set('icon_list',$icon_list);
         $this->set(compact('course', 'degrees'));
         $this->set('_serialize', ['course']);
     }
@@ -89,6 +94,10 @@ class CoursesController extends AppController
             }
         }
         $degrees = $this->Courses->Degrees->find('list', ['limit' => 200]);
+        /* Acquire list of icon files in /webroot/img/courses/icons */
+        $dir = new Folder(ROOT.'/webroot/img/courses/icons');
+        $icon_list = $dir->find('.*\.png');
+        $this->set('icon_list',$icon_list);
         $this->set(compact('course', 'degrees'));
         $this->set('_serialize', ['course']);
     }
