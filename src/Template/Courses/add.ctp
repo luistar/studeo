@@ -5,7 +5,7 @@
         <?php
             echo $this->Form->input('name');
             echo $this->Form->input('description');
-            echo $this->Form->input('picture_path', ['options' => $icon_list]);
+            echo $this->Form->input('picture_path',['options'=> array_combine($icon_list,$icon_list)]);
             echo $this->Form->input('degree_id', ['options' => $degrees]);
             echo $this->Form->input('isMandatory');
         ?>
