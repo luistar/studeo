@@ -18,10 +18,7 @@ class CoursesController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Degrees']
-        ];
-        $courses = $this->paginate($this->Courses);
+        $courses = $this->Courses->find()->contain(['Degrees'])->all();
 
         $this->set(compact('courses'));
         $this->set('_serialize', ['courses']);
