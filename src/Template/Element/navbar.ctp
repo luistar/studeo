@@ -20,25 +20,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
           	<!-- LINK to courses -->
-            <li class="active">
-            	<!-- Courses dropdown -->
-				<div class="btn-group navbar-btn">
-				  <button type="button" class="btn " style="background-color: transparent;">Courses</button>
-				  <button type="button" class="btn dropdown-toggle" style="background-color: transparent;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    <span class="caret"></span>
-				    <span class="sr-only">Toggle Dropdown</span>
-				  </button>
-				  <ul class="dropdown-menu">
-				  	<li class="dropdown-header">First Year</li>
-				    <li><a href="#">Programming 101</a></li>
-				    <li><a href="#">Calculus</a></li>
-				    <li><a href="#">Linear Algebra</a></li>
-				    <li role="separator" class="divider"></li>
-				    <li class="dropdown-header">Second Year</li>
-				    <li><a href="#">Programming Languages</a></li>
-				    <li><a href="#">Databases</a></li>
-				  </ul>
-				</div>
+            <li class=""> <!-- TODO: manage active class -->
+            	<?=$this->Html->link(__('Courses'),['controller'=>'Courses','action'=>'index'])?>
             </li>
             <!-- Funzionalità di configurazione -->
             <li class="dropdown">
