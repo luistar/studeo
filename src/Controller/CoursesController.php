@@ -43,6 +43,8 @@ class CoursesController extends AppController
 
     /**
      * Add method
+     * 
+     * This action will only be accessible to users with elevated privileges.
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
@@ -65,6 +67,8 @@ class CoursesController extends AppController
 
     /**
      * Edit method
+     * 
+     * This action will only be accessible to users with elevated privileges.
      *
      * @param string|null $id Course id.
      * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
@@ -91,6 +95,8 @@ class CoursesController extends AppController
 
     /**
      * Delete method
+     * 
+     * This action will only be accessible to users with elevated privileges.
      *
      * @param string|null $id Course id.
      * @return \Cake\Network\Response|null Redirects to index.
@@ -106,5 +112,21 @@ class CoursesController extends AppController
             $this->Flash->error(__('The course could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
+    }
+    
+    /**
+     * Admin Control Panel for Courses
+     * 
+     * This action will only be accessible to users with elevated privileges.
+     */
+    public function admin()
+    {
+    	/* Acquires paginated list of courses to be displayed in tabular form in admin.ctp */
+    	$this->paginate = [
+            'contain' => ['Degrees']
+        ];
+        $courses = $this->paginate($this->Courses);
+        $this->set(compact('courses'));
+        $this->set('_serialize', ['courses']);
     }
 }
