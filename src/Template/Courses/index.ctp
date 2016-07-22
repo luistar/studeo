@@ -2,10 +2,14 @@
    	<h1><?= __('Courses') ?></h1>
 </div>
 
+<?php if($this->request->session()->read('Auth.User.group_id')=='5'):?>
+	<?= $this->Html->link(__('Admin Control Panel'),['action'=>'admin'],['class'=>'btn btn-primary','style'=>'margin-bottom:10px'])?>
+<?php endif;?>
+
 <div>
 	<table class="table table-striped">
 		<thead>
-			<tr style="font-size:1.2em"><th colspan="4">First year <i class="fa fa-caret-square-o-down pull-right" style="margin-right:10px; text-size:1.2em"></i></th></tr>
+			<tr class="courses-table-header info"><th colspan="4">First year <i class="fa fa-caret-square-o-down pull-right" style="margin-right:10px; text-size:1.2em"></i></th></tr>
 			<tr>
 				<th></th><th><?=__('Course')?></th>
 				<th class="hidden-xs"><?=__('Tests')?></th><th class="hidden-xs"><?=__('Solutions')?></th></tr>
@@ -21,6 +25,9 @@
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
+		<tfoot>
+			<tr><td colspan="4">Footer</td></tr>
+		</tfoot>
 	</table>
 </div>	
 
