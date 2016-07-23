@@ -26,7 +26,14 @@ class ProfessorsTableTest extends TestCase
     public $fixtures = [
         'app.professors',
         'app.professor_emails',
-        'app.professorships'
+        'app.professorships',
+        'app.groups',
+        'app.courses',
+        'app.degrees',
+        'app.exams',
+        'app.solutions',
+        'app.contributors',
+        'app.exts'
     ];
 
     /**

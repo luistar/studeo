@@ -62,10 +62,12 @@ class ProfessorshipsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
+            ->integer('year_start')
             ->requirePresence('year_start', 'create')
             ->notEmpty('year_start');
 
         $validator
+            ->integer('year_end')
             ->allowEmpty('year_end');
 
         return $validator;

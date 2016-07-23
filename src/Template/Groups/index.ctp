@@ -1,6 +1,16 @@
-<div class="col-sm-12">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Html->link(__('New Group'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Professorships'), ['controller' => 'Professorships', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Professorship'), ['controller' => 'Professorships', 'action' => 'add']) ?></li>
+    </ul>
+</nav>
+<div class="groups index large-9 medium-8 columns content">
     <h3><?= __('Groups') ?></h3>
-    <table class="table table-striped table-bordered" cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>
@@ -26,12 +36,12 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-   	<p><?= $this->Paginator->counter() ?></p>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('next') . ' >') ?>
         </ul>
+        <p><?= $this->Paginator->counter() ?></p>
     </div>
 </div>

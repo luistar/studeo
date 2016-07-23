@@ -31,7 +31,9 @@ class ProfessorEmailsTableTest extends TestCase
         'app.courses',
         'app.degrees',
         'app.exams',
-        'app.solutions'
+        'app.solutions',
+        'app.contributors',
+        'app.exts'
     ];
 
     /**

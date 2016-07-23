@@ -7,8 +7,8 @@ use Cake\ORM\Entity;
  * Professorship Entity
  *
  * @property int $id
- * @property string $year_start
- * @property string $year_end
+ * @property int $year_start
+ * @property int $year_end
  * @property int $group_id
  * @property int $professor_id
  *
