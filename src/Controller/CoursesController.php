@@ -35,7 +35,11 @@ class CoursesController extends AppController
     public function view($id = null)
     {
         $course = $this->Courses->get($id, [
-            'contain' => ['Degrees']
+            'contain' => ['Degrees',
+            		'Groups'=>[ //recursively load associations
+            			'Professorships'=>['Professors', 'Exams'=>['Solutions']]
+            		]
+            ]
         ]);
 
         $this->set('course', $course);
