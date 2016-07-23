@@ -26,7 +26,7 @@
 			<?php endforeach; ?>
 		</tbody>
 		<tfoot>
-			<tr><td colspan="4">Footer</td></tr>
+			<tr class="panel-footer"><td colspan="4">Footer</td></tr>
 		</tfoot>
 	</table>
 </div>	
