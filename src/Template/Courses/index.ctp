@@ -16,7 +16,7 @@
 		</thead>
 		<tbody>
 			<?php foreach ($courses as $course): ?>
-				<td class="col-md-1"><?=$this->Html->image('courses/icons/'.$course->picture_path,['class'=>'img-circle','width'=>'64px','height'=>'64px'])?></td>
+				<td class="col-md-1 text-center"><?=$this->Html->image('courses/icons/'.$course->picture_path,['class'=>'img-circle','width'=>'42px','height'=>'42px'])?></td>
 				<td>
 					<?=$this->Html->link($course->name,['action'=>'view',$course->id],['class'=>'course-name']);?><br>
 					<i><?=$course->description?></i></td>
