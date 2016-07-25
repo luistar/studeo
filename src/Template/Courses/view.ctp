@@ -50,7 +50,7 @@
 					<div class="col-xs-12 col-sm-4">
 						<h3><strong> <?= $solutionsNum ?> </strong></h3>
 						<p><small><?= $solutionsNum==1 ? __('Solution'):__('Solutions')?></small></p>
-						<button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+						<button class="btn btn-info btn-block"><span class="fa fa-search"></span> Toggle search </button>
 					</div>
 					<div class="col-xs-12 col-sm-4">
 						<h3><strong><?= $groupsNum ?></strong></h3>
