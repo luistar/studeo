@@ -29,9 +29,9 @@
 	                <td><?= h($exam->file_path) ?></td>
 	                <td><?= h($exam->date) ?></td>
 	                <td class="actions">
-	                    <?= $this->Html->link(__('View'), ['action' => 'view', $exam->id]) ?>
-	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $exam->id]) ?>
-	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $exam->id], ['confirm' => __('Are you sure you want to delete # {0}?', $exam->id)]) ?>
+	                    <?= $this->Html->link(__('View'), ['action' => 'view', $exam->id],['class'=>'btn btn-xs btn-info']) ?>
+	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $exam->id],['class'=>'btn btn-xs btn-warning']) ?>
+	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $exam->id], ['class'=>'btn btn-xs btn-danger','confirm' => __('Are you sure you want to delete # {0}?', $exam->id)]) ?>
 	                </td>
 	            </tr>
 	            <?php endforeach; ?>

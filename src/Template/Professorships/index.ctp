@@ -28,14 +28,14 @@
 	            <?php foreach ($professorships as $professorship): ?>
 	            <tr>
 	                <td><?= $this->Number->format($professorship->id) ?></td>
-	                <td><?= $this->Number->format($professorship->year_start) ?></td>
-	                <td><?= $this->Number->format($professorship->year_end) ?></td>
+	                <td><?= $professorship->year_start ?></td>
+	                <td><?= $professorship->year_end ? $professorship->year_end : '(NULL)' ?></td>
 	                <td><?= $professorship->has('group') ? $this->Html->link($professorship->group->name, ['controller' => 'Groups', 'action' => 'view', $professorship->group->id]) : '' ?></td>
 	                <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->id, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
 	                <td class="actions">
-	                    <?= $this->Html->link(__('View'), ['action' => 'view', $professorship->id]) ?>
-	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $professorship->id]) ?>
-	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $professorship->id], ['confirm' => __('Are you sure you want to delete # {0}?', $professorship->id)]) ?>
+	                    <?= $this->Html->link(__('View'), ['action' => 'view', $professorship->id],['class'=>'btn btn-xs btn-info']) ?>
+	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $professorship->id],['class'=>'btn btn-xs btn-warning']) ?>
+	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $professorship->id], ['class'=>'btn btn-xs btn-danger','confirm' => __('Are you sure you want to delete # {0}?', $professorship->id)]) ?>
 	                </td>
 	            </tr>
 	            <?php endforeach; ?>
