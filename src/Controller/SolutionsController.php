@@ -75,7 +75,12 @@ class SolutionsController extends AppController
         		' ('.$exam->professorship->professor->last_name.') - '.$exam->date;
         }
         $exams = $examsOptions;
-        $contributors = $this->Solutions->Contributors->find('list', ['limit' => 200]);
+        $contributors = $this->Solutions->Contributors->find()->order(['username'=>'ASC'])->all();
+        $contributorsOptions = [];
+        foreach($contributors as $contributor){
+        	$contributorsOptions[$contributor->id] = $contributor->username;
+        }
+        $contributors = $contributorsOptions;
         $this->set(compact('solution', 'exams', 'contributors'));
         $this->set('_serialize', ['solution']);
     }
