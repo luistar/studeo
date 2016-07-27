@@ -1,9 +1,4 @@
 <?php 
-	echo $this->Html->css('bootstrap-treeview.min.css',['block' => true]);
-	echo $this->Html->script('bootstrap-treeview.min.js',['block' => true]);
-?>
-
-<?php 
 	$groups = $course->groups;
 	$professorships = [];
 	if($groups){
