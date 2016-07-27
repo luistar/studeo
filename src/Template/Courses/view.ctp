@@ -3,18 +3,18 @@
 	$professorships = [];
 	if($groups){
 		foreach($groups as $group){
-			array_merge($professorships, $group->professorships);
+			$professorships = array_merge($professorships, $group->professorships);
 		}
 	}
 	$professors = [];
 	$exams = [];
 	foreach($professorships as $professorship){
 		array_push($professors, $professorship->professor);
-		array_merge($exams, $professorship->exams);
+		$exams = array_merge($exams, $professorship->exams);
 	}
 	$solutions = [];
 	foreach($exams as $exam){
-		array_merge($solutions,$exam->solutions);
+		$solutions = array_merge($solutions,$exam->solutions);
 	}
 
 	$groupsNum = count($groups);
@@ -60,48 +60,31 @@
 
 <div class="treeList">
 	<ul class="list-group">
-		<li class="list-group-item group-toggle" data-professorship-id="1" data-is-expanded="1">
-			<span class="fa fa-fw fa-minus toggle-icon toggle-icon"></span>
-			Gruppo 1 (Prof. Giuliano Laccetti) <a href="http://www.google.it" class="pull-right">Show only this group</a>
-		</li>
-		<li class="list-group-item group-1 exam-toggle">
-			<span class="indent-1"></span>
-			<span class="fa fa-fw fa-minus toggle-icon"></span>
-			12/03/2015
-		</li>
-		<li class="list-group-item group-1 exam-toggle" data-exam-id="2">
-			<span class="indent-1"></span>
-			<span class="fa fa-fw fa-minus toggle-icon"></span>
-			25/02/2015
-		</li>
-		<li class="list-group-item group-1 solution-2">
-			<span class="indent-2"></span>
-				Solution by Contributor3
-		</li>
-		<li class="list-group-item group-toggle" data-professorship-id="2" data-is-expanded="1">
-			<span class="fa fa-fw fa-minus toggle-icon"></span>
-			Gruppo 2 (Prof. Paola Festa) <a href="http://www.google.it" class="pull-right">Show only this group</a>
-		</li>
-		<li class="list-group-item group-2 exam-toggle">
-			<span class="indent-1"></span>
-			<span class="fa fa-fw fa-minus toggle-icon"></span>
-			12/03/2015
-		</li>
-		<li class="list-group-item group-2 exam-toggle" data-exam-id="3">
-			<span class="indent-1"></span>
-			<span class="fa fa-fw fa-minus toggle-icon"></span>
-			25/02/2015
-		</li>
-		<li class="list-group-item group-2 solution-3">
-			<span class="indent-2"></span>
-				Solution by Contributor6
-		</li>
-		<li class="list-group-item group-2 solution-3">
-			<span class="indent-2"></span>
-				Solution by Contributor7
-		</li>
+		<?php foreach($course->groups as $group): ?>
+			<?php foreach($group->professorships as $professorship): ?>
+				<li class="list-group-item group-toggle" data-professorship-id="<?= $professorship->id ?>" data-is-expanded="1">
+					<span class="fa fa-fw fa-minus toggle-icon toggle-icon"></span>
+					<?= $group->name ?> (Prof. <?= $professorship->professor->first_name . ' ' . $professorship->professor->last_name ?>)
+					<a href="http://www.google.it" class="pull-right">Show only this group</a>
+				</li>
+				<?php foreach($professorship->exams as $exam): ?>
+					<li class="list-group-item group-<?= $group->id?> exam-toggle">
+						<span class="indent-1"></span>
+						<span class="fa fa-fw fa-minus toggle-icon"></span>
+						<?= $exam->date ?>
+					</li>
+					<?php foreach($exam->solutions as $solution): ?>
+						<li class="list-group-item group-<?= $group->id?> solution-<?= $exam->id?>">
+							<span class="indent-2"></span>
+							Solution by Contributor3
+						</li>
+					<?php endforeach; ?>
+				<?php endforeach; ?>
+			<?php endforeach; ?>
+		<?php endforeach; ?>
 	</ul>
 </div>
+
 
 <script>
 $('.group-toggle').click(function (){
