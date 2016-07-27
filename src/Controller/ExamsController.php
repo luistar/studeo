@@ -61,7 +61,14 @@ class ExamsController extends AppController
                 $this->Flash->error(__('The exam could not be saved. Please, try again.'));
             }
         }
-        $professorships = $this->Exams->Professorships->find('list', ['limit' => 200]);
+        $professorships = $this->Exams->Professorships->find()->contain(['Professors','Groups'=>['Courses']]);
+        $professorshipsOptions = [];
+        foreach($professorships as $professorship){
+        	$professorshipsOptions[$professorship->id] = strtoupper($professorship->group->course->name).' - '.$professorship->group->name.' ('.
+          		$professorship->professor->last_name.', '.$professorship->year_start.' '.__('to').' '.
+        		(($professorship->year_end)?$professorship->year_end:__('today')).')';
+        }
+        $professorships = $professorshipsOptions;
         $this->set(compact('exam', 'professorships'));
         $this->set('_serialize', ['exam']);
     }
