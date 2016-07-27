@@ -15,11 +15,11 @@ CREATE TABLE IF NOT EXISTS `contributors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ext_id` int(11) NOT NULL,
   `username` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `bio` text COLLATE utf8_unicode_ci NOT NULL,
-  `website` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `avatar_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `bio` text COLLATE utf8_unicode_ci,
+  `website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `first_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `avatar_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ext_id` (`ext_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
   CONSTRAINT `degree fk` FOREIGN KEY (`degree_id`) REFERENCES `degrees` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella studeo.courses: ~0 rows (circa)
+-- Dump dei dati della tabella studeo.courses: ~2 rows (circa)
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
 INSERT INTO `courses` (`id`, `name`, `description`, `picture_path`, `degree_id`, `isMandatory`) VALUES
 	(1, 'Programmazione I', 'Introduzione alla programmazione imperativa.', 'programming.png', 1, 1),
@@ -76,10 +76,13 @@ CREATE TABLE IF NOT EXISTS `exams` (
   PRIMARY KEY (`id`),
   KEY `professorship_FK` (`professorship_id`),
   CONSTRAINT `professorship_FK` FOREIGN KEY (`professorship_id`) REFERENCES `professorships` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella studeo.exams: ~0 rows (circa)
+-- Dump dei dati della tabella studeo.exams: ~2 rows (circa)
 /*!40000 ALTER TABLE `exams` DISABLE KEYS */;
+INSERT INTO `exams` (`id`, `professorship_id`, `file_path`, `date`, `keywords`) VALUES
+	(1, 2, 'www.svbgli.mento', '2016-07-27', 'alberi, grafi, paperopoli'),
+	(2, 2, 'asdasdasdasdasdasdassasasdasdasdas', '2014-01-10', 'paperi, strade, palindrome');
 /*!40000 ALTER TABLE `exams` ENABLE KEYS */;
 
 
@@ -92,12 +95,13 @@ CREATE TABLE IF NOT EXISTS `groups` (
   PRIMARY KEY (`id`),
   KEY `courses_FK` (`course_id`),
   CONSTRAINT `courses_FK` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella studeo.groups: ~0 rows (circa)
+-- Dump dei dati della tabella studeo.groups: ~1 rows (circa)
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
 INSERT INTO `groups` (`id`, `course_id`, `name`, `description`) VALUES
-	(1, 1, 'Gruppo 1', 'Studenti con cognome  compreso tra Aa e De');
+	(1, 1, 'Gruppo 1', 'Studenti con cognome  compreso tra Aa e De'),
+	(2, 1, 'Gruppo 2', 'Studenti con cognome  compreso tra Df e Zz');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 
 
@@ -110,12 +114,13 @@ CREATE TABLE IF NOT EXISTS `professors` (
   `website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `notes` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dump dei dati della tabella studeo.professors: ~1 rows (circa)
 /*!40000 ALTER TABLE `professors` DISABLE KEYS */;
 INSERT INTO `professors` (`id`, `first_name`, `last_name`, `office`, `website`, `notes`) VALUES
-	(1, 'Giuliano', 'Laccetti', 'Room XYZ Via Claudio,21', 'www.laccetti.org', 'Some notes');
+	(1, 'Giuliano', 'Laccetti', 'Room XYZ Via Claudio,21', 'www.laccetti.org', 'Some notes'),
+	(2, 'Paola', 'Festa', 'POIOP', 'www.festapaola.it', 'asd asd asd asd asd');
 /*!40000 ALTER TABLE `professors` ENABLE KEYS */;
 
 
@@ -131,12 +136,13 @@ CREATE TABLE IF NOT EXISTS `professorships` (
   KEY `professor_FK` (`professor_id`),
   CONSTRAINT `group_FK` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `professor_FK` FOREIGN KEY (`professor_id`) REFERENCES `professors` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dump dei dati della tabella studeo.professorships: ~1 rows (circa)
 /*!40000 ALTER TABLE `professorships` DISABLE KEYS */;
 INSERT INTO `professorships` (`id`, `year_start`, `year_end`, `group_id`, `professor_id`) VALUES
-	(1, 2009, NULL, 1, 1);
+	(1, 2009, NULL, 1, 1),
+	(2, 2010, NULL, 2, 2);
 /*!40000 ALTER TABLE `professorships` ENABLE KEYS */;
 
 
@@ -150,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `professor_emails` (
   CONSTRAINT `professors_fk` FOREIGN KEY (`professor_id`) REFERENCES `professors` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella studeo.professor_emails: ~1 rows (circa)
+-- Dump dei dati della tabella studeo.professor_emails: ~0 rows (circa)
 /*!40000 ALTER TABLE `professor_emails` DISABLE KEYS */;
 INSERT INTO `professor_emails` (`id`, `email`, `professor_id`) VALUES
 	(1, 'jules@hotmail.com', 1);
