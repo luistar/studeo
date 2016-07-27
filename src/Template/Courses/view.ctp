@@ -76,7 +76,7 @@
 					<?php foreach($exam->solutions as $solution): ?>
 						<li class="list-group-item group-<?= $group->id?> solution-<?= $exam->id?>">
 							<span class="indent-2"></span>
-							Solution by Contributor3
+							<a href="<?=$solution->url?>"><?=__('Solution')?></a> by  <?=$solution->contributor->username?> 
 						</li>
 					<?php endforeach; ?>
 				<?php endforeach; ?>

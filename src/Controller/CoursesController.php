@@ -37,7 +37,7 @@ class CoursesController extends AppController
         $course = $this->Courses->get($id, [
             'contain' => ['Degrees',
             		'Groups'=>[ //recursively load associations
-            			'Professorships'=>['Professors', 'Exams'=>['Solutions']]
+            			'Professorships'=>['Professors', 'Exams'=>['Solutions'=>['Contributors']]]
             		]
             ]
         ]);
