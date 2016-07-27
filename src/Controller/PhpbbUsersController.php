@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * PhpbbUsers Controller
@@ -55,6 +56,17 @@ class PhpbbUsersController extends AppController
     		if($user){ //TODO: check if user is banned or should be denied access
     			//Set user as authenticated
     			$this->Auth->setUser($user);
+    			//If first login, add user as Contributor
+    			$contrib = TableRegistry::get('Contributors')->find()->where(['ext_id'=>$user['user_id']])->first();
+    			if(!$contrib){ //create new contributor
+    				$contrib = TableRegistry::get('Contributors')->newEntity([
+    						'ext_id'=>$user['user_id'],
+    						'username'=>$user['username']
+    				]);
+    				if(! TableRegistry::get('Contributors')->save($contrib)){
+    					$this->Flash->error(__('Unable to create contributor.'));
+    				}
+    			}
     			//This piece of logic redirects the user to different pages depending on his privileges
     			$prevUrl = $this->Auth->redirectUrl();
     			if($prevUrl === "/"){ //if the user logged in in the public homepage, let's send him to a specific page
