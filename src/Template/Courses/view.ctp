@@ -3,18 +3,18 @@
 	$professorships = [];
 	if($groups){
 		foreach($groups as $group){
-			$professorships = array_merge($professorships, $group->professorships);
+			array_merge($professorships, $group->professorships);
 		}
 	}
 	$professors = [];
 	$exams = [];
 	foreach($professorships as $professorship){
-		$professors = array_push($professors, $professorship->professor);
-		$exams      = array_merge($exams, $professorship->exams);
+		array_push($professors, $professorship->professor);
+		array_merge($exams, $professorship->exams);
 	}
 	$solutions = [];
 	foreach($exams as $exam){
-		$solutions  = array_merge($solutions,$exam->solutions);
+		array_merge($solutions,$exam->solutions);
 	}
 
 	$groupsNum = count($groups);
