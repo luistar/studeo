@@ -61,8 +61,22 @@ class ProfessorshipsController extends AppController
                 $this->Flash->error(__('The professorship could not be saved. Please, try again.'));
             }
         }
-        $groups = $this->Professorships->Groups->find('list', ['limit' => 200]);
-        $professors = $this->Professorships->Professors->find('list', ['limit' => 200]);
+        /* Acquiring groups */
+        $groups = $this->Professorships->Groups->find()->contain(['Courses'])->all();
+        $groupOptions = []; //will contain human-readable content for the select input
+        foreach($groups as $group){
+        	$groupOptions[$group->id]= strtoupper($group->course->name).' - '.strtoupper($group->name);
+        }
+        $groups = $groupOptions;
+        
+        /* Acquiring professors */
+        $professors = $this->Professorships->Professors->find()->all();
+        $professorsOptions = []; //will contain human-readable content for the select input
+        foreach($professors as $professor){
+        	$professorsOptions[$professor->id]=strtoupper($professor->first_name).' '.strtoupper($professor->last_name);
+        }
+        $professors = $professorsOptions;
+        
         $this->set(compact('professorship', 'groups', 'professors'));
         $this->set('_serialize', ['professorship']);
     }
