@@ -19,3 +19,13 @@ body{
 tr.courses-table-header {
 	font-size:1.2em;
 }
+
+/* Classes used in the dynamic list-tree view (used in courses/view, for example ) */
+span.indent-1{
+	padding-left: 25px;
+}
+
+span.indent-2{
+	padding-left: 50px;
+}
+

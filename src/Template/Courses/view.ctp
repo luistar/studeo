@@ -63,10 +63,72 @@
 	</div>
 </div>
 
-<div id="treeview"></div>
-
+<div class="treeList">
+	<ul class="list-group">
+		<li class="list-group-item group-toggle" data-professorship-id="1" data-is-expanded="1">
+			<span class="fa fa-fw fa-minus toggle-icon toggle-icon"></span>
+			Gruppo 1 (Prof. Giuliano Laccetti) <a href="http://www.google.it" class="pull-right">Show only this group</a>
+		</li>
+		<li class="list-group-item group-1 exam-toggle">
+			<span class="indent-1"></span>
+			<span class="fa fa-fw fa-minus toggle-icon"></span>
+			12/03/2015
+		</li>
+		<li class="list-group-item group-1 exam-toggle" data-exam-id="2">
+			<span class="indent-1"></span>
+			<span class="fa fa-fw fa-minus toggle-icon"></span>
+			25/02/2015
+		</li>
+		<li class="list-group-item group-1 solution-2">
+			<span class="indent-2"></span>
+				Solution by Contributor3
+		</li>
+		<li class="list-group-item group-toggle" data-professorship-id="2" data-is-expanded="1">
+			<span class="fa fa-fw fa-minus toggle-icon"></span>
+			Gruppo 2 (Prof. Paola Festa) <a href="http://www.google.it" class="pull-right">Show only this group</a>
+		</li>
+		<li class="list-group-item group-2 exam-toggle">
+			<span class="indent-1"></span>
+			<span class="fa fa-fw fa-minus toggle-icon"></span>
+			12/03/2015
+		</li>
+		<li class="list-group-item group-2 exam-toggle" data-exam-id="3">
+			<span class="indent-1"></span>
+			<span class="fa fa-fw fa-minus toggle-icon"></span>
+			25/02/2015
+		</li>
+		<li class="list-group-item group-2 solution-3">
+			<span class="indent-2"></span>
+				Solution by Contributor6
+		</li>
+		<li class="list-group-item group-2 solution-3">
+			<span class="indent-2"></span>
+				Solution by Contributor7
+		</li>
+	</ul>
+</div>
 
 <script>
-var treeData = <?= $treeDataJSON ?>;
-$('#treeview').treeview({data: treeData});
+$('.group-toggle').click(function (){
+	var group_id = $(this).attr('data-professorship-id');
+	if( $(this).attr('data-is-expanded')==0 ){
+		$('.group-'+group_id).show();
+		$(this).attr('data-is-expanded',1);
+		$(this).find('.toggle-icon').removeClass('fa-plus').addClass('fa-minus');
+	}else{
+		$('.group-'+group_id).hide();
+		$(this).attr('data-is-expanded',0);
+		$(this).find('.toggle-icon').removeClass('fa-minus').addClass('fa-plus');
+	}
+});
+
+$('.exam-toggle').click(function(){
+	var exam_id = $(this).attr('data-exam-id');
+	$('.solution-'+exam_id).toggle();
+	if( $(this).find('.toggle-icon').hasClass('fa-minus')){
+		$(this).find('.toggle-icon').removeClass('fa-minus').addClass('fa-plus');
+	}else{
+		$(this).find('.toggle-icon').removeClass('fa-plus').addClass('fa-minus');
+	}
+});
 </script>
