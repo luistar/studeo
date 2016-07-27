@@ -49,7 +49,7 @@ class SolutionsController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($course_id = null, $exam_id = null)
     {
         $solution = $this->Solutions->newEntity();
         if ($this->request->is('post')) {
@@ -61,7 +61,20 @@ class SolutionsController extends AppController
                 $this->Flash->error(__('The solution could not be saved. Please, try again.'));
             }
         }
-        $exams = $this->Solutions->Exams->find('list', ['limit' => 200]);
+        $query = $this->Solutions->Exams->find()->contain(['Professorships'=>['Professors','Groups'=>['Courses']]]);
+        if($course_id){
+        	$query->where(['Groups.course_id'=>$course_id]);
+        }
+        if($exam_id){
+        	$query->where(['Exams.id'=>$exam_id]);
+        }
+        $exams = $query->all();
+        $examsOptions = [];
+        foreach($exams as $exam){       	
+        	$examsOptions[$exam->id] = $exam->professorship->group->course->name.' - '.$exam->professorship->group->name.
+        		' ('.$exam->professorship->professor->last_name.') - '.$exam->date;
+        }
+        $exams = $examsOptions;
         $contributors = $this->Solutions->Contributors->find('list', ['limit' => 200]);
         $this->set(compact('solution', 'exams', 'contributors'));
         $this->set('_serialize', ['solution']);
