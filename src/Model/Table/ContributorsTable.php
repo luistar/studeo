@@ -63,25 +63,6 @@ class ContributorsTable extends Table
             ->requirePresence('username', 'create')
             ->notEmpty('username');
 
-        $validator
-            ->requirePresence('bio', 'create')
-            ->notEmpty('bio');
-
-        $validator
-            ->requirePresence('website', 'create')
-            ->notEmpty('website');
-
-        $validator
-            ->requirePresence('first_name', 'create')
-            ->notEmpty('first_name');
-
-        $validator
-            ->requirePresence('last_name', 'create')
-            ->notEmpty('last_name');
-
-        $validator
-            ->requirePresence('avatar_path', 'create')
-            ->notEmpty('avatar_path');
 
         return $validator;
     }
@@ -96,7 +77,7 @@ class ContributorsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['username']));
-        $rules->add($rules->existsIn(['ext_id'], 'Exts'));
+        //$rules->add($rules->existsIn(['ext_id'], 'Exts'));
         return $rules;
     }
 }
