@@ -31,9 +31,9 @@
 	                <td><?= h($professor->office) ?></td>
 	                <td><?= h($professor->website) ?></td>
 	                <td class="actions">
-	                    <?= $this->Html->link(__('View'), ['action' => 'view', $professor->id]) ?>
-	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $professor->id]) ?>
-	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $professor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $professor->id)]) ?>
+	                    <?= $this->Html->link(__('View'), ['action' => 'view', $professor->id],['class'=>'btn btn-xs btn-info']) ?>
+	                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $professor->id],['class'=>'btn btn-xs btn-warning']) ?>
+	                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $professor->id], ['class'=>'btn btn-xs btn-danger','confirm' => __('Are you sure you want to delete # {0}?', $professor->id)]) ?>
 	                </td>
 	            </tr>
 	            <?php endforeach; ?>
