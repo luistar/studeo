@@ -37,10 +37,11 @@ class ContributorsTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->belongsTo('Exts', [
-            'foreignKey' => 'ext_id',
-            'joinType' => 'INNER'
-        ]);
+        //$this->belongsTo('Exts', [
+        //    'foreignKey' => 'ext_id',
+        //    'joinType' => 'INNER'
+        //]);
+        
         $this->hasMany('Solutions', [
             'foreignKey' => 'contributor_id'
         ]);
