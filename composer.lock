@@ -349,12 +349,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Holt59/cakephp3-bootstrap-helpers.git",
-                "reference": "cdb803a09ab6fd3d444bd442ef44e023deefc974"
+                "reference": "f7988c1bf272777240d5e5e8735c8b2709f80e4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Holt59/cakephp3-bootstrap-helpers/zipball/cdb803a09ab6fd3d444bd442ef44e023deefc974",
-                "reference": "cdb803a09ab6fd3d444bd442ef44e023deefc974",
+                "url": "https://api.github.com/repos/Holt59/cakephp3-bootstrap-helpers/zipball/f7988c1bf272777240d5e5e8735c8b2709f80e4e",
+                "reference": "f7988c1bf272777240d5e5e8735c8b2709f80e4e",
                 "shasum": ""
             },
             "require": {
@@ -382,7 +382,7 @@
                 "bootstrap",
                 "cakephp"
             ],
-            "time": "2016-07-12 13:55:30"
+            "time": "2016-07-28 11:00:52"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
