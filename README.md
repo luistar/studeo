@@ -17,6 +17,7 @@ Other options shall be added as the project grows.
 Studeo is built using CakePHP, Twitter Bootstrap, JQuery, MySQL.
 
 # Quick setup
+Clone this repository, then run ```composer install``` to install dependencies.
 By default Studeo will look for two MySQL databases in *localhost:3306*:
 
 * Studeo's database.
