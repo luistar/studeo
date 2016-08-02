@@ -64,7 +64,9 @@
 			<?php foreach($group->professorships as $professorship): ?>
 				<li class="list-group-item group-toggle" data-professorship-id="<?= $professorship->id ?>" data-is-expanded="1">
 					<span class="fa fa-fw fa-minus toggle-icon toggle-icon"></span>
-					<?= $group->name ?> (Prof. <?= $professorship->professor->first_name . ' ' . $professorship->professor->last_name ?>)
+					<?= $group->name ?> (Prof. 
+					<?=  $this->Html->link($professorship->professor->first_name . ' ' . $professorship->professor->last_name,
+							['controller'=>'professors','action'=>'view',$professorship->professor->id])?>)
 					<a href="http://www.google.it" class="pull-right">Show only this group</a>
 				</li>
 				<?php foreach($professorship->exams as $exam): ?>
@@ -76,7 +78,8 @@
 					<?php foreach($exam->solutions as $solution): ?>
 						<li class="list-group-item group-<?= $group->id?> solution-<?= $exam->id?>">
 							<span class="indent-2"></span>
-							<a href="<?=$solution->url?>"><?=__('Solution')?></a> by  <?=$solution->contributor->username?> 
+							<a href="<?=$solution->url?>"><?=__('Solution')?></a> by  
+							<?=$this->Html->link($solution->contributor->username,['controller'=>'contributors','action'=>'view',$solution->contributor->id])?> 
 						</li>
 					<?php endforeach; ?>
 				<?php endforeach; ?>
