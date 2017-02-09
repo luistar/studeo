@@ -39,6 +39,7 @@
         </tr>
     </table>
     <div class="related">
+    	<?php /*
         <h4><?= __('Related Professorships') ?></h4>
         <?php if (!empty($course->professorships)): ?>
         <table class="table table-bordered table-striped">
@@ -66,7 +67,33 @@
                 </td>
             </tr>
             <?php endforeach; ?>
+            
         </table>
         <?php endif; ?>
+        */?>
+        <?php if(!empty($course->professorships)):?>
+        	<ul>
+        		<?php foreach($course->professorships as $professorship ):?>
+        			<li><?= $professorship->professor->name ?>(<?=$professorship->description?>) <?= $professorship->start_date ?> - <?= $professorship->end_date ?>
+        			<?php if(!empty($professorship->exams)):?>
+        				<ul>
+        					<?php foreach($professorship->exams as $exam):?>
+        						<li>(<?=$exam->date?>) url: <?=$exam->url?>
+        						<?php if(!empty($exam->solutions)): ?>
+        							<ul>
+        								<?php foreach($exam->solutions as $solution): ?>
+        									<li>Solution url: <?= $solution->url?></li>
+        								<?php endforeach;?>
+        							</ul>
+        						<?php endif;?>
+        						</li>
+        					<?php endforeach; ?>
+        				</ul>		
+        			<?php endif; ?>
+        			</li>
+        		<?php endforeach; ?>
+        	</ul>
+        <?php endif; ?>
+        		
     </div>
 </div>
