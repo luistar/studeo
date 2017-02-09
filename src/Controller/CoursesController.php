@@ -106,4 +106,5 @@ class CoursesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
 }
