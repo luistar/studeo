@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property string $authorAlt
  * @property int $addedBy
  * @property string $url
+ * @property string $info
  *
  * @property \App\Model\Entity\Exam $exam
  */
