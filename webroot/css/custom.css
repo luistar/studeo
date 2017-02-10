@@ -3,3 +3,22 @@
 body{
 	margin-top:	 60px; /* margin for fixed-on-top navbar */
 }
+
+.list-group-inner {
+	margin-bottom:0;
+	border-bottom:none;
+}
+.list-group-inner li > ul li:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.list-group-inner li > ul {
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-bottom: -11px;
+}
+
+.list-group-item:last-child {
+	margin-bottom: -1px;
+}

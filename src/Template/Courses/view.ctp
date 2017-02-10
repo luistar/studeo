@@ -39,61 +39,6 @@
         </tr>
     </table>
     <div class="related">
-    	<?php /*
-        <h4><?= __('Related Professorships') ?></h4>
-        <?php if (!empty($course->professorships)): ?>
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Professor Id') ?></th>
-                <th scope="col"><?= __('Course Id') ?></th>
-                <th scope="col"><?= __('Description') ?></th>
-                <th scope="col"><?= __('Start Date') ?></th>
-                <th scope="col"><?= __('End Date') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($course->professorships as $professorships): ?>
-            <tr>
-                <td><?= h($professorships->id) ?></td>
-                <td><?= h($professorships->professor_id) ?></td>
-                <td><?= h($professorships->course_id) ?></td>
-                <td><?= h($professorships->description) ?></td>
-                <td><?= h($professorships->start_date) ?></td>
-                <td><?= h($professorships->end_date) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Professorships', 'action' => 'view', $professorships->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Professorships', 'action' => 'edit', $professorships->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Professorships', 'action' => 'delete', $professorships->id], ['confirm' => __('Are you sure you want to delete # {0}?', $professorships->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-            
-        </table>
-        <?php endif; ?>
-        */?>
-        <?php if(!empty($course->professorships)):?>
-        	<ul>
-        		<?php foreach($course->professorships as $professorship ):?>
-        			<li><?= $professorship->professor->name ?>(<?=$professorship->description?>) <?= $professorship->start_date ?> - <?= $professorship->end_date ?>
-        			<?php if(!empty($professorship->exams)):?>
-        				<ul>
-        					<?php foreach($professorship->exams as $exam):?>
-        						<li>(<?=$exam->date?>) url: <?=$exam->url?>
-        						<?php if(!empty($exam->solutions)): ?>
-        							<ul>
-        								<?php foreach($exam->solutions as $solution): ?>
-        									<li>Solution url: <?= $solution->url?></li>
-        								<?php endforeach;?>
-        							</ul>
-        						<?php endif;?>
-        						</li>
-        					<?php endforeach; ?>
-        				</ul>		
-        			<?php endif; ?>
-        			</li>
-        		<?php endforeach; ?>
-        	</ul>
-        <?php endif; ?>
-        		
+        <?= $this->element('professorshipsDisplay',['professorships'=>$course->professorships])?>
     </div>
 </div>
