@@ -44,7 +44,7 @@ class PhpbbUsersTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Groups', [
+        $this->belongsTo('PhpbbGroups', [
             'foreignKey' => 'group_id',
             'joinType' => 'INNER'
         ]);
@@ -379,5 +379,18 @@ class PhpbbUsersTable extends Table
     public static function defaultConnectionName()
     {
         return 'phpbb_db';
+    }
+    
+    
+    /**
+     * Custom finder for authentication. Includes PhpbbGroup info.
+     * 
+     * @param \Cake\ORM\Query $query
+     * @param array $options
+     * @return \Cake\ORM\Query
+     */
+    public function findAuth(Query $query, array $options)
+    {
+    	return $query->contain(['PhpbbGroups']);
     }
 }

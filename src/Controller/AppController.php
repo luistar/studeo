@@ -98,7 +98,8 @@ class AppController extends Controller
         		'authenticate' => [
         				'Form' => [
         						'userModel' => 'phpbb_users',
-        						'fields'	=> ['password'=>'user_password']
+        						'fields'	=> ['password'=>'user_password'],
+        						'finder'    => 'auth'
         				]
         		],
         ]);
@@ -128,6 +129,13 @@ class AppController extends Controller
      */
     public function isAuthorized($user)
     {
-    	return true; //temporarily allow everyone
+    	if($user['phpbb_group']['group_name'] == 'ADMINISTRATORS') {
+    		return true; //ADMINISTRATORS can do everything in controllers extending AppController
+    	}
+    	else {
+    		//redirect to homepage, display error
+    		$this->Flash->error(__('Sorry! Studeo is still in testing. You cannot access this functionality (yet!).'));
+    		return $this->redirect(['controller' => 'Pages','action'=>'display','home']);
+    	}
     }
 }
