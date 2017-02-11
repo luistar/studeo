@@ -4,6 +4,10 @@ body{
 	margin-top:	 60px; /* margin for fixed-on-top navbar */
 }
 
+
+/**
+ * CSS for the nested list group
+ */
 .list-group.list-group-root {
     padding: 0;
     overflow: hidden;
@@ -38,10 +42,16 @@ body{
 	margin-bottom: 0px;
 }
 
-
 .studeo-exam-item {
 	border-radius:0px 0px 4px 4px !important;
 }
 .studeo-solution-item:last-child {
 	border-radius:0px 0px 4px 4px !important;
+}
+
+/**
+ * CSS for course view page
+ */
+.studeo-course-detail h3 {
+	margin-top: 0px;
 }
