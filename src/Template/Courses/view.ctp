@@ -42,3 +42,11 @@
         <?= $this->element('professorshipsDisplay',['professorships'=>$course->professorships])?>
     </div>
 </div>
+
+<script>
+//this should be moved in its own js file asap TODO
+$('.download-button').click(function(event){
+	event.stopPropagation(); //we do not want the event to toggle the solution list
+	document.location.href = $(this).attr('data-link'); //go to download page
+});
+</script>

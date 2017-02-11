@@ -8,7 +8,7 @@
 		<?php foreach($exams as $exam): ?>
 			<a href="#exam-<?=$exam->id?>" class="list-group-item studeo-exam-item" data-toggle="collapse">
 				<i class="fa fa-chevron-right"></i>
-				<?=$exam->date?> <?= $exam->info?> <?= $this->Form->button('dowload',['class'=>'btn btn-xs btn-success'])?>
+				<?=$exam->date?> <?= $exam->info?> <?= $this->Form->button('dowload',['class'=>'btn btn-xs btn-success download-button','data-link'=>'some example link lel'])?>
 			</a>
 			<?php if(!empty($exam->solutions)): ?>
 				<div class="list-group collapse studeo-solutions-list" id="exam-<?=$exam->id?>">
