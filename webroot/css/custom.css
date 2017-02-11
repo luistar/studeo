@@ -4,21 +4,44 @@ body{
 	margin-top:	 60px; /* margin for fixed-on-top navbar */
 }
 
-.list-group-inner {
-	margin-bottom:0;
-	border-bottom:none;
-}
-.list-group-inner li > ul li:first-child {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.list-group.list-group-root {
+    padding: 0;
+    overflow: hidden;
 }
 
-.list-group-inner li > ul {
-    margin-left: -16px;
-    margin-right: -16px;
-    margin-bottom: -11px;
+.list-group.list-group-root .list-group {
+    margin-bottom: 0;
 }
 
-.list-group-item:last-child {
-	margin-bottom: -1px;
+.list-group.list-group-root .list-group-item {
+    border-radius: 0;
+    border-width: 1px 0 0 0;
+}
+
+.list-group.list-group-root > .list-group-item:first-child {
+    border-top-width: 0;
+}
+
+.list-group.list-group-root > .list-group > .list-group-item {
+    padding-left: 30px;
+}
+
+.list-group.list-group-root > .list-group > .list-group > .list-group-item {
+    padding-left: 45px;
+}
+
+.list-group-item .fa {
+    margin-right: 5px;
+}
+
+.studeo-exams-list {
+	margin-bottom: 0px;
+}
+
+
+.studeo-exam-item {
+	border-radius:0px 0px 4px 4px !important;
+}
+.studeo-solution-item:last-child {
+	border-radius:0px 0px 4px 4px !important;
 }
