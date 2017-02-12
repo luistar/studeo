@@ -58,6 +58,7 @@ return [
     	'courseLogosFolder' => 'courses',
     	'courseLogoDefault' => 'default.png',
     	'courseLogosPath' => WWW_ROOT . DS . 'img' . DS . 'courses',
+    	'examUploadPath' => ROOT . DS . 'uploads' . DS . 'exams' . DS,
     ],
 
     /**

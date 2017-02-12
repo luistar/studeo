@@ -11,6 +11,11 @@ use App\Controller\AppController;
 class ExamsController extends AppController
 {
 
+	public function initialize(){
+		parent::initialize();
+		$this->loadComponent('File'); //custom component creato in src/Controller/Component
+	}
+	
     /**
      * Index method
      *
@@ -19,7 +24,7 @@ class ExamsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Professorships']
+            'contain' => ['Professorships'=>['Courses','Professors']]
         ];
         $exams = $this->paginate($this->Exams);
 
@@ -52,16 +57,44 @@ class ExamsController extends AppController
     public function add()
     {
         $exam = $this->Exams->newEntity();
-        if ($this->request->is('post')) {
-            $exam = $this->Exams->patchEntity($exam, $this->request->data);
-            if ($this->Exams->save($exam)) {
+        if ($this->request->is(['post','put'])) {     	
+        	
+            $exam = $this->Exams->patchEntity($exam, $this->request->data);        	
+            $error=false;
+            $mimeCheck=true;
+            // if a file is uploaded
+            if($this->request->data['file']['name']){
+            	//check for errors
+            	$uploadError = $this->File->getErrorMessage($this->request->data['file']); //call to my component
+            	//check mime type
+            	$mimeCheck = $this->File->checkMimeType($this->request->data['file'],['jpg'=>'image/jpeg','png'=>'image/png','pdf'=>'application/pdf']);
+            	//if no upload errors and entity is valid, save file
+            	if(!$uploadError && $mimeCheck && !$exam->errors()){
+            		$fileName = $this->File->moveUploadedFileExams($exam,$this->request->data['file']);
+            		if(!$fileName){
+            			$error = __('Move file error.');
+            			$this->Flash->error(__('Could not save file in save path.'));
+            		}
+            		else
+            			$exam->path = $fileName;
+            	}
+            }
+            
+            if (!$error && $mimeCheck && $this->Exams->save($exam)) {
                 $this->Flash->success(__('The exam has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
+            if($error)
+            	$this->Flash->error($error);
+           	if(!$mimeCheck)
+           		$this->Flash->error(__('Invalid file type.'));
             $this->Flash->error(__('The exam could not be saved. Please, try again.'));
         }
-        $professorships = $this->Exams->Professorships->find('list', ['limit' => 200]);
+        $professorshipsAll = $this->Exams->Professorships->find('All',['contain'=>['Professors','Courses']])->orderAsc('Courses.name');
+        foreach($professorshipsAll as $professorship){
+        	$professorships[$professorship->id] = $professorship->course->name.' ('.$professorship->professor->name.')';
+        }
         $this->set(compact('exam', 'professorships'));
         $this->set('_serialize', ['exam']);
     }
