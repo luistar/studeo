@@ -16,6 +16,11 @@
         <li><?= $this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
+
+<?= $this->Html->link(__('<i class="fa fa-fw fa-file-text"></i> Add exam'),
+						['controller'=>'Exams','action'=>'addToProfessorship',$professorship->id],
+						['class'=>'btn btn-default studeo-action-button','escape'=>false])?>
+
 <div class="professorships view large-9 medium-8 columns content">
     <h3><?= h($professorship->course->name.' - '. $professorship->professor->name) ?></h3>
     <table class="table table-bordered table-striped">
