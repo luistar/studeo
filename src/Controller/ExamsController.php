@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Core\Configure;
 
 /**
  * Exams Controller
@@ -143,5 +144,29 @@ class ExamsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    
+    /**
+     * Download method
+     * 
+     * @param unknown $id the id of the exam to download
+     */
+    public function download($id = null)
+    {
+    	$exam = $this->Exams->get($id,['contain'=>['Professorships'=>['Courses']]]);
+    	if(!$exam){
+    		$this->Flash->error(__('Download failed: invalid exam.'));
+    		return $this->redirect($this->referer());
+    	}
+    	if($exam->path){ //if there is a path, download the file
+    		$file_name = $exam->path;
+    		$file_path = Configure::read('App.examUploadPath');
+    		$file_path .= $exam->professorship->course->id . DS . $exam->professorship->id . DS;
+    		$this->response->file($file_path . $file_name);
+    		//$this->response->download(basename($file_name));
+    		return $this->response;
+    	}else if($exam->url){ //redirect to the url
+    		return $this->redirect($exam->url);
+    	}
     }
 }
