@@ -60,3 +60,10 @@ img.studeo-course-logo {
 	width: 128px;
 	height: 128px;
 }
+
+/**
+ * Other css elements
+ */
+.link-button, .studeo-action-button {
+	margin-left: 5px;
+}

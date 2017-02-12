@@ -32,6 +32,7 @@ $cakeDescription = 'Studeo: a CMS for university courses';
     
     <?= $this->Html->script('jquery-2.2.4.min.js') ?>
     <?= $this->Html->script('bootstrap.min.js') ?>
+    <?= $this->Html->script('studeo-utils.js') ?>
 	<?php /* Metadata, css, script added in templates will be inserted in the following points */ ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?> 
