@@ -55,3 +55,8 @@ body{
 .studeo-course-detail h3 {
 	margin-top: 0px;
 }
+
+img.studeo-course-logo { 
+	width: 128px;
+	height: 128px;
+}

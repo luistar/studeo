@@ -18,8 +18,10 @@
         <?php
             echo $this->Form->input('name');
             echo $this->Form->input('cfu');
-            echo $this->Form->input('logo');
+            echo $this->Form->label('logo');
+            echo $this->Form->select('logo', $logos, ['empty'=>true]);
             echo $this->Form->input('year');
+            echo $this->Form->input('description');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

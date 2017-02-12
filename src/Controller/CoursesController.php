@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Filesystem\Folder;
+use Cake\Core\Configure;
 
 /**
  * Courses Controller
@@ -58,6 +60,15 @@ class CoursesController extends AppController
             }
             $this->Flash->error(__('The course could not be saved. Please, try again.'));
         }
+        
+        //find available logos
+        $courseLogosFolder = new Folder(Configure::read('App.courseLogosPath'));
+        $availableLogos = $courseLogosFolder->find();
+        foreach($availableLogos as $logo){
+        	$logos[$logo] = $logo;
+        }
+        
+        $this->set('logos',$logos);
         $this->set(compact('course'));
         $this->set('_serialize', ['course']);
     }

@@ -54,6 +54,10 @@ return [
             'templates' => [APP . 'Template' . DS],
             'locales' => [APP . 'Locale' . DS],
         ],
+    	//more config values added by me
+    	'courseLogosFolder' => 'courses',
+    	'courseLogoDefault' => 'default.png',
+    	'courseLogosPath' => WWW_ROOT . DS . 'img' . DS . 'courses',
     ],
 
     /**
