@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Solutions Controller
@@ -110,5 +111,34 @@ class SolutionsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function addToExam($id=null)
+    {
+    	$exam = TableRegistry::get('Exams')->get($id);
+    	if(!$exam){
+    		$this->Flash->error(__('Invalid exam.'));
+    		return $this->redirect($this->referer());
+    	}
+    	$solution = $this->Solutions->newEntity();
+    	if ($this->request->is('post')) {
+    		$solution = $this->Solutions->patchEntity($solution, $this->request->data);
+    		$solution->exam_id = $exam->id;
+    		$solution->addedBy = $this->Auth->user('user_id');
+    		if ($this->Solutions->save($solution)) {
+    			$this->Flash->success(__('The solution has been saved.'));
+    
+    			return $this->redirect(['action' => 'index']);
+    		}
+    		$this->Flash->error(__('The solution could not be saved. Please, try again.'));
+    	}
+    	$this->set('exam',$exam);
+    	$this->set(compact('solution', 'exams'));
+    	$this->set('_serialize', ['solution']);
     }
 }
