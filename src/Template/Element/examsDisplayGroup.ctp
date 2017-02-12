@@ -7,7 +7,11 @@
 	<div class="list-group list-group-root studeo-exams-list">
 		<?php foreach($exams as $exam): ?>
 			<a href="#exam-<?=$exam->id?>" class="list-group-item studeo-exam-item" data-toggle="collapse">
-				<i class="fa fa-chevron-right"></i>
+				<?php if(!empty($exam->solutions)):?>
+					<i class="fa fa-fw fa-chevron-right studeo-toggle-row-icon"></i>
+				<?php else: ?>
+					<i class="fa fa-fw fa-exclamation-circle studeo-toggle-row-icon-empty"></i>
+				<?php endif; ?>
 				<?= $exam->isExercise ? __('Exercise') : __('Exam') ?>
 				<?= $exam->date?> 
 				<?= $exam->info?>
