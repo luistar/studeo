@@ -30,7 +30,7 @@
             <?php foreach ($exams as $exam): ?>
             <tr>
                 <td><?= $this->Number->format($exam->id) ?></td>
-                <td><?= $exam->has('professorship') ? $this->Html->link($exam->professorship->id, ['controller' => 'Professorships', 'action' => 'view', $exam->professorship->id]) : '' ?></td>
+                <td><?= $exam->has('professorship') ? $this->Html->link($exam->professorship->course->name.' - '.$exam->professorship->professor->name.' ('.$exam->professorship->start_date.'-'.$exam->professorship->end_date.')', ['controller' => 'Professorships', 'action' => 'view', $exam->professorship->id]) : '' ?></td>
                 <td><?= h($exam->url) ?></td>
                 <td><?= h($exam->path) ?></td>
                 <td><?= h($exam->isExercise) ?></td>
