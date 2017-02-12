@@ -46,6 +46,7 @@ use Cake\Core\Configure;
 </div>
 
 <div class="related">
+	<h3><?= __('Professorships')?></h3>
 	<?= $this->element('professorshipsDisplay',['professorships'=>$course->professorships])?>
 </div>
 
