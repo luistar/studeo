@@ -31,7 +31,7 @@
             <?php foreach ($professorships as $professorship): ?>
             <tr>
                 <td><?= $this->Number->format($professorship->id) ?></td>
-                <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->id, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
+                <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->name, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
                 <td><?= $professorship->has('course') ? $this->Html->link($professorship->course->name, ['controller' => 'Courses', 'action' => 'view', $professorship->course->id]) : '' ?></td>
                 <td><?= h($professorship->description) ?></td>
                 <td><?= $this->Number->format($professorship->start_date) ?></td>

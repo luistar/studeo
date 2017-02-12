@@ -17,11 +17,11 @@
     </ul>
 </nav>
 <div class="professorships view large-9 medium-8 columns content">
-    <h3><?= h($professorship->id) ?></h3>
-    <table class="vertical-table">
+    <h3><?= h($professorship->course->name.' - '. $professorship->professor->name) ?></h3>
+    <table class="table table-bordered table-striped">
         <tr>
             <th scope="row"><?= __('Professor') ?></th>
-            <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->id, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
+            <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->name, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Course') ?></th>
@@ -32,10 +32,6 @@
             <td><?= h($professorship->description) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($professorship->id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Start Date') ?></th>
             <td><?= $this->Number->format($professorship->start_date) ?></td>
         </tr>
@@ -44,4 +40,13 @@
             <td><?= $this->Number->format($professorship->end_date) ?></td>
         </tr>
     </table>
+</div>
+
+<div class="related">
+	<h3><?=_('Exams and solutions')?></h3>
+	<div class="panel panel-default">
+		<div>
+			<?= $this->element('examsDisplayGroup', ["exams" => $professorship->exams]); ?>
+		</div>
+	</div>
 </div>

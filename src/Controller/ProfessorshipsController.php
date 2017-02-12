@@ -37,7 +37,7 @@ class ProfessorshipsController extends AppController
     public function view($id = null)
     {
         $professorship = $this->Professorships->get($id, [
-            'contain' => ['Professors', 'Courses']
+            'contain' => ['Professors', 'Courses','Exams'=>['Solutions']]
         ]);
 
         $this->set('professorship', $professorship);
