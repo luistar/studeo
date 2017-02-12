@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Core\Configure;
+use Cake\ORM\TableRegistry;
 
 /**
  * Exams Controller
@@ -146,6 +147,7 @@ class ExamsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     
+    
     /**
      * Download method
      * 
@@ -168,5 +170,60 @@ class ExamsController extends AppController
     	}else if($exam->url){ //redirect to the url
     		return $this->redirect($exam->url);
     	}
+    }
+    
+    
+    /**
+     * Creates a new exam for the professorship with the given id.
+     * 
+     * @param unknown $id
+     */
+    public function addToProfessorship($id=null)
+    {
+    	$professorship = TableRegistry::get('Professorships')->get($id,['contain'=>['Courses','Professors']]);
+    	if(!$professorship){
+    		$this->Flash->error(__('Invalid professorship.'));
+    		return $this->redirect($this->referer());
+    	}
+    	$exam = $this->Exams->newEntity();
+    	if ($this->request->is(['post','put'])) {
+    		 
+    		$exam = $this->Exams->patchEntity($exam, $this->request->data);
+    		$exam->professorship_id = $professorship->id;
+    		$error=false;
+    		$mimeCheck=true;
+    		// if a file is uploaded
+    		if($this->request->data['file']['name']){
+    			//check for errors
+    			$uploadError = $this->File->getErrorMessage($this->request->data['file']); //call to my component
+    			//check mime type
+    			$mimeCheck = $this->File->checkMimeType($this->request->data['file'],['jpg'=>'image/jpeg','png'=>'image/png','pdf'=>'application/pdf']);
+    			//if no upload errors and entity is valid, save file
+    			if(!$uploadError && $mimeCheck && !$exam->errors()){
+    				$fileName = $this->File->moveUploadedFileExams($exam,$this->request->data['file']);
+    				if(!$fileName){
+    					$error = __('Move file error.');
+    					$this->Flash->error(__('Could not save file in save path.'));
+    				}
+    				else
+    					$exam->path = $fileName;
+    			}
+    		}
+    	
+    		if (!$error && $mimeCheck && $this->Exams->save($exam)) {
+    			$this->Flash->success(__('The exam has been saved.'));
+    	
+    			return $this->redirect(['action' => 'index']);
+    		}
+    		if($error)
+    			$this->Flash->error($error);
+    		if(!$mimeCheck)
+    			$this->Flash->error(__('Invalid file type.'));
+    		$this->Flash->error(__('The exam could not be saved. Please, try again.'));
+    	}
+    	
+    	$this->set('exam',$exam);
+    	$this->set('professorship',$professorship);
+    	$this->set('_serialize', ['exam']);
     }
 }
