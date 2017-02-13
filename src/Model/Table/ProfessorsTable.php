@@ -65,10 +65,12 @@ class ProfessorsTable extends Table
 
         $validator
             ->allowEmpty('email1');
-
+        $validator
+        	->email('email1');
+        $validator
+        	->email('email2');
         $validator
             ->allowEmpty('email2');
-
         $validator
             ->allowEmpty('notes');
 
