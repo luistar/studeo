@@ -58,6 +58,12 @@ class ExamsController extends AppController
      */
     public function add()
     {
+    	$professorshipsAll = $this->Exams->Professorships->find('all',['contain'=>['Professors','Courses']])->orderAsc('Courses.name')->all();
+    	if(empty($professorshipsAll->items)){
+    		$this->Flash->error(__("No professorships yet. You cannot add exams until there is at least one professorship."));
+    		return $this->redirect(['controller'=>'Exams','action'=>'index']); //redirect to exam index
+    	}
+    	
         $exam = $this->Exams->newEntity();
         if ($this->request->is(['post','put'])) {     	
         	
@@ -93,7 +99,7 @@ class ExamsController extends AppController
            		$this->Flash->error(__('Invalid file type.'));
             $this->Flash->error(__('The exam could not be saved. Please, try again.'));
         }
-        $professorshipsAll = $this->Exams->Professorships->find('All',['contain'=>['Professors','Courses']])->orderAsc('Courses.name');
+        
         foreach($professorshipsAll as $professorship){
         	$professorships[$professorship->id] = $professorship->course->name.' ('.$professorship->professor->name.')';
         }

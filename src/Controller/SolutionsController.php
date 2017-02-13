@@ -52,6 +52,12 @@ class SolutionsController extends AppController
      */
     public function add()
     {
+    	
+    	$exams = $this->Solutions->Exams->find('list')->all();
+    	if(empty($exams->items)){
+    		$this->Flash->error(__("No exams yet. You cannot add solutions until there is at least one exam."));
+    		return $this->redirect(['controller'=>'Solutions','action'=>'index']); //redirect to solutions index
+    	}
         $solution = $this->Solutions->newEntity();
         if ($this->request->is('post')) {
             $solution = $this->Solutions->patchEntity($solution, $this->request->data);
@@ -62,7 +68,6 @@ class SolutionsController extends AppController
             }
             $this->Flash->error(__('The solution could not be saved. Please, try again.'));
         }
-        $exams = $this->Solutions->Exams->find('list', ['limit' => 200]);
         $this->set(compact('solution', 'exams'));
         $this->set('_serialize', ['solution']);
     }
