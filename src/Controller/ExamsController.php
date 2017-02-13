@@ -59,7 +59,7 @@ class ExamsController extends AppController
     public function add()
     {
     	$professorshipsAll = $this->Exams->Professorships->find('all',['contain'=>['Professors','Courses']])->orderAsc('Courses.name')->all();
-    	if(empty($professorshipsAll->items)){
+    	if($professorshipsAll->count()==0){
     		$this->Flash->error(__("No professorships yet. You cannot add exams until there is at least one professorship."));
     		return $this->redirect(['controller'=>'Exams','action'=>'index']); //redirect to exam index
     	}

@@ -54,7 +54,7 @@ class SolutionsController extends AppController
     {
     	
     	$exams = $this->Solutions->Exams->find('list')->all();
-    	if(empty($exams->items)){
+    	if($exams->count()==0){
     		$this->Flash->error(__("No exams yet. You cannot add solutions until there is at least one exam."));
     		return $this->redirect(['controller'=>'Solutions','action'=>'index']); //redirect to solutions index
     	}

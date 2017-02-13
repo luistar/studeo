@@ -52,8 +52,13 @@ class ProfessorshipsController extends AppController
     public function add()
     {
     	$professors_list = $this->Professorships->Professors->find()->select(['id','firstName','lastName'])->all();
-        if(empty($professors_list->items)){
+        if($professors_list->count()==0){
         	$this->Flash->error(__("No professors yet. You cannot add professorships until there is at least one professor."));
+        	return $this->redirect(['controller'=>'Professorships','action'=>'index']); //redirect to professorships index
+        }
+        $courses = $this->Professorships->Courses->find('list');
+        if($courses->count()==0){
+        	$this->Flash->error(__("No courses yet. You cannot add professorships until there is at least one course."));
         	return $this->redirect(['controller'=>'Professorships','action'=>'index']); //redirect to professorships index
         }
     	$professorship = $this->Professorships->newEntity();
@@ -67,7 +72,6 @@ class ProfessorshipsController extends AppController
             $this->Flash->error(__('The professorship could not be saved. Please, try again.'));
         }
         
-        $courses = $this->Professorships->Courses->find('list', ['limit' => 200]);
         
         foreach($professors_list as $professor) {
         	$professors[$professor->id] = $professor->name;
