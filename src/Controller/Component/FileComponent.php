@@ -58,7 +58,7 @@ class FileComponent extends Component {
 			$fileName = basename($this->request->data['file']['name'] , $extension) . '_' . ++$count . '.' . $extension;
 		}
 		if(!is_dir($savePath))
-			mkdir($savePath,0644,true);
+			mkdir($savePath,0777,true);
 		if(!move_uploaded_file($exam->file['tmp_name'], $savePath . DS . $fileName)){
 			return false;
 		}
