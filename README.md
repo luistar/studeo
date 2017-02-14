@@ -1,32 +1,77 @@
-# CakePHP Application Skeleton
+# Studeo
+Studeo is a basic CMS built for university courses. It allows students to share news and knowledge efficiently.
 
-[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
-[![License](https://img.shields.io/packagist/l/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
+# The problem
+Computer Science students @ *Università degli Studi di Napoli "Federico II"* were using 
+a phpbb board to share solutions to previous tests and exercises. As the number of users and solutions grew, it became hard to
+properly index everything manually. So we decided to build Studeo.
 
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
+# PhpBB integration and dependency
+Studeo is meant to integrate with an existing phpbb board bulletin and to provide additional indexing features to said board.
+Although being conceived to be used along with phpbb, Studeo will be almost completely independent from the latter, 
+as it will provide indexing by link. 
+Only the authentication and authorization system will initially depend on phpbb USERS table. 
+Other options shall be added as the project grows. 
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+# Technology
+Studeo is built using CakePHP, Twitter Bootstrap, JQuery, MySQL.
 
-## Installation
+# Quick setup
+Clone this repository, then run ```composer install``` to install dependencies.
+By default Studeo will look for two MySQL databases in *localhost:3306*:
 
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+* Studeo's database.
+* phpBB's database.
 
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist cakephp/app [app_name]
-```
+Connection to those can be customized in /config/app.php, by editing the following parts:
+```php
+'Datasources' => [
+        'default' => [
+            'className' => 'Cake\Database\Connection',
+            'driver' => 'Cake\Database\Driver\Mysql',
+            'persistent' => false,
+            'host' => 'localhost',
+            //'port' => 'non_standard_port_number',
+            'username' => 'studeo',
+            'password' => 'studeo',
+            'database' => 'studeo',
+            'encoding' => 'utf8',
+            'timezone' => 'UTC',
+            'flags' => [],
+            'cacheMetadata' => true,
+            'log' => false,
+            'quoteIdentifiers' => false,
+            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+            'url' => env('DATABASE_URL', null),
+        ],
+    	/**
+    	 * Connection to the phpbb database.
+    	 */
+    	'phpbb_db' => [
+    		'className' => 'Cake\Database\Connection',
+    		'driver' => 'Cake\Database\Driver\Mysql',
+    		'persistent' => false,
+    		'host' => 'localhost',
+    		//'port' => 'non_standard_port_number',
+    		'username' => 'phpbb',
+    		'password' => 'phpbb',
+    		'database' => 'phpbb',
+    		'encoding' => 'utf8',
+    		'timezone' => 'UTC',
+    		'flags' => [],
+    		'cacheMetadata' => true,
+    		'log' => false,
+    		'quoteIdentifiers' => false,
+    		//'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+    		'url' => env('DATABASE_URL', null),
+            'phpbbTablePrefix' => 'phpbb',
+    	],
+  ```
+  The /sql/studeo_db_create.sql script will build the necessary database structure.
+  If one does not wish to install phpbb locally for testing purposes (recommended), it is possible to run the /sql/phpbb_user.sql script to create a phpbb schema. The default users table provides the following users:
+  * username: **admin**     password: **password**
+  * username: **user**      password: **password**
 
-You should now be able to visit the path to where you installed the app and see the default home page.
 
-## Update
-
-Since this skeleton is a starting point for your application and various files would have been modified as per your needs, there isn't a way to provide automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the `'Datasources'` and any other
-configuration relevant for your application.
-
-## Layout
-The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) CSS framework by default. You can, however, replace it with any other library or custom styles.
+#Contribution guidelines
+Please, write comments, commit messages and variable/table/column names in English! Issues can be submitted in italian, too.
