@@ -5,6 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\Rule\ExistsIn;
+use Cake\ORM\TableRegistry;
 
 /**
  * Solutions Model
@@ -68,7 +70,8 @@ class SolutionsTable extends Table
 
         $validator
             ->requirePresence('url', 'create')
-            ->notEmpty('url');
+            ->notEmpty('url')
+        	->url('url');
 
         return $validator;
     }
@@ -83,6 +86,19 @@ class SolutionsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['exam_id'], 'Exams'));
+        $rules->add(function($entity, $options){
+        	if($entity->author){ //if author id was specified check it matches with a real user
+        		$author = TableRegistry::get('PhpbbUsers')->find()->where(['user_id'=>$entity->author])->all()->count();
+        		if($author == 0)
+        			return false;
+        	}
+        	if($entity->addedBy){ //if addedBy id was specified check it matches with a real user
+        		$contrib = TableRegistry::get('PhpbbUsers')->find()->where(['user_id'=>$entity->addedBy])->all()->count();
+        		if($contrib == 0)
+        			return false;
+        	}
+        	return true;
+        });
 
         return $rules;
     }
