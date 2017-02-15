@@ -5,6 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\I18n\Date;
+use Cake\ORM\TableRegistry;
 
 /**
  * Exams Model
@@ -70,6 +72,28 @@ class ExamsTable extends Table
         $validator
             ->date('date')
             ->allowEmpty('date');
+        
+        $validator->add('date', 'dateMustBeLowerThanToday', [
+        	'rule' => function ($value, $context) {
+            	$date = Date::create($value['year'], $value['month'], $value['day']);
+            	return $date <= Date::now();
+            },
+            'message' => 'Date cannot be later than today!'
+        ]);
+        
+        $validator->add('date', 'dateMustBeConsistentWithProfessorship', [
+        	'rule' => function ($value, $context) {
+        		$professorship = TableRegistry::get('Professorships')->find()->where(['id'=>$context['data']['professorship_id']])->first();
+        		//$professorship = $professorship->first();
+        		$year = $value['year'];
+        		if($professorship->start_date > $year) 
+        			return false;
+        		if($professorship->end_date && $professorship->end_date < $year) 
+        			return false;
+        		return true;
+        	},
+        	'message' => 'Date must be consistent with selected professorship!'
+        ]);
 
         $validator
             ->allowEmpty('info');
