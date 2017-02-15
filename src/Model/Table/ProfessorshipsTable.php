@@ -66,11 +66,24 @@ class ProfessorshipsTable extends Table
 
         $validator
             ->integer('start_date')
-            ->allowEmpty('start_date');
+            ->range('start_date', [2000,2100],"Invalid date. Must be in interval (2000-2100).")
+            ->requirePresence('start_date');
 
         $validator
             ->integer('end_date')
+            ->range('end_date', [2000,2100],"Invalid date. Must be in interval (2000-2100).")
             ->allowEmpty('end_date');
+        
+        $validator->add('end_date', 'custom', [
+       		'rule' => function ($value, $context) {
+            	if($context['data']['end_date']){
+            		if($context['data']['end_date'] < $context['data']['start_date'])
+            			return false;
+            	}
+            	return true;
+            },
+            'message' => 'End date cannot be earlier than start date.'
+        ]);
 
         return $validator;
     }
