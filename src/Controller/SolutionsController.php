@@ -61,6 +61,7 @@ class SolutionsController extends AppController
         $solution = $this->Solutions->newEntity();
         if ($this->request->is('post')) {
             $solution = $this->Solutions->patchEntity($solution, $this->request->data);
+            $solution->addedBy = $this->Auth->user('user_id');
             if ($this->Solutions->save($solution)) {
                 $this->Flash->success(__('The solution has been saved.'));
 
