@@ -57,22 +57,13 @@ class ProfessorsTable extends Table
             ->requirePresence('lastName', 'create')
             ->notEmpty('lastName');
 
-        $validator
-            ->allowEmpty('website');
+        $validator->allowEmpty('website')->url("website");
+		$validator->allowEmpty('docentiWebsite')->url("docentiWebsite");
 
-        $validator
-            ->allowEmpty('docentiWebsite');
-
-        $validator
-            ->allowEmpty('email1');
-        $validator
-        	->email('email1');
-        $validator
-        	->email('email2');
-        $validator
-            ->allowEmpty('email2');
-        $validator
-            ->allowEmpty('notes');
+        $validator->allowEmpty('email1')->email('email1');
+        $validator->allowEmpty('email2')->email('email2');
+        
+        $validator->allowEmpty('notes');
 
         return $validator;
     }
