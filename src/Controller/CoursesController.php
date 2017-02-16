@@ -20,8 +20,26 @@ class CoursesController extends AppController
      */
     public function index()
     {
-        $courses = $this->paginate($this->Courses);
+        //$courses = $this->paginate($this->Courses);
+        $courses = $this->Courses->find()->orderAsc('name')->all();
+        $years = [1=>[],2=>[],3=>[],4=>[],5=>[],6=>[],0=>[]];
+        foreach($courses as $course){
+        	switch($course->year){
+        		case 1: //bachelor first year
+        		case 2: //bachelor second year
+        		case 3: //bachelor third year
+        		case 4: //master first year
+        		case 5: //master second year
+        		case 6: //free-choice exams
+        			array_push($years[$course->year],$course);
+        			break;
+        		default: //inactive courses
+        			array_push($years[0],$course);
+        			break;
+        	}
+        }
 
+        $this->set('years',$years);
         $this->set(compact('courses'));
         $this->set('_serialize', ['courses']);
     }
@@ -107,7 +125,7 @@ class CoursesController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        $this->request->allowMethod(['get','post', 'delete']);
         $course = $this->Courses->get($id);
         if ($this->Courses->delete($course)) {
             $this->Flash->success(__('The course has been deleted.'));
