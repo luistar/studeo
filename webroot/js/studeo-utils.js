@@ -8,4 +8,8 @@ $(document).ready( function(){
 	$('.studeo-exam-item').click(function(event){
 		$(this).find('.studeo-toggle-row-icon').toggleClass('fa-chevron-down').toggleClass('fa-chevron-right');
 	});
+	
+	$(document).ready(function(){
+	    $('[data-toggle="popover"]').popover(); 
+	});
 });
