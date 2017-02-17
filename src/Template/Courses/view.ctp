@@ -17,7 +17,7 @@ use Cake\Core\Configure;
     </ul>
 </nav>
 
-<h3><?= h($course->name) ?></h3>
+<h1 class="page-header"><?= h($course->name) ?></h1>
 <div class="row studeo-course-detail">
     <div class="col-md-2">
     	<?php if(!$course->logo): ?>
