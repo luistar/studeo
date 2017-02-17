@@ -28,6 +28,19 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+	/**
+	 * Initialization hook method.
+	 *
+	 * Use this method to add common initialization code like loading components.
+	 *
+	 * e.g. `$this->loadComponent('Security');`
+	 *
+	 * @return void
+	 */
+	public function initialize(){
+		parent::initialize();
+		$this->Auth->allow(['controller' => 'pages', 'action' => 'display']);
+	}
 
     /**
      * Displays a view
@@ -76,6 +89,6 @@ class PagesController extends AppController
      */
     public function isAuthorized($user)
     {
-    	return true; //temporarily allow everyone
+    	return true;
     }
 }

@@ -106,4 +106,11 @@ class ProfessorsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function isAuthorized($user = null){
+    	$action = $this->request->params['action'];
+    	if(in_array($action,['index','view']))
+    		return true; //all logged users can access these actions
+    	return parent::isAuthorized($user);
+    }
 }

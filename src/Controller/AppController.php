@@ -129,13 +129,13 @@ class AppController extends Controller
      */
     public function isAuthorized($user)
     {
-    	if($user['phpbb_group']['group_name'] == 'ADMINISTRATORS') {
+    	if(in_array($user['phpbb_group']['group_name'],['ADMINISTRATORS'])) {
     		return true; //ADMINISTRATORS can do everything in controllers extending AppController
     	}
     	else {
     		//redirect to homepage, display error
     		$this->Flash->error(__('Sorry! Studeo is still in testing. You cannot access this functionality (yet!).'));
-    		return $this->redirect(['controller' => 'Pages','action'=>'display','home']);
+    		return $this->redirect($this->referer('/'));
     	}
     }
 }
