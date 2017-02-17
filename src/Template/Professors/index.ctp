@@ -69,5 +69,9 @@
 </div>
 
 <script>
-	$('#professorsTable').DataTable();
+$('#professorsTable').DataTable({
+	"columnDefs": [
+		{ "searchable": false, "targets": [2,3] }
+	]
+});
 </script>
