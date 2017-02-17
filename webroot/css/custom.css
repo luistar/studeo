@@ -140,3 +140,8 @@ Studeo colors and buttons
 	border-color: #2a9498;
 	color: white;
 }
+
+/** Popovers */
+.popover {
+    max-width: none;
+}
