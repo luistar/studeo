@@ -33,4 +33,10 @@
 			<?php endif;?>
 		<?php endforeach; ?>
 	</div>
+<?php else:?>
+	<div class="list-group list-group-root studeo-exams-list">
+		<a href="" class="list-group-item studeo-exam-item">
+			<?=__('There are no exams for this professorship yet!') ?>
+		</a>
+	</div>
 <?php endif;?>
