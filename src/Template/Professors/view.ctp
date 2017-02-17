@@ -12,50 +12,48 @@
         <li><?= $this->Html->link(__('New Professor'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="professors view large-9 medium-8 columns content">
-    <h3><?= h($professor->id) ?></h3>
-    <table class="vertical-table">
+<div class="professors">
+    <h1 class="page-header"><?= h($professor->name) ?></h1>
+    <table class="table">
+    	<?php if($professor->website):?>
         <tr>
-            <th scope="row"><?= __('FirstName') ?></th>
-            <td><?= h($professor->firstName) ?></td>
+            <th scope="row"><?= __('Personal Website') ?></th>
+            <td><?= $this->Html->link(h($professor->website),h($professor->website),['target'=>'_blank','_isFull'=>'true']) ?></td>
         </tr>
+        <?php endif;?>
+        <?php if($professor->docentiWebsite):?>
         <tr>
-            <th scope="row"><?= __('LastName') ?></th>
-            <td><?= h($professor->lastName) ?></td>
+            <th scope="row"><?= __('Istitutional Website') ?></th>
+            <td><?= $this->Html->link(h($professor->docentiWebsite),h($professor->docentiWebsite),['target'=>'_blank','_isFull'=>'true']) ?></td>
         </tr>
+        <?php endif;?>
+        <?php if($professor->email1):?>
         <tr>
-            <th scope="row"><?= __('Website') ?></th>
-            <td><?= h($professor->website) ?></td>
+            <th scope="row"><?= __('Email') ?></th>
+            <td><?= $this->Html->link(h($professor->email1),'mailto:'.h($professor->email1),['target'=>'_blank']) ?></td>
         </tr>
+        <?php endif;?>
+        <?php if($professor->email2):?>
         <tr>
-            <th scope="row"><?= __('DocentiWebsite') ?></th>
-            <td><?= h($professor->docentiWebsite) ?></td>
+            <th scope="row"><?= __('Alternative Email') ?></th>
+            <td><?= $this->Html->link(h($professor->email2),'mailto:'.h($professor->email1),['target'=>'_blank']) ?></td>
         </tr>
-        <tr>
-            <th scope="row"><?= __('Email1') ?></th>
-            <td><?= h($professor->email1) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email2') ?></th>
-            <td><?= h($professor->email2) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($professor->id) ?></td>
-        </tr>
+        <?php endif;?>
     </table>
-    <div class="row">
+    <?php if($professor->notes):?>
+    <div class="">
         <h4><?= __('Notes') ?></h4>
         <?= $this->Text->autoParagraph(h($professor->notes)); ?>
     </div>
+    <?php endif;?>
     
-    <div class="relations row">
-    	<h3><?= __("Relationships")?></h3>
+    <h3><?= __("Professorships")?></h3>
+    <?php if(!empty($professor->professorships)):?>
+    <div class="professorships">
     	<table class="table table-striped table-bordered">
     		<thead>
     			<tr>
-		    	 	<th>Id</th>
-		    	 	<th>Professor</th>
+		    	 	<th>Course</th>
 		    	 	<th>Start Date</th>
 		    	 	<th>End Date</th>
 		    	 </tr>
@@ -63,11 +61,10 @@
     		<tbody>
 	    		<?php foreach($professor->professorships as $professorship): ?>
 		    	 	<tr>
-		    	 		<td><?=$professorship->id?></td>
-		    	 		<td><?=$this->Html->link($professorship->professor->name, [
-		    	 				'controller'=>'Professors',
+		    	 		<td><?=$this->Html->link($professorship->course->name, [
+		    	 				'controller'=>'Professorships',
 		    	 				'action'=>'view',
-		    	 				$professorship->professor->id
+		    	 				$professorship->id
 		    	 			])?>
 		    	 		</td>
 		    	 		<td><?=$professorship->start_date?></td>
@@ -77,4 +74,7 @@
     		</tbody>
     	</table>
     </div>
+    <?php else: ?>
+    <div class="alert alert-danger"><p><?= __('There are no professorships linked to this professor.')?></p></div>
+    <?php endif; ?>
 </div>

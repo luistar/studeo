@@ -11,8 +11,15 @@
         <li><?= $this->Html->link(__('New Professorship'), ['controller' => 'Professorships', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="exams index large-9 medium-8 columns content">
-    <h3><?= __('Exams') ?></h3>
+<div class="exams">
+    <h1 class="page-header"><?= __('Exams') ?></h1>
+    <div class="jumbotron">
+    	<h2><?=__('Studeo is currently managing {0} exams',$exams->count())?></h2>
+    	<p><?=__('You can access the exams and all related functionality by selecting the {0} you\'re interested in.',
+    			$this->Html->link(__('course'),['controller'=>'Courses']))?></p>
+    </div>
+    
+    <?php if(true): //TODO only admins and mods should see this section?>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -55,4 +62,5 @@
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
+    <?php endif;?>
 </div>

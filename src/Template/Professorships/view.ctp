@@ -21,9 +21,9 @@
 						['controller'=>'Exams','action'=>'addToProfessorship',$professorship->id],
 						['class'=>'btn btn-default studeo-action-button','escape'=>false])?>
 
-<div class="professorships view large-9 medium-8 columns content">
-    <h3><?= h($professorship->course->name.' - '. $professorship->professor->name) ?></h3>
-    <table class="table table-bordered table-striped">
+<div class="professorships">
+    <h1 class="page-header"><?= h($professorship->course->name.' - '. $professorship->professor->name) ?></h1>
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Professor') ?></th>
             <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->name, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
@@ -38,11 +38,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Start Date') ?></th>
-            <td><?= $this->Number->format($professorship->start_date) ?></td>
+            <td><?= h($professorship->start_date) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('End Date') ?></th>
-            <td><?= $this->Number->format($professorship->end_date) ?></td>
+            <td><?= h($professorship->end_date) ?></td>
         </tr>
     </table>
 </div>

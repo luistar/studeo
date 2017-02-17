@@ -20,12 +20,6 @@
             <tr>
                 <th scope="col"><?= __('First name') ?></th>
                 <th scope="col"><?= __('Last name') ?></th>
-                <?php /*
-                <th scope="col"><?= $this->Paginator->sort('website') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('docentiWebsite') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('email1') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('email2') ?></th>
-                */?>
                 <th scope="col"><?= __('Contacts') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -35,24 +29,30 @@
             <tr>
                 <td><?= h($professor->firstName) ?></td>
                 <td><?= h($professor->lastName) ?></td>
-                <?php /*
-                <td><?= h($professor->website) ?></td>
-                <td><?= h($professor->docentiWebsite) ?></td>
-                <td><?= h($professor->email1) ?></td>
-                <td><?= h($professor->email2) ?></td>
-                */?>
                 <td>
                 	<?php if($professor->website):?>
-                		<?= $this->Html->link('<i class="fa fa-fw fa-globe"></i>',$professor->website,['escape'=>false,'target'=>'_blank','_full'=>true])?>
+                		<?= $this->Html->link('<i class="fa fa-fw fa-globe"></i>',$professor->website,
+                				['escape'=>false,'target'=>'_blank','_full'=>true,
+                				 'data-toggle'=>"popover", 'data-trigger'=>'hover', 'data-placement'=>'top', 'title'=>__('Personal Website'), 'data-content'=>$professor->website
+                		])?>
                 	<?php endif; ?>
                 	<?php if($professor->docentiWebsite):?>
-                		<?= $this->Html->link('<i class="fa fa-fw fa-bank"></i>',$professor->docentiWebsite,['escape'=>false,'target'=>'_blank','_full'=>true])?>
+                		<?= $this->Html->link('<i class="fa fa-fw fa-bank"></i>',$professor->docentiWebsite,
+                				['escape'=>false,'target'=>'_blank','_full'=>true,
+                				 'data-toggle'=>"popover", 'data-trigger'=>'hover','data-placement'=>'top', 'title'=>__('Istitutional Website'), 'data-content'=>$professor->docentiWebsite
+                		])?>
                 	<?php endif; ?>
                 	<?php if($professor->email1):?>
-                		<?= $this->Html->link('<i class="fa fa-fw fa-envelope"></i>','mailto:'.$professor->email1,['escape'=>false,'target'=>'_blank','_full'=>true])?>
+                		<?= $this->Html->link('<i class="fa fa-fw fa-envelope"></i>','mailto:'.$professor->email1,
+                				['escape'=>false,'target'=>'_blank','_full'=>true,
+                						'data-toggle'=>"popover", 'data-trigger'=>'hover','data-placement'=>'top', 'title'=>__('Email'), 'data-content'=>$professor->email1
+                		])?>
                 	<?php endif; ?>
                 	<?php if($professor->email2):?>
-                		<?= $this->Html->link('<i class="fa fa-fw fa-envelope"></i>','mailto:'.$professor->email2,['escape'=>false,'target'=>'_blank','_full'=>true])?>
+                		<?= $this->Html->link('<i class="fa fa-fw fa-envelope"></i>','mailto:'.$professor->email2,[
+                				'escape'=>false,'target'=>'_blank','_full'=>true,
+                				'data-toggle'=>"popover", 'data-trigger'=>'hover','data-placement'=>'top', 'title'=>__('Email'), 'data-content'=>$professor->email1
+                		])?>
                 	<?php endif; ?>
                 </td>
                 <td class="actions">

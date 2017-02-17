@@ -11,9 +11,15 @@
         <li><?= $this->Html->link(__('New Exam'), ['controller' => 'Exams', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="solutions index large-9 medium-8 columns content">
-    <h3><?= __('Solutions') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<div class="solutions">
+    <h1 class="page-header"><?= __('Solutions') ?></h1>
+    <div class="jumbotron">
+    	<h2><?=__('Studeo is currently managing {0} solutions',$solutions->count())?></h2>
+    	<p><?=__('You can access the solutions and add your own solution by selecting the {0} you\'re interested in.',
+    			$this->Html->link(__('course'),['controller'=>'Courses']))?></p>
+    </div>
+    <?php if(true)://TODO only admins shold see this part of the page?>
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -53,4 +59,5 @@
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
+    <?php endif;?>
 </div>
