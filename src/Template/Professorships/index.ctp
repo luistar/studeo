@@ -34,8 +34,8 @@
                 <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->name, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
                 <td><?= $professorship->has('course') ? $this->Html->link($professorship->course->name, ['controller' => 'Courses', 'action' => 'view', $professorship->course->id]) : '' ?></td>
                 <td><?= h($professorship->description) ?></td>
-                <td><?= $this->Number->format($professorship->start_date) ?></td>
-                <td><?= $this->Number->format($professorship->end_date) ?></td>
+                <td><?= $professorship->start_date ?></td>
+                <td><?= $professorship->end_date ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $professorship->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $professorship->id]) ?>
