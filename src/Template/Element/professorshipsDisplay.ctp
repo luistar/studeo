@@ -22,4 +22,6 @@
         	</div>
         </div>
 	<?php endforeach; ?>
+<?php else: ?>
+	<div class="alert alert-danger"><?=__('There are no professorships linked with this course.')?></div>
 <?php endif; ?>

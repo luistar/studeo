@@ -36,10 +36,12 @@ use Cake\Core\Configure;
 	            <th scope="row"><?= __('Year') ?></th>
 	            <td><?= $this->Number->format($course->year) ?></td>
 	        </tr>
+	        <?php if($course->description!=0):?>
 	        <tr>
 	            <th scope="row"><?= __('Description') ?></th>
-	            <td><?= $course->description ?></td>
+	            <td><?= h($course->description) ?></td>
 	        </tr>
+	        <?php endif;?>
 	        <?php if($requiredBy->count()!=0):?>
 	        <tr>
 	            <th scope="row"><?= __('Requires') ?></th>
