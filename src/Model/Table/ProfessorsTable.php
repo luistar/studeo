@@ -57,8 +57,19 @@ class ProfessorsTable extends Table
             ->requirePresence('lastName', 'create')
             ->notEmpty('lastName');
 
-        $validator->allowEmpty('website')->url("website");
-		$validator->allowEmpty('docentiWebsite')->url("docentiWebsite");
+        $validator->allowEmpty('website')->urlWithProtocol("website");
+		$validator->allowEmpty('docentiWebsite')->urlWithProtocol("docentiWebsite");
+		
+		$validator->add('docentiWebsite', 'custom', [
+				'rule' => function ($value, $context) {
+					if(stripos($value,"docenti.unina")!==false)
+						return true;
+					else
+						return false;
+				},
+				'message' => 'Docenti website looks invalid.'
+		]);
+		
 
         $validator->allowEmpty('email1')->email('email1');
         $validator->allowEmpty('email2')->email('email2');
