@@ -41,5 +41,9 @@
             <th scope="row"><?= __('AddedBy') ?></th>
             <td><?= $this->Number->format($solution->addedBy) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('info') ?></th>
+            <td><?= h($solution->info) ?></td>
+        </tr>
     </table>
 </div>

@@ -22,6 +22,7 @@
             echo $this->Form->input('author');
             echo $this->Form->input('authorAlt');
             echo $this->Form->input('url');
+            echo $this->Form->input('info');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
