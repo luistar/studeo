@@ -12,10 +12,24 @@
 	<h2 class="main-title">Studeo<br>
 	<small>Universit&agrave; degli Studi di Napoli Federico II<br>
 	Computer Science</small></h2>
-	
 </div>
 
 <div class="row">
+	<div class="col-xs-6 col-sm-3">
+		<?= $this->Html->link('<i class="fa fa-fw fa-users"></i><br/>'.__('Professors'),['controller'=>'Professors'],['class'=>'btn btn-lg btn-studeo-red btn-block','escape'=>false])?>
+	</div>
+	<div class="col-xs-6  col-sm-3">
+		<?= $this->Html->link('<i class="fa fa-fw fa-graduation-cap"></i><br/>'.__('Courses'),['controller'=>'Courses'],['class'=>'btn btn-lg btn-primary btn-block','escape'=>false])?>
+	</div>
+	<div class="col-xs-6 col-sm-3">
+		<?= $this->Html->link('<i class="fa fa-fw fa-file-text"></i><br/>'.__('Exams'),['controller'=>'Exams'],['class'=>'btn btn-lg btn-warning btn-block','escape'=>false])?>
+	</div>
+	<div class="col-xs-6 col-sm-3">
+		<?= $this->Html->link('<i class="fa fa-fw fa-comments"></i><br/>'.__('Solutions'),['controller'=>'Solutions'],['class'=>'btn btn-lg btn-studeo-light-blue btn-block','escape'=>false])?>
+	</div>
+</div>
+
+<div class="row" style="margin-top:10px">
 	<div class="col-md-3 col-md-push-9">
 		<div class="panel panel-default">
 			<div class="panel-heading">

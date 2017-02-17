@@ -112,3 +112,31 @@ img.studeo-course-logo {
 		font-size: 3em;
 	}
 }
+
+/**
+Studeo colors and buttons
+*/
+
+.btn-studeo-red {
+	background-color: #b73365; 
+	border-color: #982b54;
+	color: white;
+}
+
+.btn-studeo-red:hover {
+	background-color: #982b54; 
+	border-color: #982b54;
+	color: white;
+}
+
+.btn-studeo-light-blue {
+	background-color: #33b2b7; 
+	border-color: #2a9498;
+	color: white;
+}
+
+.btn-studeo-light-blue:hover {
+	background-color: #2a9498; 
+	border-color: #2a9498;
+	color: white;
+}
