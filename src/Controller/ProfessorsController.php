@@ -18,7 +18,7 @@ class ProfessorsController extends AppController
      */
     public function index()
     {
-        $professors = $this->paginate($this->Professors);
+        $professors = $this->Professors->find()->all();
 
         $this->set(compact('professors'));
         $this->set('_serialize', ['professors']);
