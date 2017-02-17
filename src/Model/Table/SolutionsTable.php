@@ -71,7 +71,9 @@ class SolutionsTable extends Table
         $validator
             ->requirePresence('url', 'create')
             ->notEmpty('url')
-        	->url('url');
+        	->urlWithProtocol('url');
+        
+        $validator->requirePresence('info');
 
         return $validator;
     }
