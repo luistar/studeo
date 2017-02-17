@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Filesystem\Folder;
 use Cake\Core\Configure;
+use Cake\ORM\TableRegistry;
 
 /**
  * Courses Controller
@@ -21,7 +22,7 @@ class CoursesController extends AppController
     public function index()
     {
         //$courses = $this->paginate($this->Courses);
-        $courses = $this->Courses->find()->orderAsc('name')->all();
+        $courses = $this->Courses->find('all')->orderAsc('name')->all();
         $years = [1=>[],2=>[],3=>[],4=>[],5=>[],6=>[],0=>[]];
         foreach($courses as $course){
         	switch($course->year){
@@ -56,8 +57,12 @@ class CoursesController extends AppController
         $course = $this->Courses->get($id, [
             'contain' => ['Professorships'=>['Professors','Exams'=>['Solutions']]]
         ]);
-
-        $this->set('course', $course);
+        $requiredBy = TableRegistry::get('Requirements')->find('all',['contain'=>['CoursesRequirement']])->where(['required_for'=>$course->id])->all();
+		$requiredFrom = TableRegistry::get('Requirements')->find('all',['contain'=>['RequiredFor']])->where(['course_id'=>$course->id])->all();
+        
+		$this->set('requiredBy',$requiredBy);
+		$this->set('requiredFrom',$requiredFrom);
+		$this->set('course', $course);
         $this->set('_serialize', ['course']);
     }
 

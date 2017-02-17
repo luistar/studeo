@@ -35,6 +35,9 @@
             <li class=""> 
             	<?=$this->Html->link(__('Solutions'),['controller'=>'Solutions','action'=>'index'])?>
             </li>
+            <li class=""> 
+            	<?=$this->Html->link(__('Requirements'),['controller'=>'Requirements','action'=>'index'])?>
+            </li>
             <!-- Funzionalità di configurazione -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Link 2 Dropdown <i class="fa fa-caret-down"></i></a>

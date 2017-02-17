@@ -39,6 +39,16 @@ class CoursesTable extends Table
         $this->hasMany('Professorships', [
             'foreignKey' => 'course_id'
         ]);
+        
+        $this->hasMany('Requirements', [
+        	'className' => 'Requirements',
+        	'foreignKey'=>'course_id'
+        ]);
+        
+        $this->hasMany('RequiredFor', [
+        	'className' => 'Requirements',
+        	'foreignKey'=>'required_for'
+        ]);
     }
 
     /**

@@ -25,7 +25,6 @@ use Cake\Core\Configure;
     	<?php else: ?>
     		<?= $this->Html->image(Configure::read('App.courseLogosFolder').'/'.$course->logo, ['class'=>'thumbnail studeo-course-logo']); ?>
     	<?php endif; ?>
-    	
     </div>
     <div class="col-md-10">
 	    <table class="table table-bordered table-striped">
@@ -41,6 +40,32 @@ use Cake\Core\Configure;
 	            <th scope="row"><?= __('Description') ?></th>
 	            <td><?= $course->description ?></td>
 	        </tr>
+	        <?php if($requiredBy->count()!=0):?>
+	        <tr>
+	            <th scope="row"><?= __('Requires') ?></th>
+	            <td>
+	            	<?php $count = 0;?>
+					<?php foreach($requiredBy as $requiredByCourse):?>
+						<?php $count++; ?>
+						<?= $this->Html->link(h($requiredByCourse->course->name),['controller'=>'Courses','action'=>'view',$requiredByCourse->course->id])?>
+ 						<?php if($count < $requiredBy->count()) echo ", ";?>
+					<?php endforeach;?>
+				</td>
+	        </tr>
+	        <?php endif; ?>
+	        <?php if($requiredFrom->count()!=0):?>
+	        <tr>
+	            <th scope="row"><?= __('Required by') ?></th>
+	            <td>
+	            	<?php $count = 0;?>
+					<?php foreach($requiredFrom as $requiredFromCourse):?>
+						<?php $count++; ?>
+						<?= $this->Html->link(h($requiredFromCourse->required->name),['controller'=>'Courses','action'=>'view',$requiredFromCourse->required->id])?>
+						<?php if($count < $requiredFrom->count()) echo ", ";?>
+					<?php endforeach;?>
+				</td>
+	        </tr>
+	        <?php endif; ?>
 	    </table>
     </div>
 </div>

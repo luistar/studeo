@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `description` varchar(512) DEFAULT NULL,
   `year` tinyint(4) NOT NULL COMMENT '1,2,3 -> bachelor 4,5->master 6->free choice',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- L’esportazione dei dati non era selezionata.
 -- Dump della struttura di tabella studeo.exams
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `exams` (
   PRIMARY KEY (`id`),
   KEY `FK_professorship` (`professorship_id`),
   CONSTRAINT `FK_professorship` FOREIGN KEY (`professorship_id`) REFERENCES `professorships` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- L’esportazione dei dati non era selezionata.
 -- Dump della struttura di tabella studeo.professors
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `professors` (
   `email2` varchar(256) DEFAULT NULL,
   `notes` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Table to store data on professors';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='Table to store data on professors';
 
 -- L’esportazione dei dati non era selezionata.
 -- Dump della struttura di tabella studeo.professorships
@@ -65,6 +65,19 @@ CREATE TABLE IF NOT EXISTS `professorships` (
   KEY `FK_course` (`course_id`),
   CONSTRAINT `FK_course` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_professor` FOREIGN KEY (`professor_id`) REFERENCES `professors` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- L’esportazione dei dati non era selezionata.
+-- Dump della struttura di tabella studeo.requirements
+CREATE TABLE IF NOT EXISTS `requirements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_id` int(11) NOT NULL,
+  `required_for` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK__courses` (`course_id`),
+  KEY `FK__courses_2` (`required_for`),
+  CONSTRAINT `FK__courses` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK__courses_2` FOREIGN KEY (`required_for`) REFERENCES `courses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- L’esportazione dei dati non era selezionata.
