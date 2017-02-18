@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Professorships Controller
@@ -39,6 +40,14 @@ class ProfessorshipsController extends AppController
         $professorship = $this->Professorships->get($id, [
             'contain' => ['Professors', 'Courses','Exams'=>['Solutions']]
         ]);
+        
+        foreach($professorship->exams as $exam){
+        	foreach($exam->solutions as $solution){
+        		if($solution->author){
+        			$solution->userAuthor = TableRegistry::get('PhpbbUsers')->get($solution->author);
+        		}
+        	}
+        }
 
         $this->set('professorship', $professorship);
         $this->set('_serialize', ['professorship']);
