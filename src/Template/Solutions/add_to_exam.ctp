@@ -17,10 +17,10 @@
             echo $this->Form->input('exam',[
         		'value'=> $examDescription, 
         		'disabled'=>'disabled']);
-            echo $this->Form->input('author');
-            echo $this->Form->input('authorAlt');
-            echo $this->Form->input('url');
-            echo $this->Form->input('info');
+            echo $this->Form->input('author',['help'=>__('An user id of the forum account.')]);
+            echo $this->Form->input('authorAlt',['help'=>__('A string used to identify the author. Use it when there is no user-id from the forum.')]);
+            echo $this->Form->input('url',['help'=>__('Url (with protocol) to the solution.')]);
+            echo $this->Form->input('info',['help'=>__('Descriptive field. Must contain text such as "Complete solution" or "Exercise x,y,z".')]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
