@@ -16,7 +16,7 @@
 
 <div class="solutions view large-9 medium-8 columns content">
     <h3><?= h($solution->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Exam') ?></th>
             <td><?= $solution->has('exam') ? $this->Html->link($solution->exam->id, ['controller' => 'Exams', 'action' => 'view', $solution->exam->id]) : '' ?></td>
@@ -35,11 +35,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Author') ?></th>
-            <td><?= $this->Number->format($solution->author) ?></td>
+            <td><?= h($author->username) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('AddedBy') ?></th>
-            <td><?= $this->Number->format($solution->addedBy) ?></td>
+            <td><?= h($addedBy->username) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('info') ?></th>

@@ -59,7 +59,7 @@
                     <?= $this->Html->link('<i class="fa fa-fw fa-info-circle"></i>'. __('Details'), ['action' => 'view', $professor->id],['class'=>'btn btn-xs btn-primary','escape'=>false]) ?>
                     <?php if($isAdmin): ?> 
 	                    <?= $this->Html->link('<i class="fa fa-fw fa-edit"></i>'.__('Edit'), ['action' => 'edit', $professor->id],['class'=>'btn btn-xs btn-warning','escape'=>false]) ?>
-	                    <?= $this->Form->postLink('<i class="fa fa-fw fa-trash"></i>'.__('Delete'), ['action' => 'delete', $professor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $professor->id),'class'=>'btn btn-xs btn-danger','escape'=>false]) ?>
+	                    <?= $this->Form->postLink('<i class="fa fa-fw fa-trash"></i>'.__('Delete'), ['action' => 'delete', $professor->id], ['confirm' => __('Are you sure you want to delete {0}?', $professor->name),'class'=>'btn btn-xs btn-danger','escape'=>false]) ?>
 	                <?php endif;?>
                 </td>
             </tr>

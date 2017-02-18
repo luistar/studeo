@@ -20,7 +20,7 @@ class ExamsController extends AppController
 	
 	public function isAuthorized($user = null){
 		$action = $this->request->params['action'];
-		if(in_array($action,['index','view','add-to-professorship','add']))
+		if(in_array($action,['index','view','add-to-professorship','add','download']))
 			return true; //all logged users can access these actions
 		return parent::isAuthorized($user);
 	}
@@ -51,8 +51,14 @@ class ExamsController extends AppController
     public function view($id = null)
     {
         $exam = $this->Exams->get($id, [
-            'contain' => ['Professorships']
+            'contain' => ['Professorships','Solutions']
         ]);
+        
+        foreach($exam->solutions as $solution){
+        	if($solution->author){
+        		$solution->userAuthor = TableRegistry::get('PhpbbUsers')->get($solution->author);
+        	}
+        }
 
         $this->set('exam', $exam);
         $this->set('_serialize', ['exam']);

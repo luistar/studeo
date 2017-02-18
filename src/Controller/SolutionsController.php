@@ -14,7 +14,7 @@ class SolutionsController extends AppController
 	
 	public function isAuthorized($user = null){
 		$action = $this->request->params['action'];
-		if(in_array($action,['index','view','add-to-exam','add']))
+		if(in_array($action,['index','add-to-exam','add']))
 			return true; //all logged users can access these actions
 		return parent::isAuthorized($user);
 	}
@@ -47,7 +47,12 @@ class SolutionsController extends AppController
         $solution = $this->Solutions->get($id, [
             'contain' => ['Exams']
         ]);
+        
+        $author = ($solution->author ? TableRegistry::get('PhpbbUsers')->get($solution->author) : $solution->authorAlt);
+        $addedBy= TableRegistry::get('PhpbbUsers')->get($solution->addedBy);
 
+        $this->set('author',$author);
+        $this->set('addedBy',$addedBy);
         $this->set('solution', $solution);
         $this->set('_serialize', ['solution']);
     }

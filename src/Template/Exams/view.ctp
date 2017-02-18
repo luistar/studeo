@@ -17,7 +17,7 @@
 
 <div class="exams view large-9 medium-8 columns content">
     <h3><?= h($exam->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Professorship') ?></th>
             <td><?= $exam->has('professorship') ? $this->Html->link($exam->professorship->id, ['controller' => 'Professorships', 'action' => 'view', $exam->professorship->id]) : '' ?></td>
@@ -47,4 +47,9 @@
             <td><?= $exam->isExercise ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
+</div>
+
+<div class="related">
+	<h3 class="page-header"><?= __('Solutions')?></h3>
+	<div class="panel panel-default"><div><?= $this->element('examsDisplayGroup',['exams'=>array($exam)])?></div></div>
 </div>
