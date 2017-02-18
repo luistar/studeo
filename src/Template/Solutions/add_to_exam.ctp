@@ -4,13 +4,18 @@
   */
 ?>
 
-<div class="solutions form large-9 medium-8 columns content">
+<div class="solutions">
     <?= $this->Form->create($solution) ?>
     <fieldset>
         <legend><?= __('Add Solution') ?></legend>
         <?php
+        	$examDescription = $exam->isExercise ? __('Exercise') : __('Exam');
+        	$examDescription .= ' - ' . ($exam->date ? $exam->date : '');
+        	$examDescription .= $exam->info ? ' - '.$exam->info.' - ' : '';
+        	$examDescription .= ' ('.$exam->professorship->course->name.' - '.$exam->professorship->professor->name;
+        	$examDescription .= ' - '.$exam->professorship->start_date.'-'.$exam->professorship->end_date.')';
             echo $this->Form->input('exam',[
-        		'value'=> $exam->date .' ('.$exam->info.')', 
+        		'value'=> $examDescription, 
         		'disabled'=>'disabled']);
             echo $this->Form->input('author');
             echo $this->Form->input('authorAlt');

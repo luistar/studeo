@@ -108,7 +108,7 @@ class ExamsController extends AppController
         }
         
         foreach($professorshipsAll as $professorship){
-        	$professorships[$professorship->id] = $professorship->course->name.' ('.$professorship->professor->name.')';
+        	$professorships[$professorship->id] = $professorship->course->name.' ('.$professorship->professor->name.') '.$professorship->start_date.' - '.$professorship->end_date;
         }
         $this->set(compact('exam', 'professorships'));
         $this->set('_serialize', ['exam']);

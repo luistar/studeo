@@ -133,7 +133,7 @@ class SolutionsController extends AppController
      */
     public function addToExam($id=null)
     {
-    	$exam = TableRegistry::get('Exams')->get($id);
+    	$exam = TableRegistry::get('Exams')->get($id,['contain'=>['Professorships'=>['Courses','Professors']]]);
     	if(!$exam){
     		$this->Flash->error(__('Invalid exam.'));
     		return $this->redirect($this->referer());
