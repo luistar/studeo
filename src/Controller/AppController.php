@@ -137,7 +137,7 @@ class AppController extends Controller
     	}
     	else {
     		//redirect to homepage, display error
-    		$this->Flash->error(__('Sorry! Studeo is still in testing. You cannot access this functionality (yet!).'));
+    		$this->Flash->error(__('Sorry! You cannot access this functionality!'));
     		return $this->redirect($this->referer('/'));
     	}
     }
