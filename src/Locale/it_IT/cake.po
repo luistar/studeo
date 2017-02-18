@@ -1,0 +1,296 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2017-02-18 17:40+0100\n"
+"PO-Revision-Date: 2017-02-18 17:44+0100\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Language: it_IT\n"
+
+#: Template/Error/error400ctp:36 Template/Error/error500ctp:41
+msgid "Error"
+msgstr "Errore"
+
+#: Template/Error/error400ctp:37
+msgid "The requested address {0} was not found on this server."
+msgstr "L'indirizzo richiesto {0} non è stato trovato su questo server."
+
+#: Template/Error/error500ctp:39
+msgid "An Internal Error Has Occurred"
+msgstr "Si è verificato un errore interno"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Controller/Component/AuthComponentphp:464
+msgid "You are not authorized to access that location."
+msgstr "Non sei autorizzato ad accedere a quest'area."
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Controller/Component/CsrfComponentphp:155
+msgid "Missing CSRF token cookie"
+msgstr "Manca il cookie con il token CSRF!"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Controller/Component/CsrfComponentphp:159
+msgid "CSRF token mismatch."
+msgstr "Il token CSRF non corrisponde."
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Error/ExceptionRendererphp:252
+msgid "Not Found"
+msgstr "Non trovato"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Error/ExceptionRendererphp:254
+msgid "An Internal Error Has Occurred."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/Numberphp:90
+msgid "{0,number,#,###.##} KB"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/Numberphp:92
+msgid "{0,number,#,###.##} MB"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/Numberphp:94
+msgid "{0,number,#,###.##} GB"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/Numberphp:96
+msgid "{0,number,#,###.##} TB"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/Numberphp:88
+msgid "{0,number,integer} Byte"
+msgid_plural "{0,number,integer} Bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:80
+msgid "{0} from now"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:80
+msgid "{0} ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:83
+msgid "{0} after"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:83
+msgid "{0} before"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:114
+msgid "just now"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:151
+msgid "about a second ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:152
+msgid "about a minute ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:153
+msgid "about an hour ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:154;332
+msgid "about a day ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:155;333
+msgid "about a week ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:156;334
+msgid "about a month ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:157;335
+msgid "about a year ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:168
+msgid "in about a second"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:169
+msgid "in about a minute"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:170
+msgid "in about an hour"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:171;346
+msgid "in about a day"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:172;347
+msgid "in about a week"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:173;348
+msgid "in about a month"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:174;349
+msgid "in about a year"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:304
+msgid "today"
+msgstr "oggi"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:370
+msgid "%s ago"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:371
+msgid "on %s"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:47;126;316
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:51;129;319
+msgid "{0} month"
+msgid_plural "{0} months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:57;132;322
+msgid "{0} week"
+msgid_plural "{0} weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:59;135;325
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:64;138
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:68;141
+msgid "{0} minute"
+msgid_plural "{0} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatterphp:72;144
+msgid "{0} second"
+msgid_plural "{0} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Network/Responsephp:1473
+msgid "The requested file was not found"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/ORM/RulesCheckerphp:57
+msgid "This value is already in use"
+msgstr "Questo valore è già in uso"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/ORM/RulesCheckerphp:104
+msgid "This value does not exist"
+msgstr "Questo valore non esiste"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/ORM/RulesCheckerphp:128
+msgid "The count does not match {0}{1}"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Utility/Textphp:894
+msgid "and"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Validation/Validatorphp:103
+msgid "This field is required"
+msgstr "Questo campo è obbligatorio"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Validation/Validatorphp:104
+msgid "This field cannot be left empty"
+msgstr "Questo campo non può essere lasciato vuoto"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/Validation/Validatorphp:1752
+msgid "The provided value is invalid"
+msgstr "Il valore inserito non è valido"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Helper/FormHelperphp:950
+msgid "New %s"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Helper/FormHelperphp:953
+msgid "Edit %s"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Helper/FormHelperphp:1815
+msgid "Submit"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Helper/HtmlHelperphp:793
+msgid "Home"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:540
+msgid "January"
+msgstr "Gennaio"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:541
+msgid "February"
+msgstr "Febbraio"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:542
+msgid "March"
+msgstr "Marzo"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:543
+msgid "April"
+msgstr "Aprile"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:544
+msgid "May"
+msgstr "Maggio"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:545
+msgid "June"
+msgstr "Giugno"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:546
+msgid "July"
+msgstr "Luglio"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:547
+msgid "August"
+msgstr "Agosto"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:548
+msgid "September"
+msgstr "Settembre"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:549
+msgid "October"
+msgstr "Ottobre"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:550
+msgid "November"
+msgstr "Novembre"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/cakephp/src/View/Widget/DateTimeWidgetphp:551
+msgid "December"
+msgstr "Dicembre"

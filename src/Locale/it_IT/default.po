@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2017-02-18 15:17+0100\n"
-"PO-Revision-Date: 2017-02-18 15:35+0100\n"
+"PO-Revision-Date: 2017-02-18 17:39+0100\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,158 +21,166 @@ msgstr "Autenticazione necessaria per proseguire."
 
 #: Controller/AppControllerphp:140
 msgid "Sorry! You cannot access this functionality!"
-msgstr ""
+msgstr "Oops! Non puoi accedere a questa funzionalità!"
 
 #: Controller/CoursesControllerphp:97;131
 msgid "The course has been saved."
-msgstr ""
+msgstr "L'insegnamento è stato salvato."
 
 #: Controller/CoursesControllerphp:101;135
 msgid "The course could not be saved. Please, try again."
-msgstr ""
+msgstr "L'insegnamento non può essere salvato. Riprova."
 
 #: Controller/CoursesControllerphp:153
 msgid "The course has been deleted."
-msgstr ""
+msgstr "L'insegnamento è stato eliminato."
 
 #: Controller/CoursesControllerphp:155
 msgid "The course could not be deleted. Please, try again."
-msgstr ""
+msgstr "L'insegnamento non può essere eliminato. Riprova."
 
 #: Controller/ExamsControllerphp:76
 msgid ""
 "No professorships yet. You cannot add exams until there is at least one "
 "professorship."
 msgstr ""
+"Non sono ancora presenti cattedre. Non puoi aggiungere tracce finché non è "
+"presente almeno una cattedra."
 
 #: Controller/ExamsControllerphp:96;224
 msgid "Move file error."
-msgstr ""
+msgstr "Errore durante la copia del file."
 
 #: Controller/ExamsControllerphp:97;225
 msgid "Could not save file in save path."
-msgstr ""
+msgstr "Impossibile salvare il file nel path di salvataggio."
 
 #: Controller/ExamsControllerphp:105;138;233
 msgid "The exam has been saved."
-msgstr ""
+msgstr "La traccia è stata salvata."
 
 #: Controller/ExamsControllerphp:112;240
 msgid "Invalid file type."
-msgstr ""
+msgstr "File non valido."
 
 #: Controller/ExamsControllerphp:113;142;241
 msgid "The exam could not be saved. Please, try again."
-msgstr ""
+msgstr "Impossibile salvare la traccia. Riprova."
 
 #: Controller/ExamsControllerphp:161
 msgid "The exam has been deleted."
-msgstr ""
+msgstr "La traccia è stata eliminata."
 
 #: Controller/ExamsControllerphp:163
 msgid "The exam could not be deleted. Please, try again."
-msgstr ""
+msgstr "Impossibile eliminare la traccia."
 
 #: Controller/ExamsControllerphp:179
 msgid "Download failed: invalid exam."
-msgstr ""
+msgstr "Download fallito: traccia non valida."
 
 #: Controller/ExamsControllerphp:204
 msgid "Invalid professorship."
-msgstr ""
+msgstr "Cattedra non valida."
 
 #: Controller/PhpbbUsersControllerphp:82
 msgid "Wrong username or password! Try again."
-msgstr ""
+msgstr "Username o password errati! Riprova."
 
 #: Controller/ProfessorsControllerphp:62;87
 msgid "The professor has been saved."
-msgstr ""
+msgstr "Il docente è stato salvato."
 
 #: Controller/ProfessorsControllerphp:66;91
 msgid "The professor could not be saved. Please, try again."
-msgstr ""
+msgstr "Impossibile salvare il docente. Riprova."
 
 #: Controller/ProfessorsControllerphp:109
 msgid "The professor has been deleted."
-msgstr ""
+msgstr "Il docente è stato eliminato."
 
 #: Controller/ProfessorsControllerphp:111
 msgid "The professor could not be deleted. Please, try again."
-msgstr ""
+msgstr "Impossibile eliminare il docente. Riprova."
 
 #: Controller/ProfessorshipsControllerphp:65
 msgid ""
 "No professors yet. You cannot add professorships until there is at least one "
 "professor."
 msgstr ""
+"Ancora nessun docente inserito. Non puoi aggiungere cattedre finché non è "
+"presente almeno un docente."
 
 #: Controller/ProfessorshipsControllerphp:70
 msgid ""
 "No courses yet. You cannot add professorships until there is at least one "
 "course."
 msgstr ""
+"Ancora nessun insegnamento inserito. Non puoi aggiungere cattedre finché non "
+"è presente almeno un insegnamento."
 
 #: Controller/ProfessorshipsControllerphp:77;109
 msgid "The professorship has been saved."
-msgstr ""
+msgstr "La cattedra è stata salvata."
 
 #: Controller/ProfessorshipsControllerphp:81;113
 msgid "The professorship could not be saved. Please, try again."
-msgstr ""
+msgstr "Impossibile salvare la cattedra. Riprova."
 
 #: Controller/ProfessorshipsControllerphp:133
 msgid "The professorship has been deleted."
-msgstr ""
+msgstr "La cattedra è stata eliminata."
 
 #: Controller/ProfessorshipsControllerphp:135
 msgid "The professorship could not be deleted. Please, try again."
-msgstr ""
+msgstr "Impossibile eliminare la cattedra. Riprova."
 
 #: Controller/RequirementsControllerphp:59;85
 msgid "The requirement has been saved."
-msgstr ""
+msgstr "La propedeuticità è stata salvata."
 
 #: Controller/RequirementsControllerphp:63;89
 msgid "The requirement could not be saved. Please, try again."
-msgstr ""
+msgstr "Impossibile salvare la propedeuticità. Riprova."
 
 #: Controller/RequirementsControllerphp:110
 msgid "The requirement has been deleted."
-msgstr ""
+msgstr "La propedeuticità è stata eliminata."
 
 #: Controller/RequirementsControllerphp:112
 msgid "The requirement could not be deleted. Please, try again."
-msgstr ""
+msgstr "Impossibile eliminare la propedeuticità. Riprova."
 
 #: Controller/SolutionsControllerphp:70
 msgid ""
 "No exams yet. You cannot add solutions until there is at least one exam."
 msgstr ""
+"Ancora nessuna traccia inserita. Non puoi aggiungere soluzioni finché non è "
+"presente almeno una traccia."
 
 #: Controller/SolutionsControllerphp:78;103;152
 msgid "The solution has been saved."
-msgstr ""
+msgstr "La soluzione è stata salvata."
 
 #: Controller/SolutionsControllerphp:82;107;156
 msgid "The solution could not be saved. Please, try again."
-msgstr ""
+msgstr "Impossibile salvare la soluzione. Riprova."
 
 #: Controller/SolutionsControllerphp:126
 msgid "The solution has been deleted."
-msgstr ""
+msgstr "La soluzione è stata eliminata."
 
 #: Controller/SolutionsControllerphp:128
 msgid "The solution could not be deleted. Please, try again."
-msgstr ""
+msgstr "Impossibile eliminare la soluzione. Riprova."
 
 #: Controller/SolutionsControllerphp:143
 msgid "Invalid exam."
-msgstr ""
+msgstr "Traccia non valida."
 
 #: Model/Table/RequirementsTablephp:78
 msgid "A course cannot require itself!"
-msgstr ""
+msgstr "Un insegnamento non può essere propedeutico a se stesso!"
 
 #: Template/Courses/addctp:7 Template/Courses/editctp:10
 #: Template/Courses/viewctp:15 Template/Exams/addctp:11
@@ -185,13 +193,13 @@ msgstr ""
 #: Template/Requirements/indexctp:9 Template/Requirements/viewctp:11
 #: Template/Solutions/editctp:9 Template/Solutions/viewctp:12
 msgid "List Courses"
-msgstr ""
+msgstr "Elenca insegnamenti"
 
 #: Template/Courses/addctp:8 Template/Courses/editctp:11
 #: Template/Courses/indexctp:10 Template/Courses/viewctp:16
 #: Template/Exams/indexctp:13
 msgid "List Professorships"
-msgstr ""
+msgstr "Elenca cattedre"
 
 #: Template/Courses/addctp:9 Template/Courses/editctp:12
 #: Template/Courses/indexctp:11 Template/Courses/viewctp:18
@@ -199,11 +207,11 @@ msgstr ""
 #: Template/Exams/viewctp:14 Template/Professorships/editctp:10
 #: Template/Professorships/indexctp:8 Template/Professorships/viewctp:10
 msgid "New Professorship"
-msgstr ""
+msgstr "Nuova cattedra"
 
 #: Template/Courses/addctp:15
 msgid "Add Course"
-msgstr ""
+msgstr "Aggiungi insegnamento"
 
 #: Template/Courses/addctp:25 Template/Courses/editctp:26
 #: Template/Exams/addctp:33 Template/Exams/add_to_professorshipctp:32
@@ -214,7 +222,7 @@ msgstr ""
 #: Template/Solutions/editctp:25
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Element/formctp:102
 msgid "Submit"
-msgstr ""
+msgstr "Invia"
 
 #: Template/Courses/editctp:8 Template/Courses/viewctp:12
 #: Template/Exams/editctp:8 Template/Exams/indexctp:53 Template/Exams/viewctp:9
@@ -228,7 +236,7 @@ msgstr ""
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:105
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:170
 msgid "Delete"
-msgstr ""
+msgstr "Elimina"
 
 #: Template/Courses/editctp:8 Template/Courses/viewctp:12
 #: Template/Exams/editctp:8 Template/Exams/viewctp:9
@@ -236,18 +244,18 @@ msgstr ""
 #: Template/Requirements/viewctp:9 Template/Solutions/editctp:8
 #: Template/Solutions/viewctp:10
 msgid "Are you sure you want to delete {0}?"
-msgstr ""
+msgstr "Sei sicuro di voler eliminare {0}?"
 
 #: Template/Courses/editctp:9 Template/Courses/indexctp:9
 #: Template/Courses/viewctp:13 Template/Professorships/addctp:10
 #: Template/Professorships/editctp:14 Template/Professorships/indexctp:12
 #: Template/Professorships/viewctp:14 Template/Requirements/indexctp:10
 msgid "New Course"
-msgstr ""
+msgstr "Nuovo Insegnamento"
 
 #: Template/Courses/editctp:18
 msgid "Edit Course"
-msgstr ""
+msgstr "Modifica Insegnamento"
 
 #: Template/Courses/indexctp:15 Template/Element/navbarctp:32
 #: Template/Pages/homectp:22
@@ -268,23 +276,23 @@ msgstr "Secondo anno"
 
 #: Template/Courses/indexctp:20
 msgid "Third year"
-msgstr ""
+msgstr "Terzo anno"
 
 #: Template/Courses/indexctp:22
 msgid "Master degree"
-msgstr ""
+msgstr "Laurea magistrale"
 
 #: Template/Courses/indexctp:26
 msgid "Free-choice and inactive courses"
-msgstr ""
+msgstr "Insegnamenti a scelta libera e inattivi"
 
 #: Template/Courses/indexctp:27
 msgid "Free-choice courses"
-msgstr ""
+msgstr "Insegnamenti a scelta libera"
 
 #: Template/Courses/indexctp:28
 msgid "Inactive courses"
-msgstr ""
+msgstr "Insegnamenti inattivi"
 
 #: Template/Courses/viewctp:11 Template/Element/coursesBlockDisplayctp:21
 #: Template/Exams/indexctp:52 Template/Exams/viewctp:8
@@ -295,165 +303,168 @@ msgstr ""
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:104
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:169
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 #: Template/Courses/viewctp:35
 msgid "Cfu"
-msgstr ""
+msgstr "CFU"
 
 #: Template/Courses/viewctp:39
 msgid "Year"
-msgstr ""
+msgstr "Anno"
 
 #: Template/Courses/viewctp:44 Template/Professorships/viewctp:29
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #: Template/Courses/viewctp:50
 msgid "Requires"
-msgstr ""
+msgstr "Propedeuticità"
 
 #: Template/Courses/viewctp:63
 msgid "Required by"
-msgstr ""
+msgstr "Propedeutico a"
 
 #: Template/Courses/viewctp:79 Template/Element/navbarctp:27
 #: Template/Professors/viewctp:52 Template/Professorships/indexctp:16
 msgid "Professorships"
-msgstr ""
+msgstr "Cattedre"
 
 #: Template/Element/coursesBlockDisplayctp:29
 msgid "There are no courses in this section."
-msgstr ""
+msgstr "Non sono presenti insegnamenti in questa sezione."
 
 #: Template/Element/examsDisplayGroupctp:15
 #: Template/Solutions/add_to_examctp:12
 msgid "Exercise"
-msgstr ""
+msgstr "Esercizio"
 
 #: Template/Element/examsDisplayGroupctp:15
 #: Template/Solutions/add_to_examctp:12 Template/Solutions/viewctp:21
 msgid "Exam"
-msgstr ""
+msgstr "Traccia"
 
 #: Template/Element/examsDisplayGroupctp:19
 msgid "No solutions yet"
-msgstr ""
+msgstr "Ancora nessuna soluzione"
 
 #: Template/Element/examsDisplayGroupctp:19
 msgid "{0} solution{1} found"
-msgstr ""
+msgstr "{0} soluzioni trovate"
 
 #: Template/Element/examsDisplayGroupctp:20
 msgid "Dowload"
-msgstr ""
+msgstr "Download"
 
 #: Template/Element/examsDisplayGroupctp:23
 msgid "Add solution"
-msgstr ""
+msgstr "Aggiungi soluzione"
 
 #: Template/Element/examsDisplayGroupctp:31
 msgid "Solution"
-msgstr ""
+msgstr "Soluzione"
 
 #: Template/Element/examsDisplayGroupctp:31
 msgid "by"
-msgstr ""
+msgstr "di"
 
 #: Template/Element/examsDisplayGroupctp:42
 msgid "There are no exams for this professorship yet!"
-msgstr ""
+msgstr "Non ci sono ancora tracce associate a questa cattedra!"
 
 #: Template/Element/navbarctp:23 Template/Pages/homectp:19
 #: Template/Professors/indexctp:17
 msgid "Professors"
-msgstr ""
+msgstr "Docenti"
 
 #: Template/Element/navbarctp:35 Template/Exams/indexctp:19
 #: Template/Pages/homectp:25
 msgid "Exams"
-msgstr ""
+msgstr "Tracce"
 
 #: Template/Element/navbarctp:38 Template/Exams/viewctp:53
 #: Template/Pages/homectp:28 Template/Solutions/indexctp:9
 msgid "Solutions"
-msgstr ""
+msgstr "Soluzioni"
 
 #: Template/Element/navbarctp:42 Template/Requirements/indexctp:14
 msgid "Requirements"
-msgstr ""
+msgstr "Propedeuticità"
 
 #: Template/Element/navbarctp:60
 msgid "Welcome, "
-msgstr ""
+msgstr "Benvenuto,"
 
 #: Template/Element/navbarctp:63
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
 #: Template/Element/professorshipsDisplayctp:13
 msgid "<i class=\"fa fa-fw fa-info-circle\"></i> Details"
-msgstr ""
+msgstr "<i class=\"fa fa-fw fa-info-circle\"></i> Dettagli"
 
 #: Template/Element/professorshipsDisplayctp:16
 msgid "<i class=\"fa fa-fw fa-file-text\"></i> Add exam"
-msgstr ""
+msgstr "<i class=\"fa fa-fw fa-file-text\"></i> Aggiungi traccia"
 
 #: Template/Element/professorshipsDisplayctp:26
 msgid "There are no professorships linked with this course."
-msgstr ""
+msgstr "Non ci sono cattedre collegate a questo insegnamento."
 
 #: Template/Exams/addctp:10 Template/Exams/add_to_professorshipctp:9
 msgid "List Exams"
-msgstr ""
+msgstr "Elenca tracce"
 
 #: Template/Exams/addctp:13 Template/Exams/add_to_professorshipctp:12
 #: Template/Exams/editctp:11
 msgid "List Professorship"
-msgstr ""
+msgstr "Elenca cattedre"
 
 #: Template/Exams/addctp:20 Template/Exams/add_to_professorshipctp:19
 msgid "Add Exam"
-msgstr ""
+msgstr "Aggiungi traccia"
 
 #: Template/Exams/addctp:23
 msgid "The exam's url. With protocol."
-msgstr ""
+msgstr "L'url della traccia. Con protocollo."
 
 #: Template/Exams/addctp:24 Template/Exams/add_to_professorshipctp:25
 msgid "Upload file"
-msgstr ""
+msgstr "Carica file"
 
 #: Template/Exams/addctp:26
 msgid "Exam upload. Allowed extensions: jpg, pdf, png."
-msgstr ""
+msgstr "Carica traccia. Estensioni permesse: jpg, pdf, png."
 
 #: Template/Exams/addctp:28
 msgid "Flag used to mark everything that is not a written exam."
 msgstr ""
+"Flag utilizzato per contrassegnare tutto ciò che non è una prova scritta."
 
 #: Template/Exams/editctp:9 Template/Exams/indexctp:9 Template/Exams/viewctp:10
 msgid "New Exam"
-msgstr ""
+msgstr "Nuova traccia"
 
 #: Template/Exams/editctp:19
 msgid "Edit Exam"
-msgstr ""
+msgstr "Modifica traccia"
 
 #: Template/Exams/indexctp:21
 msgid "Studeo is currently managing {0} exams"
-msgstr ""
+msgstr "Studeo sta correntemente gestendo {0} esami"
 
 #: Template/Exams/indexctp:22
 msgid ""
 "You can access the exams and all related functionality by selecting the {0} "
 "you're interested in."
 msgstr ""
+"Puoi accedere alle tracce e a tutte le funzionalità correlate selezionando "
+"il {0} che ti interessa."
 
 #: Template/Exams/indexctp:23 Template/Solutions/addctp:28
 #: Template/Solutions/indexctp:13
 msgid "course"
-msgstr ""
+msgstr "corso"
 
 #: Template/Exams/indexctp:37 Template/Professors/indexctp:24
 #: Template/Professorships/indexctp:26 Template/Requirements/indexctp:21
@@ -462,7 +473,7 @@ msgstr ""
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:42;68
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:63;159
 msgid "Actions"
-msgstr ""
+msgstr "Azioni"
 
 #: Template/Exams/indexctp:51 Template/Professorships/indexctp:39
 #: Template/Requirements/indexctp:31 Template/Solutions/indexctp:38
@@ -470,7 +481,7 @@ msgstr ""
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:103
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:168
 msgid "View"
-msgstr ""
+msgstr "Visualizza"
 
 #: Template/Exams/indexctp:53 Template/Professors/editctp:8
 #: Template/Professors/viewctp:10 Template/Professorships/editctp:9
@@ -480,31 +491,31 @@ msgstr ""
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:105
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:65;170
 msgid "Are you sure you want to delete # {0}?"
-msgstr ""
+msgstr "Sei sicuro di voler eliminare # {0}?"
 
 #: Template/Exams/indexctp:61 Template/Professorships/indexctp:49
 #: Template/Requirements/indexctp:41 Template/Solutions/indexctp:48
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:113
 msgid "first"
-msgstr ""
+msgstr "prima"
 
 #: Template/Exams/indexctp:62 Template/Professorships/indexctp:50
 #: Template/Requirements/indexctp:42 Template/Solutions/indexctp:49
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:114
 msgid "previous"
-msgstr ""
+msgstr "precedente"
 
 #: Template/Exams/indexctp:64 Template/Professorships/indexctp:52
 #: Template/Requirements/indexctp:44 Template/Solutions/indexctp:51
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:116
 msgid "next"
-msgstr ""
+msgstr "successiva"
 
 #: Template/Exams/indexctp:65 Template/Professorships/indexctp:53
 #: Template/Requirements/indexctp:45 Template/Solutions/indexctp:52
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:117
 msgid "last"
-msgstr ""
+msgstr "ultima"
 
 #: Template/Exams/indexctp:67 Template/Professorships/indexctp:55
 #: Template/Requirements/indexctp:47 Template/Solutions/indexctp:54
@@ -513,222 +524,230 @@ msgid ""
 "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
 "total"
 msgstr ""
+"Pagina {{page}} di {{pages}}, visualizzati {{current}} elementi di {{count}} "
+"totali"
 
 #: Template/Exams/viewctp:22
 msgid "Professorship"
-msgstr ""
+msgstr "Cattedra"
 
 #: Template/Exams/viewctp:26 Template/Solutions/viewctp:29
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 #: Template/Exams/viewctp:30
 msgid "Path"
-msgstr ""
+msgstr "Path"
 
 #: Template/Exams/viewctp:34
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: Template/Exams/viewctp:38 Template/Solutions/viewctp:33
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #: Template/Exams/viewctp:42
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: Template/Exams/viewctp:46
 msgid "IsExercise"
-msgstr ""
+msgstr "isEsercizio"
 
 #: Template/Exams/viewctp:47
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:132
 msgid "Yes"
-msgstr ""
+msgstr "Sì"
 
 #: Template/Exams/viewctp:47
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:132
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: Template/Layout/errorctp:35
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 #: Template/Layout/errorctp:43
 msgid "Back"
-msgstr ""
+msgstr "Indietro"
 
 #: Template/Pages/aboutctp:12
 msgid "A basic CMS for university courses."
-msgstr ""
+msgstr "Un semplice CMS per corsi universitari "
 
 #: Template/Pages/aboutctp:13
 msgid "GitHub page"
-msgstr ""
+msgstr "Pagina GitHub"
 
 #: Template/Pages/contactsctp:1 Template/Professors/indexctp:23
 msgid "Contacts"
-msgstr ""
+msgstr "Contatti"
 
 #: Template/Pages/contactsctp:6
 msgid "Developer and administrator"
-msgstr ""
+msgstr "Sviluppatore e amministratore"
 
 #: Template/Pages/contactsctp:21;26
 msgid "Administrator"
-msgstr ""
+msgstr "Amministratore"
 
 #: Template/Pages/homectp:34
 msgid "What is this?"
-msgstr ""
+msgstr "Cos'è?"
 
 #: Template/Pages/homectp:36
 msgid ""
 "Studeo is a basic CMS built for university courses. It allows students to "
 "share exams and solutions efficiently."
 msgstr ""
+"Studeo è un semplice CMS per corsi universitari. Permette agli studenti di "
+"condividere tracce e soluzioni in maniera efficiente."
 
 #: Template/Pages/homectp:40
 msgid "May I contribute?"
-msgstr ""
+msgstr "Posso aiutare?"
 
 #: Template/Pages/homectp:42
 msgid ""
 "Studeo is free and open source. You may suggest new features or contribute "
 "directly on the GitHub page."
 msgstr ""
+"Studeo è software libero e open source. Puoi suggerire funzionalità e "
+"partecipare allo sviluppo sulla pagina GitHub."
 
 #: Template/Pages/homectp:47
 msgid "Found an error!"
-msgstr ""
+msgstr "Ho trovato un errore!"
 
 #: Template/Pages/homectp:49
 msgid ""
 "If you think you found some inaccurate information or are experiencing "
 "problems with Studeo, please contact us and describe the issue."
 msgstr ""
+"Se pensi di aver trovato informazioni errate o stai riscontrando problemi "
+"con Studeo, contattaci e descrivici il problema."
 
 #: Template/Pages/homectp:51
 msgid "Contact us"
-msgstr ""
+msgstr "Contattaci"
 
 #: Template/PhpbbUsers/loginctp:7;30
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/loginctp:29
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: Template/PhpbbUsers/loginctp:25
 msgid "Please insert login credentials"
-msgstr ""
+msgstr "Inserisci le credenziali del forum"
 
 #: Template/Professors/addctp:8 Template/Professors/editctp:10
 #: Template/Professors/viewctp:14 Template/Professorships/addctp:7
 #: Template/Professorships/editctp:11 Template/Professorships/indexctp:9
 #: Template/Professorships/viewctp:11
 msgid "List Professors"
-msgstr ""
+msgstr "Elenca docenti"
 
 #: Template/Professors/addctp:15
 msgid "Add Professor"
-msgstr ""
+msgstr "Aggiungi docente"
 
 #: Template/Professors/editctp:9 Template/Professors/indexctp:12
 #: Template/Professors/viewctp:11 Template/Professorships/addctp:9
 #: Template/Professorships/editctp:13 Template/Professorships/indexctp:11
 #: Template/Professorships/viewctp:13
 msgid "New Professor"
-msgstr ""
+msgstr "Nuovo docente"
 
 #: Template/Professors/editctp:17
 msgid "Edit Professor"
-msgstr ""
+msgstr "Modifica docente"
 
 #: Template/Professors/indexctp:21
 msgid "First name"
-msgstr ""
+msgstr "Nome"
 
 #: Template/Professors/indexctp:22
 msgid "Last name"
-msgstr ""
+msgstr "Cognome"
 
 #: Template/Professors/indexctp:36 Template/Professors/viewctp:22
 msgid "Personal Website"
-msgstr ""
+msgstr "Sito web personale"
 
 #: Template/Professors/indexctp:42 Template/Professors/viewctp:28
 msgid "Istitutional Website"
-msgstr ""
+msgstr "Sito web istituzionale"
 
 #: Template/Professors/indexctp:48;54 Template/Professors/viewctp:34
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: Template/Professors/indexctp:59
 msgid "Details"
-msgstr ""
+msgstr "Dettagli"
 
 #: Template/Professors/viewctp:40
 msgid "Alternative Email"
-msgstr ""
+msgstr "Email alternativa"
 
 #: Template/Professors/viewctp:47
 msgid "Notes"
-msgstr ""
+msgstr "Note"
 
 #: Template/Professors/viewctp:80
 msgid "There are no professorships linked to this professor."
-msgstr ""
+msgstr "Non ci sono cattedre associate a questo docente."
 
 #: Template/Professorships/addctp:16
 msgid "Add Professorship"
-msgstr ""
+msgstr "Aggiungi cattedra"
 
 #: Template/Professorships/editctp:20
 msgid "Edit Professorship"
-msgstr ""
+msgstr "Modifica cattedra"
 
 #: Template/Professorships/viewctp:21
 msgid "Professor"
-msgstr ""
+msgstr "Docente"
 
 #: Template/Professorships/viewctp:25 Template/Requirements/viewctp:18
 msgid "Course"
-msgstr ""
+msgstr "Insegnamento"
 
 #: Template/Professorships/viewctp:33
 msgid "Start Date"
-msgstr ""
+msgstr "Data inizio"
 
 #: Template/Professorships/viewctp:37
 msgid "End Date"
-msgstr ""
+msgstr "Data fine"
 
 #: Template/Requirements/addctp:7 Template/Requirements/editctp:8
 #: Template/Requirements/viewctp:10
 msgid "List Requirements"
-msgstr ""
+msgstr "Elenca propedeuticità"
 
 #: Template/Requirements/addctp:14
 msgid "Add Requirement"
-msgstr ""
+msgstr "Aggiungi propedeuticità"
 
 #: Template/Requirements/editctp:15
 msgid "Edit Requirement"
-msgstr ""
+msgstr "Modifica propedeuticità"
 
 #: Template/Requirements/indexctp:8
 msgid "New Requirement"
-msgstr ""
+msgstr "Nuova propedeuticità"
 
 #: Template/Requirements/viewctp:22
 msgid "Required For"
-msgstr ""
+msgstr "Propedeutico a"
 
 #: Template/Solutions/addctp:25
 msgid "Oops!"
-msgstr ""
+msgstr "Oops!"
 
 #: Template/Solutions/addctp:26
 msgid ""
@@ -738,60 +757,71 @@ msgid ""
 "the  related exam. \n"
 "Start by selecting the related {0}."
 msgstr ""
+"Questa funzionalità non è più disponibile! Non dovresti essere qui! Non stai "
+"cercando di hackerare Studeo, vero?\n"
+"Ad ogni modo per aggiungere una soluzione devi cliccare sul pulsante "
+"\"aggiungi soluzione\" dell'esame desiderato.\n"
+"\vInizia selezionando l'{0} corrispondente."
 
 #: Template/Solutions/add_to_examctp:10
 msgid "Add Solution"
-msgstr ""
+msgstr "Aggiungi soluzione"
 
 #: Template/Solutions/add_to_examctp:20
 msgid "An user id of the forum account."
-msgstr ""
+msgstr "L'id di un utente del forum."
 
 #: Template/Solutions/add_to_examctp:21
 msgid ""
 "A string used to identify the author. Use it when there is no user-id from "
 "the forum."
 msgstr ""
+"Una stringa utilizzata per identificare l'autore. Usala se non è possibile "
+"specificare l'id dell'utente nel forum."
 
 #: Template/Solutions/add_to_examctp:22
 msgid "Url (with protocol) to the solution."
-msgstr ""
+msgstr "Url (con protocollo) della soluzione."
 
 #: Template/Solutions/add_to_examctp:23
 msgid ""
 "Descriptive field. Must contain text such as \"Complete solution\" or "
 "\"Exercise x,y,z\"."
 msgstr ""
+"Campo descrittivo. Dovrebbe essere qualcosa di simile a \"Svolgimento "
+"completo\" oppure \"Esercizio 1,2,3\"."
 
 #: Template/Solutions/editctp:15
 msgid "Edit Solution"
-msgstr ""
+msgstr "Modifica soluzione"
 
 #: Template/Solutions/indexctp:11
 msgid "Studeo is currently managing {0} solutions"
-msgstr ""
+msgstr "Studeo sta correntemente gestendo {0} soluzioni"
 
 #: Template/Solutions/indexctp:12
 msgid ""
 "You can access the solutions and add your own solution by selecting the {0} "
 "you're interested in."
 msgstr ""
+"Puoi accedere alle soluzioni e aggiungerne di nuove selezionando il {0} che "
+"ti interessa."
 
 #: Template/Solutions/viewctp:25
 msgid "AuthorAlt"
-msgstr ""
+msgstr "Autore (alternativo)"
 
 #: Template/Solutions/viewctp:37
 msgid "Author"
-msgstr ""
+msgstr "Autore"
 
 #: Template/Solutions/viewctp:41
 msgid "AddedBy"
-msgstr ""
+msgstr "Aggiunto da"
 
 #: Template/Solutions/viewctp:45
 msgid "info"
-msgstr ""
+msgstr "info"
 
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Element/formctp:39
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:66
@@ -860,25 +890,25 @@ msgstr ""
 
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/src/View/Helper/BootstrapFormHelperphp:620
 msgid "files selected"
-msgstr ""
+msgstr "file selezionati"
 
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/src/View/Helper/BootstrapFormHelperphp:621
 msgid "Choose Files"
-msgstr ""
+msgstr "Scegli file"
 
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/src/View/Helper/BootstrapFormHelperphp:621
 msgid "Choose File"
-msgstr ""
+msgstr "Scegli file"
 
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/src/View/Helper/BootstrapFormHelperphp:949;950
 msgid "Search"
-msgstr ""
+msgstr "Ricerca"
 
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/src/View/Helper/BootstrapHtmlHelperphp:243
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/src/View/Helper/BootstrapModalHelperphp:274;330
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/tests/TestCase/View/Helper/BootstrapModalHelperTestphp:57;96;137;214
 msgid "Close"
-msgstr ""
+msgstr "Chiudi"
 
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/src/View/Helper/BootstrapNavbarHelperphp:174
 #: C:/wamp64/www/studeo/vendor/holt59/cakephp3-bootstrap-helpers/tests/TestCase/View/Helper/BootstrapNavbarHelperTestphp:55;119
