@@ -118,6 +118,9 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+        $user = $this->Auth->user();
+        $this->set('isAdmin',in_array($user['phpbb_group']['group_name'],['ADMINISTRATORS']));
+        $this->set('isMod',  in_array($user['phpbb_group']['group_name'],['GLOBAL_MODERATORS']));
     }
     
     

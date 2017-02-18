@@ -3,14 +3,14 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Course'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Professorships'), ['controller' => 'Professorships', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Professorship'), ['controller' => 'Professorships', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
+<?php if($isAdmin):?>
+<div class="btn-group">
+	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Course'), ['action' => 'add'],['class'=>'btn btn-primary','escape'=>false]) ?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Professorships'), ['controller' => 'Professorships', 'action' => 'index'],['class'=>'btn btn-default','escape'=>false]) ?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Professorship'), ['controller' => 'Professorships', 'action' => 'add'],['class'=>'btn btn-default','escape'=>false]) ?>
+</div>
+<?php endif;?>
 
 <h1 class="page-title"><?=__('Courses')?></h1>
 

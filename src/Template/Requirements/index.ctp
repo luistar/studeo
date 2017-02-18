@@ -3,14 +3,13 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Requirement'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
+<div class="btn-group">
+	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Requirement'), ['action' => 'add'],['class'=>'btn btn-primary','escape'=>false])?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Courses'), ['controller' => 'Courses', 'action' => 'index'],['class'=>'btn btn-default','escape'=>false]) ?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Course'), ['controller'=>'Courses','action' => 'add'],['class'=>'btn btn-default','escape'=>false])?>
+</div>
+
 <div class="requirements index large-9 medium-8 columns content">
     <h3><?= __('Requirements') ?></h3>
     <table class="table table-bordered table-striped">

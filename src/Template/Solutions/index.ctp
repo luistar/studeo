@@ -3,14 +3,8 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Solution'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Exams'), ['controller' => 'Exams', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Exam'), ['controller' => 'Exams', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
+
 <div class="solutions">
     <h1 class="page-header"><?= __('Solutions') ?></h1>
     <div class="jumbotron">
@@ -18,7 +12,7 @@
     	<p><?=__('You can access the solutions and add your own solution by selecting the {0} you\'re interested in.',
     			$this->Html->link(__('course'),['controller'=>'Courses']))?></p>
     </div>
-    <?php if(true)://TODO only admins shold see this part of the page?>
+    <?php if($isAdmin):?>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>

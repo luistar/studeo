@@ -22,9 +22,11 @@
           	<li class=""> <!-- TODO: manage active class -->
             	<?=$this->Html->link(__('Professors'),['controller'=>'Professors','action'=>'index'])?>
             </li>
+            <?php if($isAdmin):?>
           	<li class=""> 
             	<?=$this->Html->link(__('Professorships'),['controller'=>'Professorships','action'=>'index'])?>
             </li>
+            <?php endif;?>
           	<!-- LINK to courses -->
             <li class=""> 
             	<?=$this->Html->link(__('Courses'),['controller'=>'Courses','action'=>'index'])?>
@@ -35,19 +37,11 @@
             <li class=""> 
             	<?=$this->Html->link(__('Solutions'),['controller'=>'Solutions','action'=>'index'])?>
             </li>
+            <?php if($isAdmin):?>
             <li class=""> 
             	<?=$this->Html->link(__('Requirements'),['controller'=>'Requirements','action'=>'index'])?>
             </li>
-            <!-- Funzionalità di configurazione -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Link 2 Dropdown <i class="fa fa-caret-down"></i></a>
-              <ul class="dropdown-menu">
-                <li><?= $this->Html->link('sublink1',[])?></li>
-                <li role="separator" class="divider"></li>
-                <li><?= $this->Html->link('sublink2',[])?></li>
-                <li><?= $this->Html->link('sublink3',[])?></li>
-              </ul>
-            </li>
+            <?php endif; ?>
 		</ul>
           
           <!--  parte di codice relativa alla parte allineata a destra della navbar -->
@@ -65,18 +59,6 @@
                 	<li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= __('Welcome, ')?> <strong><?=$this->request->session()->read('Auth.User.username') ?></strong><span class="caret"></span></a>
 		              <ul class="dropdown-menu">
-		              	<li>
-	                		<?= $this->Html->link('<i class="fa fa-tint fa-fw"></i> ' . __('Customize (TODO)'),[
-	                				'controller' => 'PhpbbUsers',
-	                				'action' => 'personalizza'
-	                		],['escape'=>false])?>
-                		</li>
-		              	<li>
-	                		<?= $this->Html->link('<i class="fa fa-key fa-fw"></i> ' . __('Change Password (TODO)'),[
-	                				'controller' => 'PhpbbUsers',
-	                				'action' => 'changePassword'
-	                		],['escape'=>false])?>
-                		</li>
 		              	<li>
 	                		<?= $this->Html->link('<i class="fa fa-sign-out fa-fw"></i> ' . __('Logout'),[
 	                				'controller' => 'PhpbbUsers',

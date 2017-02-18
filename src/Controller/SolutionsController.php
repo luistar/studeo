@@ -11,6 +11,13 @@ use Cake\ORM\TableRegistry;
  */
 class SolutionsController extends AppController
 {
+	
+	public function isAuthorized($user = null){
+		$action = $this->request->params['action'];
+		if(in_array($action,['index','view','add-to-exam','add']))
+			return true; //all logged users can access these actions
+		return parent::isAuthorized($user);
+	}
 
     /**
      * Index method

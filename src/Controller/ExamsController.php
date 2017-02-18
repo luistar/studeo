@@ -18,6 +18,13 @@ class ExamsController extends AppController
 		$this->loadComponent('File'); //custom component creato in src/Controller/Component
 	}
 	
+	public function isAuthorized($user = null){
+		$action = $this->request->params['action'];
+		if(in_array($action,['index','view','add-to-professorship','add']))
+			return true; //all logged users can access these actions
+		return parent::isAuthorized($user);
+	}
+	
     /**
      * Index method
      *
@@ -232,4 +239,5 @@ class ExamsController extends AppController
     	$this->set('professorship',$professorship);
     	$this->set('_serialize', ['exam']);
     }
+    
 }

@@ -7,12 +7,12 @@
 <?= $this->Html->css('/DataTables/datatables.min.css', ['block'=>'css']);?>
 <?= $this->Html->script('/DataTables/datatables.min.js', ['inline' => false, 'block' => 'script']);?>
 
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Professor'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
+<?php if($isAdmin):?>
+<div class="btn-group">
+	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Professor'), ['action' => 'add'],['class'=>'btn btn-primary','escape'=>false]) ?>
+</div>
+<?php endif;?>
+
 <div class="">
     <h1 class="page-header"><?= __('Professors') ?></h1>
     <table class="table table-striped table-bordered" id="professorsTable">
@@ -57,7 +57,7 @@
                 </td>
                 <td class="actions">
                     <?= $this->Html->link('<i class="fa fa-fw fa-info-circle"></i>'. __('Details'), ['action' => 'view', $professor->id],['class'=>'btn btn-xs btn-primary','escape'=>false]) ?>
-                    <?php if(true)://TODO show these only if user is admin (or mod?) ?> 
+                    <?php if($isAdmin): ?> 
 	                    <?= $this->Html->link('<i class="fa fa-fw fa-edit"></i>'.__('Edit'), ['action' => 'edit', $professor->id],['class'=>'btn btn-xs btn-warning','escape'=>false]) ?>
 	                    <?= $this->Form->postLink('<i class="fa fa-fw fa-trash"></i>'.__('Delete'), ['action' => 'delete', $professor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $professor->id),'class'=>'btn btn-xs btn-danger','escape'=>false]) ?>
 	                <?php endif;?>
@@ -71,7 +71,7 @@
 <script>
 $('#professorsTable').DataTable({
 	"columnDefs": [
-		{ "searchable": false, "targets": [2,3] }
+		{ "searchable": false, "orderable": false, "targets": [2,3] }
 	]
 });
 </script>

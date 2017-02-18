@@ -13,6 +13,13 @@ use Cake\ORM\TableRegistry;
  */
 class CoursesController extends AppController
 {
+	
+	public function isAuthorized($user = null){
+		$action = $this->request->params['action'];
+		if(in_array($action,['index','view']))
+			return true; //all logged users can access these actions
+		return parent::isAuthorized($user);
+	}
 
     /**
      * Index method
@@ -140,5 +147,4 @@ class CoursesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    
 }

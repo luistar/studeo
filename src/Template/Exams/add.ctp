@@ -5,14 +5,15 @@ use Cake\Chronos\Date;
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Exams'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Professorships'), ['controller' => 'Professorships', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Professorship'), ['controller' => 'Professorships', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
+<div class="btn-group" style="margin-bottom: 25px;">
+	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Exams'), ['action' => 'index'],['class'=>'btn btn-primary','escape'=>false]) ?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Courses'), ['controller' => 'Courses', 'action' => 'index'],['class'=>'btn btn-default','escape'=>false]) ?>
+	<?php if($isAdmin):?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Professorship'), ['controller' => 'Professorships', 'action' => 'index'],['class'=>'btn btn-default','escape'=>false]) ?>
+	<?php endif;?>
+</div>
+
 <div class="exams form large-9 medium-8 columns content">
     <?= $this->Form->create($exam,['type'=>'file']) ?>
     <fieldset>

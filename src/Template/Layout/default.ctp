@@ -39,7 +39,7 @@ $cakeDescription = 'Studeo: a CMS for university courses';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <?= $this->element('navbar'); //inserisce navbar da src/Template/Element/navbar.ctp ?>
+    <?= $this->element('navbar',['isAdmin'=>$isAdmin,'isMod'=>$isMod]); //inserisce navbar da src/Template/Element/navbar.ctp ?>
     <div class="container">
     	<?= $this->Flash->render(); //renders flash element ?>
     </div>

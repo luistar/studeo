@@ -3,14 +3,12 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Courses'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Professorships'), ['controller' => 'Professorships', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Professorship'), ['controller' => 'Professorships', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<div class="btn-group" style="margin-bottom: 25px;">
+	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Courses'), ['action' => 'index'],['class'=>'btn btn-default','escape'=>false]) ?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Professorships'), ['controller' => 'Professorships', 'action' => 'index'],['class'=>'btn btn-default','escape'=>false]) ?>
+	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Professorship'), ['controller' => 'Professorships', 'action' => 'add'],['class'=>'btn btn-default','escape'=>false]) ?>
+</div>
+
 <div class="courses form large-9 medium-8 columns content">
     <?= $this->Form->create($course) ?>
     <fieldset>

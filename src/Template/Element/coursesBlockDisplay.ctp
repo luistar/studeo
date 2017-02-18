@@ -17,13 +17,11 @@
 				<a href="<?= $this->Url->build(['action'=>'view',$course->id]);?>" class="list-group-item"
 					<?php if($color):?> style="border-color: <?=$color?>;"<?php endif;?>>
 					<?=h($course->name);?>
-					<?php //TODO display buttons only to users allowed to perform these actions con courses?>
-					<?= $this->Form->button('<i class="fa fa-fw fa-trash"></i>'.__('Delete'),
-							['class'=>'btn btn-xs btn-danger link-button pull-right studeo-action-button', 'escape'=>false,
-							 'data-link'=>$this->Url->build(['action'=>'delete',$course->id])])?>
+					<?php if($isAdmin):?>
 					<?= $this->Form->button('<i class="fa fa-fw fa-pencil"></i>'.__('Edit'),
 							['class'=>'btn btn-xs btn-warning link-button pull-right studeo-action-button', 'escape'=>false,
 							 'data-link'=>$this->Url->build(['action'=>'edit',$course->id])])?>
+					<?php endif;?>
 				</a>
 			<?php endforeach;?>
 		<?php else: ?>
