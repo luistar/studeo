@@ -32,22 +32,23 @@
 <div class="row" >
 	<div class="col-md-4">
 		<h3 class="page-header"><?=__('What is this?')?></h3>
-		<p>
+		<p style="font-size: 1.1em">
 		<?=__('Studeo is a basic CMS built for university courses. It allows students to share exams and solutions efficiently.')?>
 		</p>
 	</div>
 	<div class="col-md-4">
 		<h3 class="page-header"><?=__('May I contribute?')?></h3>
-		<p>
+		<p style="font-size: 1.1em">
 		<?=__('Studeo is free and open source. You may suggest new features or contribute directly on the GitHub page.')?>
 		</p>
 		<?=$this->Html->link('<i class="fa fa-fw fa-github"></i> '.'GitHub Page','https://www.github.com/luistar/studeo',['class'=>'btn btn-primary','escape'=>false])?>
 	</div>
 	<div class="col-md-4">
 		<h3 class="page-header"><?=__('Found an error!')?></h3>
-		<p>
-		<?=__('If you think you found some inaccurate information, please contact the staff and describe the issue.')?>
+		<p style="font-size: 1.1em">
+		<?=__('If you think you found some inaccurate information or are experiencing problems with Studeo, please contact us and describe the issue.')?>
 		</p>
+		<?=$this->Html->link('<i class="fa fa-fw fa-users"></i> '.__('Contact us'),['controller'=>'Pages','contacts'],['class'=>'btn btn-primary','escape'=>false])?>
 	</div>
 </div>
 
