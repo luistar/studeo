@@ -1,0 +1,277 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2017-02-18 14:14+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/DebugTimerphp:135
+msgid "Core Processing (Derived from $_SERVER[\"REQUEST_TIME\"])"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:53
+msgid "Controller initialization"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:62
+msgid "Controller action start"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:63;68
+msgid "Controller action"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:73;74;94
+msgid "View Render start"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:83;88
+msgid "Render {0}"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:95
+msgid "Controller shutdown"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:45
+msgid "-> Testing :url"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:72
+msgid "Total Requests made: :requests"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:73
+msgid "Total Time elapsed: :duration (seconds)"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:77
+msgid "Requests/Second: :rps req/sec"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:81
+msgid "Average request time: :average-time seconds"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:85
+msgid "Standard deviation of average request time: :std-dev"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:89
+msgid "Longest/shortest request: :longest sec/:shortest sec"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:147
+msgid "Allows you to obtain some rough benchmarking statisticsabout a fully qualified URL."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:153
+msgid "The URL to request."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:158
+msgid "Number of iterations to perform."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:162
+msgid "Maximum total time for all iterations, in seconds.If a single iteration takes more than the timeout, only one request will be made"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:168
+msgid "Example Use: `cake benchmark --n 10 --t 100 http://localhost/testsite`. <info>Note:</info> this benchmark does not include browser render times."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/cache_panelctp:21
+msgid "There were no cache operations this request."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/cache_panelctp:25
+msgid "{0} Metrics"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/cache_panelctp:31
+msgid "Metric"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/cache_panelctp:32
+msgid "Total"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:28
+msgid "Application Constants"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:49
+msgid "No application environment available."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:53
+msgid "CakePHP Constants"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:74
+msgid "CakePHP environment unavailable."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:78
+msgid "PHP Environment"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:99
+msgid "PHP environment unavailable."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:104
+msgid "Hidef Environment"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:125
+msgid "No Hidef environment available."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/history_panelctp:23
+msgid "No previous requests logged."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/history_panelctp:25
+msgid "previous requests available"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/history_panelctp:29;53
+msgid "Back to current request"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/log_panelctp:21
+msgid "There were no log entries made this request"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/log_panelctp:24
+msgid "{0} Messages"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/log_panelctp:28
+msgid "Time"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/log_panelctp:29
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:32
+msgid "Message"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:22
+msgid "{0} not found"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:27
+msgid "Direct dependencies only"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:32
+msgid "Requirements ({0})"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:58
+msgid "Dev Requirements ({0})"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/request_panelctp:31
+msgid "Headers already sent at file {0} and line {1}."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/request_panelctp:40
+msgid "No post data."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/request_panelctp:49
+msgid "No querystring data."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/request_panelctp:59
+msgid "No Cookie data."
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/routes_panelctp:11
+msgid "Route name"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/routes_panelctp:12
+msgid "URI template"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/routes_panelctp:13
+msgid "Defaults"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/sql_log_panelctp:58
+msgid "Total Time: {0} ms &mdash; Total Queries: {1} &mdash; Total Rows: {2}"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/sql_log_panelctp:71
+msgid "Query"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/sql_log_panelctp:72
+msgid "Rows"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/sql_log_panelctp:73
+msgid "Took (ms)"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/sql_log_panelctp:91
+msgid "No active database connections"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:23
+msgid "Memory"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:25
+msgid "Peak Memory Use:"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:33
+msgid "Memory Use"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:48
+msgid "Timers"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:50
+msgid "Total Request Time:"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:57
+msgid "Event"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:58
+msgid "Time in ms"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:59
+msgid "Timeline"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/Template/Element/variables_panelctp:28
+msgid "Sort variables by name"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/View/Helper/SimpleGraphHelperphp:76
+msgid "Starting {0}ms into the request, taking {1}ms"
+msgstr ""
+
+#: C:/wamp64/www/studeo/vendor/cakephp/debug_kit/src/View/Helper/TidyHelperphp:110
+msgid "No markup errors found"
+msgstr ""
+
