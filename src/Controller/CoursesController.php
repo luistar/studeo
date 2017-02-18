@@ -67,6 +67,16 @@ class CoursesController extends AppController
         $requiredBy = TableRegistry::get('Requirements')->find('all',['contain'=>['CoursesRequirement']])->where(['required_for'=>$course->id])->all();
 		$requiredFrom = TableRegistry::get('Requirements')->find('all',['contain'=>['RequiredFor']])->where(['course_id'=>$course->id])->all();
         
+		foreach($course->professorships as $professorship){
+			foreach($professorship->exams as $exam){
+				foreach($exam->solutions as $solution){
+					if($solution->author){
+						$solution->userAuthor = TableRegistry::get('PhpbbUsers')->get($solution->author);
+					}
+				}
+			}
+		}
+		
 		$this->set('requiredBy',$requiredBy);
 		$this->set('requiredFrom',$requiredFrom);
 		$this->set('course', $course);
