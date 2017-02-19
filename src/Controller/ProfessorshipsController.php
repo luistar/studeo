@@ -67,12 +67,12 @@ class ProfessorshipsController extends AppController
      */
     public function add()
     {
-    	$professors_list = $this->Professorships->Professors->find()->select(['id','firstName','lastName'])->all();
+    	$professors_list = $this->Professorships->Professors->find()->select(['id','firstName','lastName'])->orderAsc('lastName')->all();
         if($professors_list->count()==0){
         	$this->Flash->error(__("No professors yet. You cannot add professorships until there is at least one professor."));
         	return $this->redirect(['controller'=>'Professorships','action'=>'index']); //redirect to professorships index
         }
-        $courses = $this->Professorships->Courses->find('list');
+        $courses = $this->Professorships->Courses->find('list')->orderAsc('name');
         if($courses->count()==0){
         	$this->Flash->error(__("No courses yet. You cannot add professorships until there is at least one course."));
         	return $this->redirect(['controller'=>'Professorships','action'=>'index']); //redirect to professorships index
@@ -90,7 +90,7 @@ class ProfessorshipsController extends AppController
         
         
         foreach($professors_list as $professor) {
-        	$professors[$professor->id] = $professor->name;
+        	$professors[$professor->id] = $professor->lastName . ' ' . $professor->firstName;
         }
         
         
