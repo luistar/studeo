@@ -36,9 +36,9 @@
                 <td><?= $professorship->start_date ?></td>
                 <td><?= $professorship->end_date ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $professorship->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $professorship->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $professorship->id], ['confirm' => __('Are you sure you want to delete # {0}?', $professorship->id)]) ?>
+                    <?= $this->Html->link('<i class="fa fa-fw fa-info-circle"></i> '.__('View'), ['action' => 'view', $professorship->id],['class'=>'btn btn-xs btn-primary','escape'=>false]) ?>
+                    <?= $this->Html->link('<i class="fa fa-fw fa-edit"></i> '.__('Edit'), ['action' => 'edit', $professorship->id],['class'=>'btn btn-xs btn-warning','escape'=>false]) ?>
+                    <?= $this->Form->postLink('<i class="fa fa-fw fa-trash"></i> '.__('Delete'), ['action' => 'delete', $professorship->id], ['confirm' => __('Are you sure you want to delete # {0}?', $professorship->id),'class'=>'btn btn-xs btn-danger','escape'=>false]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
