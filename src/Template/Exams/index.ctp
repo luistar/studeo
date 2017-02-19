@@ -23,7 +23,7 @@
     			$this->Html->link(__('course'),['controller'=>'Courses']))?></p>
     </div>
     
-    <?php if(true): //TODO only admins and mods should see this section?>
+    <?php if($isAdmin):?>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
