@@ -28,7 +28,7 @@
 				<div class="list-group collapse studeo-solutions-list" id="exam-<?=$exam->id?>">
 					<?php foreach($exam->solutions as $solution): ?>
 						<?= $this->Html->link(
-								$solution->info ? h($solution->info) :__('Solution').' '.__('by').' <strong>'. ($solution->author ? h($solution->userAuthor->username) : h($solution->authorAlt)).'</strong>',
+								($solution->info ? h($solution->info) :__('Solution')).' '.__('by').' <strong>'. ($solution->author ? h($solution->userAuthor->username) : h($solution->authorAlt)).'</strong>',
 								$solution->url,['class'=>'list-group-item studeo-solution-item','escape'=>false]
 							)?>
 					<?php endforeach; ?>

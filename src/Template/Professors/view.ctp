@@ -55,9 +55,9 @@
     	<table class="table table-striped table-bordered">
     		<thead>
     			<tr>
-		    	 	<th>Course</th>
-		    	 	<th>Start Date</th>
-		    	 	<th>End Date</th>
+		    	 	<th><?= __('Course')?></th>
+		    	 	<th><?= __('Start Date')?></th>
+		    	 	<th><?= __('End Date')?></th>
 		    	 </tr>
     		</thead>
     		<tbody>
