@@ -16,6 +16,7 @@
         <legend><?= __('Add Professorship') ?></legend>
         <?php
             //echo $this->Form->input('professor_id', ['options' => $professors]);
+            echo $this->Form->label(__('Professor'));
             echo $this->Form->select('professor_id', $professors, ['empty'=>false]);
             echo $this->Form->input('course_id', ['options' => $courses]);
             echo $this->Form->input('description');
