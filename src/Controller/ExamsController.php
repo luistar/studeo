@@ -20,7 +20,7 @@ class ExamsController extends AppController
 	
 	public function isAuthorized($user = null){
 		$action = $this->request->params['action'];
-		if(in_array($action,['index','view','add-to-professorship','add','download']))
+		if(in_array($action,['index','view','addToProfessorship','add','download']))
 			return true; //all logged users can access these actions
 		return parent::isAuthorized($user);
 	}

@@ -14,7 +14,7 @@ class SolutionsController extends AppController
 	
 	public function isAuthorized($user = null){
 		$action = $this->request->params['action'];
-		if(in_array($action,['index','add-to-exam','add']))
+		if(in_array($action,['index','addToExam','add']))
 			return true; //all logged users can access these actions
 		return parent::isAuthorized($user);
 	}
