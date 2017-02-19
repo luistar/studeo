@@ -51,7 +51,7 @@
                 	<?php if($professor->email2):?>
                 		<?= $this->Html->link('<i class="fa fa-fw fa-envelope"></i>','mailto:'.$professor->email2,[
                 				'escape'=>false,'target'=>'_blank','_full'=>true,
-                				'data-toggle'=>"popover", 'data-trigger'=>'hover','data-placement'=>'top', 'title'=>__('Email'), 'data-content'=>$professor->email1
+                				'data-toggle'=>"popover", 'data-trigger'=>'hover','data-placement'=>'top', 'title'=>__('Email'), 'data-content'=>$professor->email2
                 		])?>
                 	<?php endif; ?>
                 </td>
