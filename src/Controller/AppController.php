@@ -68,8 +68,8 @@ class AppController extends Controller
          * Enable the following components for recommended CakePHP security settings.
          * see http://book.cakephp.org/3.0/en/controllers/components/security.html
          */
-        //$this->loadComponent('Security');
-        //$this->loadComponent('Csrf');
+        $this->loadComponent('Security');
+        $this->loadComponent('Csrf');
         
         /*
          * Load and setup the authentication component
@@ -118,9 +118,11 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
-        $user = $this->Auth->user();
-        $this->set('isAdmin',in_array($user['phpbb_group']['group_name'],['ADMINISTRATORS']));
-        $this->set('isMod',  in_array($user['phpbb_group']['group_name'],['GLOBAL_MODERATORS']));
+        if($this->Auth){
+	        $user = $this->Auth->user();
+	        $this->set('isAdmin',in_array($user['phpbb_group']['group_name'],['ADMINISTRATORS']));
+	        $this->set('isMod',  in_array($user['phpbb_group']['group_name'],['GLOBAL_MODERATORS']));
+        }
     }
     
     
