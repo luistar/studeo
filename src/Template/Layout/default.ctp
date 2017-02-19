@@ -33,6 +33,15 @@ $cakeDescription = 'Studeo: a CMS for university courses';
 	<link rel="manifest" href="/manifest.json">
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="theme-color" content="#ffffff">
+	
+	<?php /*facebook opengraph meta*/?>
+	
+	<meta property="og:image:height" content="508">
+	<meta property="og:image:width" content="970">
+	<meta property="og:description" content="Condividi tracce e soluzioni in maniera efficiente.">
+	<meta property="og:title" content="Studeo: Informatica UniNa">
+	<meta property="og:image" content="/img/og-image.jpg">
+	<meta property="og:url" content="studeo.informatica-unina.com">
 
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('font-awesome.min.css') ?>
