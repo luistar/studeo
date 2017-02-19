@@ -21,10 +21,12 @@ use Cake\Chronos\Date;
         	echo $this->Form->input('professorship',[
         		'value'=> $professorship->course->name .' ('.$professorship->professor->name.') '.$professorship->start_date.' - '.$professorship->end_date, 
         		'disabled'=>'disabled']);
-            echo $this->Form->input('url');
+            echo $this->Form->input('url',['help'=>__('The exam\'s url. With protocol.')]);
             echo $this->Form->label(__('Upload file'));
             echo $this->Form->file('file');
+            echo '<p class="help-block">'.__('Exam upload. Allowed extensions: jpg, pdf, png.')."</p>";
             echo $this->Form->input('isExercise');
+            echo '<p class="help-block">'.__('Flag used to mark everything that is not a written exam.')."</p>";
             echo $this->Form->input('date', ['empty' => true,'minYear'=>2000,'maxYear'=>date("Y")]);
             echo $this->Form->input('info');
         ?>
