@@ -12,6 +12,13 @@ use Cake\ORM\TableRegistry;
 class ProfessorshipsController extends AppController
 {
 
+	public function isAuthorized($user = null){
+		$action = $this->request->params['action'];
+		if(in_array($action,['view']))
+			return true; //all logged users can access these actions
+			return parent::isAuthorized($user);
+	}
+	
     /**
      * Index method
      *
