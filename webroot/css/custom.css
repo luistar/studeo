@@ -145,3 +145,8 @@ Studeo colors and buttons
 .popover {
     max-width: none;
 }
+
+/*NAVBAR LOGO*/
+.navbar-brand {
+    padding: 5px 15px;
+}
