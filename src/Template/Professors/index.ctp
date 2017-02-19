@@ -69,9 +69,14 @@
 </div>
 
 <script>
-$('#professorsTable').DataTable({
-	"columnDefs": [
-		{ "searchable": false, "orderable": false, "targets": [2,3] }
-	]
+$(document).ready(function(){
+	$('#professorsTable').DataTable({
+		"columnDefs": [
+			{ "searchable": false, "orderable": false, "targets": [2,3] }
+		],
+		"drawCallback": function( settings ) {
+			$('[data-toggle="popover"]').popover(); 
+	    }
+	});
 });
 </script>
