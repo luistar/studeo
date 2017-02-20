@@ -385,5 +385,6 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+    	'cookie' => 'STUDEO'
     ],
 ];
