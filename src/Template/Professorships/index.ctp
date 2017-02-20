@@ -4,6 +4,9 @@
   */
 ?>
 
+<?= $this->Html->css('/DataTables/datatables.min.css', ['block'=>'css']);?>
+<?= $this->Html->script('/DataTables/datatables.min.js', ['inline' => false, 'block' => 'script']);?>
+
 <div class="btn-group">
 	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Professorship'), ['action' => 'add'],['class'=>'btn btn-primary','escape'=>false]) ?>
 	<?= $this->Html->link('<i class="fa fa-fw fa-list"></i> '.__('List Professors'), ['controller'=>'Professors','action' => 'index'],['class'=>'btn btn-default','escape'=>false]) ?>
@@ -14,10 +17,10 @@
 
 <div class="professorships">
     <h1 class="page-header"><?= __('Professorships') ?></h1>
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered" id="professorshipsTable">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <?php /* <th scope="col"><?= $this->Paginator->sort('id') ?></th> */?>
                 <th scope="col"><?= $this->Paginator->sort('professor_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('course_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('description') ?></th>
@@ -29,7 +32,7 @@
         <tbody>
             <?php foreach ($professorships as $professorship): ?>
             <tr>
-                <td><?= $this->Number->format($professorship->id) ?></td>
+                <?php /* <td><?= $this->Number->format($professorship->id) ?></td> */?>
                 <td><?= $professorship->has('professor') ? $this->Html->link($professorship->professor->name, ['controller' => 'Professors', 'action' => 'view', $professorship->professor->id]) : '' ?></td>
                 <td><?= $professorship->has('course') ? $this->Html->link($professorship->course->name, ['controller' => 'Courses', 'action' => 'view', $professorship->course->id]) : '' ?></td>
                 <td><?= h($professorship->description) ?></td>
@@ -44,14 +47,14 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
 </div>
+
+<script>
+$(document).ready(function(){
+	$('#professorshipsTable').DataTable({
+		"columnDefs": [
+			{ "searchable": false, "orderable": false, "targets": [5] }
+		]
+	});
+});
+</script>

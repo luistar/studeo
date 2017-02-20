@@ -26,10 +26,7 @@ class ProfessorshipsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Professors', 'Courses']
-        ];
-        $professorships = $this->paginate($this->Professorships);
+        $professorships = $this->Professorships->find('all',['contain' => ['Professors', 'Courses']]);
 
         $this->set(compact('professorships'));
         $this->set('_serialize', ['professorships']);
