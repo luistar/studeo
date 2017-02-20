@@ -77,6 +77,10 @@ class CoursesController extends AppController
 			}
 		}
 		
+		usort($course->professorships, function($a, $b){
+			return $a->start_date > $b->start_date;
+		});
+		
 		$this->set('requiredBy',$requiredBy);
 		$this->set('requiredFrom',$requiredFrom);
 		$this->set('course', $course);
