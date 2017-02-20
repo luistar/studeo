@@ -232,7 +232,7 @@ class ExamsController extends AppController
     		if (!$error && $mimeCheck && $this->Exams->save($exam)) {
     			$this->Flash->success(__('The exam has been saved.'));
     	
-    			return $this->redirect(['action' => 'index']);
+    			return $this->redirect(['controller'=>'Courses','action' => 'view',$professorship->course->id]);
     		}
     		if($error)
     			$this->Flash->error($error);
