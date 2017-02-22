@@ -45,6 +45,9 @@ class ProfessorshipsController extends AppController
             'contain' => ['Professors', 'Courses','Exams'=>['Solutions']]
         ]);
         
+        usort($professorship->exams, function($a, $b){
+        	return $a->date > $b->date;
+        });
         foreach($professorship->exams as $exam){
         	foreach($exam->solutions as $solution){
         		if($solution->author){

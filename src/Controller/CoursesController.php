@@ -68,6 +68,9 @@ class CoursesController extends AppController
 		$requiredFrom = TableRegistry::get('Requirements')->find('all',['contain'=>['RequiredFor']])->where(['course_id'=>$course->id])->all();
         
 		foreach($course->professorships as $professorship){
+			usort($professorship->exams, function($a, $b){
+				return $a->date > $b->date;
+			});
 			foreach($professorship->exams as $exam){
 				foreach($exam->solutions as $solution){
 					if($solution->author){
