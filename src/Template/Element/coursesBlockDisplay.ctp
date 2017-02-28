@@ -11,7 +11,7 @@
 	<div class="panel-heading" <?php if($color):?> style="background-color: <?=$color?>; border-color: <?=$color?>;"<?php endif;?>>
 		<?=h($title)?>
 	</div>
-	<table class="table">
+	<table class="table studeo-courses-table">
 		<?php if(!empty($courses)):?>
 			<?php foreach($courses as $courseElem): ?>
 				<?php 
@@ -19,9 +19,9 @@
 					$examsCount = $courseElem['examsCount'];
 					$solCount = $courseElem['solutionsCount'];
 				?>
-				<tr>
-					<td class="col-sm-5"><a href="<?= $this->Url->build(['action'=>'view',$course->id]);?>" class=""
-					<?php if($color):?> style="border-color: <?=$color?>;"<?php endif;?>>
+				<tr <?php if($color):?> style="border-top: 1px solid <?=$color?> !important;"<?php endif;?>>
+					<td class="col-sm-5" >
+					<a href="<?= $this->Url->build(['action'=>'view',$course->id]);?>">
 					<?=h($course->name);?></a></td>
 					<td>(<?=$examsCount.' '.__n(__('exam'),__('exams'),$examsCount)?>,
 					 <?=$solCount.' '.__n(__('solution'),__('solutions'),$solCount)?>)</td>

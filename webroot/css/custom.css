@@ -55,6 +55,10 @@ body{
 	overflow: hidden;
 }
 
+.studeo-courses-table tbody tr td {
+	border-top: none;
+}
+
 /**
  * CSS for course view page
  */
