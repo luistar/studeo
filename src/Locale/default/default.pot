@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2017-02-18 14:14+0000\n"
+"POT-Creation-Date: 2017-02-28 09:21+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -18,23 +18,23 @@ msgstr ""
 msgid "Authentication required to continue."
 msgstr ""
 
-#: Controller/AppControllerphp:140
+#: Controller/AppControllerphp:142
 msgid "Sorry! You cannot access this functionality!"
 msgstr ""
 
-#: Controller/CoursesControllerphp:97;131
+#: Controller/CoursesControllerphp:110;144
 msgid "The course has been saved."
 msgstr ""
 
-#: Controller/CoursesControllerphp:101;135
+#: Controller/CoursesControllerphp:114;148
 msgid "The course could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/CoursesControllerphp:153
+#: Controller/CoursesControllerphp:166
 msgid "The course has been deleted."
 msgstr ""
 
-#: Controller/CoursesControllerphp:155
+#: Controller/CoursesControllerphp:168
 msgid "The course could not be deleted. Please, try again."
 msgstr ""
 
@@ -98,27 +98,27 @@ msgstr ""
 msgid "The professor could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/ProfessorshipsControllerphp:65
+#: Controller/ProfessorshipsControllerphp:72
 msgid "No professors yet. You cannot add professorships until there is at least one professor."
 msgstr ""
 
-#: Controller/ProfessorshipsControllerphp:70
+#: Controller/ProfessorshipsControllerphp:77
 msgid "No courses yet. You cannot add professorships until there is at least one course."
 msgstr ""
 
-#: Controller/ProfessorshipsControllerphp:77;109
+#: Controller/ProfessorshipsControllerphp:84;116
 msgid "The professorship has been saved."
 msgstr ""
 
-#: Controller/ProfessorshipsControllerphp:81;113
+#: Controller/ProfessorshipsControllerphp:88;120
 msgid "The professorship could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ProfessorshipsControllerphp:133
+#: Controller/ProfessorshipsControllerphp:140
 msgid "The professorship has been deleted."
 msgstr ""
 
-#: Controller/ProfessorshipsControllerphp:135
+#: Controller/ProfessorshipsControllerphp:142
 msgid "The professorship could not be deleted. Please, try again."
 msgstr ""
 
@@ -178,7 +178,7 @@ msgstr ""
 #: Template/Professors/viewctp:13
 #: Template/Professorships/addctp:8
 #: Template/Professorships/editctp:12
-#: Template/Professorships/indexctp:10
+#: Template/Professorships/indexctp:13
 #: Template/Professorships/viewctp:12
 #: Template/Requirements/addctp:8
 #: Template/Requirements/editctp:9
@@ -205,7 +205,7 @@ msgstr ""
 #: Template/Exams/indexctp:14
 #: Template/Exams/viewctp:14
 #: Template/Professorships/editctp:10
-#: Template/Professorships/indexctp:8
+#: Template/Professorships/indexctp:11
 #: Template/Professorships/viewctp:10
 msgid "New Professorship"
 msgstr ""
@@ -217,11 +217,11 @@ msgstr ""
 #: Template/Courses/addctp:25
 #: Template/Courses/editctp:26
 #: Template/Exams/addctp:33
-#: Template/Exams/add_to_professorshipctp:32
+#: Template/Exams/add_to_professorshipctp:34
 #: Template/Exams/editctp:29
 #: Template/Professors/addctp:26
 #: Template/Professors/editctp:28
-#: Template/Professorships/addctp:26
+#: Template/Professorships/addctp:27
 #: Template/Professorships/editctp:29
 #: Template/Requirements/addctp:20
 #: Template/Requirements/editctp:21
@@ -240,7 +240,7 @@ msgstr ""
 #: Template/Professors/indexctp:62
 #: Template/Professors/viewctp:10
 #: Template/Professorships/editctp:9
-#: Template/Professorships/indexctp:41
+#: Template/Professorships/indexctp:44
 #: Template/Professorships/viewctp:9
 #: Template/Requirements/editctp:7
 #: Template/Requirements/indexctp:33
@@ -271,7 +271,7 @@ msgstr ""
 #: Template/Courses/viewctp:13
 #: Template/Professorships/addctp:10
 #: Template/Professorships/editctp:14
-#: Template/Professorships/indexctp:12
+#: Template/Professorships/indexctp:15
 #: Template/Professorships/viewctp:14
 #: Template/Requirements/indexctp:10
 msgid "New Course"
@@ -320,12 +320,12 @@ msgid "Inactive courses"
 msgstr ""
 
 #: Template/Courses/viewctp:11
-#: Template/Element/coursesBlockDisplayctp:21
+#: Template/Element/coursesBlockDisplayctp:29
 #: Template/Exams/indexctp:52
 #: Template/Exams/viewctp:8
 #: Template/Professors/indexctp:61
 #: Template/Professors/viewctp:9
-#: Template/Professorships/indexctp:40
+#: Template/Professorships/indexctp:43
 #: Template/Professorships/viewctp:8
 #: Template/Requirements/indexctp:32
 #: Template/Requirements/viewctp:8
@@ -360,11 +360,29 @@ msgstr ""
 #: Template/Courses/viewctp:79
 #: Template/Element/navbarctp:27
 #: Template/Professors/viewctp:52
-#: Template/Professorships/indexctp:16
+#: Template/Professorships/indexctp:19
 msgid "Professorships"
 msgstr ""
 
-#: Template/Element/coursesBlockDisplayctp:29
+#: Template/Element/coursesBlockDisplayctp:26
+msgid "exam"
+msgstr ""
+
+#: Template/Element/coursesBlockDisplayctp:26
+msgid "exams"
+msgstr ""
+
+#: Template/Element/coursesBlockDisplayctp:27
+#: Template/Element/examsDisplayGroupctp:19
+msgid "solution"
+msgstr ""
+
+#: Template/Element/coursesBlockDisplayctp:27
+#: Template/Element/examsDisplayGroupctp:19
+msgid "solutions"
+msgstr ""
+
+#: Template/Element/coursesBlockDisplayctp:38
 msgid "There are no courses in this section."
 msgstr ""
 
@@ -381,10 +399,6 @@ msgstr ""
 
 #: Template/Element/examsDisplayGroupctp:19
 msgid "No solutions yet"
-msgstr ""
-
-#: Template/Element/examsDisplayGroupctp:19
-msgid "{0} solution{1} found"
 msgstr ""
 
 #: Template/Element/examsDisplayGroupctp:20
@@ -406,6 +420,12 @@ msgstr ""
 #: Template/Element/examsDisplayGroupctp:42
 msgid "There are no exams for this professorship yet!"
 msgstr ""
+
+#: Template/Element/examsDisplayGroupctp:19
+msgid "found"
+msgid_plural "found"
+msgstr[0] ""
+msgstr[1] ""
 
 #: Template/Element/navbarctp:23
 #: Template/Pages/homectp:19
@@ -468,6 +488,7 @@ msgid "Add Exam"
 msgstr ""
 
 #: Template/Exams/addctp:23
+#: Template/Exams/add_to_professorshipctp:24
 msgid "The exam's url. With protocol."
 msgstr ""
 
@@ -477,10 +498,12 @@ msgid "Upload file"
 msgstr ""
 
 #: Template/Exams/addctp:26
+#: Template/Exams/add_to_professorshipctp:27
 msgid "Exam upload. Allowed extensions: jpg, pdf, png."
 msgstr ""
 
 #: Template/Exams/addctp:28
+#: Template/Exams/add_to_professorshipctp:29
 msgid "Flag used to mark everything that is not a written exam."
 msgstr ""
 
@@ -510,7 +533,7 @@ msgstr ""
 
 #: Template/Exams/indexctp:37
 #: Template/Professors/indexctp:24
-#: Template/Professorships/indexctp:26
+#: Template/Professorships/indexctp:29
 #: Template/Requirements/indexctp:21
 #: Template/Solutions/indexctp:25
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Element/formctp:30
@@ -520,7 +543,7 @@ msgid "Actions"
 msgstr ""
 
 #: Template/Exams/indexctp:51
-#: Template/Professorships/indexctp:39
+#: Template/Professorships/indexctp:42
 #: Template/Requirements/indexctp:31
 #: Template/Solutions/indexctp:38
 #: Template/Solutions/viewctp:13
@@ -533,7 +556,7 @@ msgstr ""
 #: Template/Professors/editctp:8
 #: Template/Professors/viewctp:10
 #: Template/Professorships/editctp:9
-#: Template/Professorships/indexctp:41
+#: Template/Professorships/indexctp:44
 #: Template/Professorships/viewctp:9
 #: Template/Requirements/indexctp:33
 #: Template/Solutions/indexctp:40
@@ -544,7 +567,6 @@ msgid "Are you sure you want to delete # {0}?"
 msgstr ""
 
 #: Template/Exams/indexctp:61
-#: Template/Professorships/indexctp:49
 #: Template/Requirements/indexctp:41
 #: Template/Solutions/indexctp:48
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:113
@@ -552,7 +574,6 @@ msgid "first"
 msgstr ""
 
 #: Template/Exams/indexctp:62
-#: Template/Professorships/indexctp:50
 #: Template/Requirements/indexctp:42
 #: Template/Solutions/indexctp:49
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:114
@@ -560,7 +581,6 @@ msgid "previous"
 msgstr ""
 
 #: Template/Exams/indexctp:64
-#: Template/Professorships/indexctp:52
 #: Template/Requirements/indexctp:44
 #: Template/Solutions/indexctp:51
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:116
@@ -568,7 +588,6 @@ msgid "next"
 msgstr ""
 
 #: Template/Exams/indexctp:65
-#: Template/Professorships/indexctp:53
 #: Template/Requirements/indexctp:45
 #: Template/Solutions/indexctp:52
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:117
@@ -576,7 +595,6 @@ msgid "last"
 msgstr ""
 
 #: Template/Exams/indexctp:67
-#: Template/Professorships/indexctp:55
 #: Template/Requirements/indexctp:47
 #: Template/Solutions/indexctp:54
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:119
@@ -694,7 +712,7 @@ msgstr ""
 #: Template/Professors/viewctp:14
 #: Template/Professorships/addctp:7
 #: Template/Professorships/editctp:11
-#: Template/Professorships/indexctp:9
+#: Template/Professorships/indexctp:12
 #: Template/Professorships/viewctp:11
 msgid "List Professors"
 msgstr ""
@@ -708,7 +726,7 @@ msgstr ""
 #: Template/Professors/viewctp:11
 #: Template/Professorships/addctp:9
 #: Template/Professorships/editctp:13
-#: Template/Professorships/indexctp:11
+#: Template/Professorships/indexctp:14
 #: Template/Professorships/viewctp:13
 msgid "New Professor"
 msgstr ""
@@ -752,6 +770,22 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
+#: Template/Professors/viewctp:58
+#: Template/Professorships/viewctp:25
+#: Template/Requirements/viewctp:18
+msgid "Course"
+msgstr ""
+
+#: Template/Professors/viewctp:59
+#: Template/Professorships/viewctp:33
+msgid "Start Date"
+msgstr ""
+
+#: Template/Professors/viewctp:60
+#: Template/Professorships/viewctp:37
+msgid "End Date"
+msgstr ""
+
 #: Template/Professors/viewctp:80
 msgid "There are no professorships linked to this professor."
 msgstr ""
@@ -760,25 +794,13 @@ msgstr ""
 msgid "Add Professorship"
 msgstr ""
 
-#: Template/Professorships/editctp:20
-msgid "Edit Professorship"
-msgstr ""
-
+#: Template/Professorships/addctp:19
 #: Template/Professorships/viewctp:21
 msgid "Professor"
 msgstr ""
 
-#: Template/Professorships/viewctp:25
-#: Template/Requirements/viewctp:18
-msgid "Course"
-msgstr ""
-
-#: Template/Professorships/viewctp:33
-msgid "Start Date"
-msgstr ""
-
-#: Template/Professorships/viewctp:37
-msgid "End Date"
+#: Template/Professorships/editctp:20
+msgid "Edit Professorship"
 msgstr ""
 
 #: Template/Requirements/addctp:7

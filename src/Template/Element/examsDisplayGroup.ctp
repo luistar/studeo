@@ -16,7 +16,7 @@
 				<?= $exam->date?> 
 				<?= $exam->info?>
 				<?php $solutionsCount = count($exam->solutions); ?> 
-				(<?= $solutionsCount == 0 ? __('No solutions yet') : __("{0} solution{1} found",  [h($solutionsCount),$solutionsCount==1 ? '' : 's'])?>)
+				(<?= $solutionsCount == 0 ? __('No solutions yet') : h($solutionsCount).' '.__n(__('solution'),__('solutions'), $solutionsCount).' '.__n('found','found', $solutionsCount)?>)
 				<?= $this->Form->button('<i class="fa fa-fw fa-cloud-download"></i>'.__('Dowload'),
 						['class'=>'btn btn-xs btn-success link-button pull-right studeo-action-button', 'escape'=>false,
 						 'data-link'=>$this->Url->build(['controller'=>'Exams','action'=>'download',$exam->id])])?>
