@@ -28,10 +28,17 @@ class CoursesController extends AppController
      */
     public function index()
     {
-        //$courses = $this->paginate($this->Courses);
-        $courses = $this->Courses->find('all')->orderAsc('name')->all();
+        $courses = $this->Courses->find('all',['contain'=>['Professorships'=>['Exams'=>['Solutions']]]])->orderAsc('name')->all();
         $years = [1=>[],2=>[],3=>[],4=>[],5=>[],6=>[],0=>[]];
         foreach($courses as $course){
+        	$examsCount = 0;
+        	$solutionsCount = 0;
+        	foreach($course->professorships as $professorship){
+        		$examsCount += count($professorship->exams);
+        		foreach($professorship->exams as $exam){
+        			$solutionsCount += count($exam->solutions);
+        		}
+        	}
         	switch($course->year){
         		case 1: //bachelor first year
         		case 2: //bachelor second year
@@ -39,16 +46,15 @@ class CoursesController extends AppController
         		case 4: //master first year
         		case 5: //master second year
         		case 6: //free-choice exams
-        			array_push($years[$course->year],$course);
+        			array_push($years[$course->year],['course'=>$course,'solutionsCount'=>$solutionsCount,'examsCount'=>$examsCount]);
         			break;
         		default: //inactive courses
-        			array_push($years[0],$course);
+        			array_push($years[0],['course'=>$course,'solutionsCount'=>$solutionsCount,'examsCount'=>$examsCount]);
         			break;
         	}
         }
 
         $this->set('years',$years);
-        $this->set(compact('courses'));
         $this->set('_serialize', ['courses']);
     }
 

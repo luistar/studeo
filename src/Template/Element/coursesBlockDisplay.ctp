@@ -11,23 +11,32 @@
 	<div class="panel-heading" <?php if($color):?> style="background-color: <?=$color?>; border-color: <?=$color?>;"<?php endif;?>>
 		<?=h($title)?>
 	</div>
-	<div class="list-group">
+	<table class="table">
 		<?php if(!empty($courses)):?>
-			<?php foreach($courses as $course): ?>
-				<a href="<?= $this->Url->build(['action'=>'view',$course->id]);?>" class="list-group-item"
+			<?php foreach($courses as $courseElem): ?>
+				<?php 
+					$course = $courseElem['course'];
+					$examsCount = $courseElem['examsCount'];
+					$solCount = $courseElem['solutionsCount'];
+				?>
+				<tr>
+					<td class="col-sm-5"><a href="<?= $this->Url->build(['action'=>'view',$course->id]);?>" class=""
 					<?php if($color):?> style="border-color: <?=$color?>;"<?php endif;?>>
-					<?=h($course->name);?>
+					<?=h($course->name);?></a></td>
+					<td>(<?=$examsCount.' '.__n(__('exam'),__('exams'),$examsCount)?>,
+					 <?=$solCount.' '.__n(__('solution'),__('solutions'),$solCount)?>)</td>
 					<?php if($isAdmin):?>
-					<?= $this->Form->button('<i class="fa fa-fw fa-pencil"></i>'.__('Edit'),
+					<td><?= $this->Form->button('<i class="fa fa-fw fa-pencil"></i>'.__('Edit'),
 							['class'=>'btn btn-xs btn-warning link-button pull-right studeo-action-button', 'escape'=>false,
-							 'data-link'=>$this->Url->build(['action'=>'edit',$course->id])])?>
+							 'data-link'=>$this->Url->build(['action'=>'edit',$course->id])])?></td>
 					<?php endif;?>
-				</a>
+				
+				</tr>
 			<?php endforeach;?>
 		<?php else: ?>
-			<a href="#" class="list-group-item" <?php if($color):?> style="border-color: <?=$color?>;"<?php endif;?>>
+			<td href="#" class="" <?php if($color):?> style="border-color: <?=$color?>;"<?php endif;?>>
 				<?= __('There are no courses in this section.')?>
-			</a>
+			</td>
 		<?php endif;?>
-	</div>
+	</table>
 </div>
