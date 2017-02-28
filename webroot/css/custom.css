@@ -44,9 +44,15 @@ body{
 
 .studeo-exam-item {
 	border-radius:0px 0px 4px 4px !important;
+	overflow: hidden;
 }
+
 .studeo-solution-item:last-child {
 	border-radius:0px 0px 4px 4px !important;
+}
+
+.studeo-professorship-panel .panel-heading {
+	overflow: hidden;
 }
 
 /**

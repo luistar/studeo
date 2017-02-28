@@ -6,7 +6,7 @@
 
 <?php if(!empty($professorships)):?>
 	<?php foreach($professorships as $professorship ):?>
-		<div class="panel panel-primary">
+		<div class="panel panel-primary studeo-professorship-panel">
 			<div class="panel-heading">
 				<?= $professorship->professor->name ?> (<?=$professorship->description?>) 
 				<?= $professorship->start_date ?> - <?= $professorship->end_date ?>
