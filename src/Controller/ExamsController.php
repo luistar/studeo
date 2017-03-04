@@ -36,7 +36,10 @@ class ExamsController extends AppController
             'contain' => ['Professorships'=>['Courses','Professors']]
         ];
         $exams = $this->paginate($this->Exams);
-
+        
+        $examsCount = $this->Exams->find('all')->count();
+		
+        $this->set('examsCount',$examsCount);
         $this->set(compact('exams'));
         $this->set('_serialize', ['exams']);
     }
