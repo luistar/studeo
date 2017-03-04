@@ -4,6 +4,9 @@
   */
 ?>
 
+<?= $this->Html->css('/DataTables/datatables.min.css', ['block'=>'css']);?>
+<?= $this->Html->script('/DataTables/datatables.min.js', ['inline' => false, 'block' => 'script']);?>
+
 <div class="btn-group">
 	<?php if($isAdmin):?>
 	<?= $this->Html->link('<i class="fa fa-fw fa-plus"></i> '.__('New Exam'), ['action' => 'add'],['class'=>'btn btn-primary','escape'=>false]) ?>
@@ -24,38 +27,38 @@
     </div>
     
     <?php if($isAdmin):?>
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered" id="examsTable">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('professorship_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('url') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('path') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('isExercise') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('info') ?></th>
+                <?php /*<th scope="col"><?= __('id') ?></th>*/?>
+                <th scope="col"><?= __('Professorship') ?></th>
+                <th scope="col"><?= __('url') ?></th>
+                <th scope="col"><?= __('path') ?></th>
+                <th scope="col"><?= __('isExercise') ?></th>
+                <th scope="col"><?= __('Date') ?></th>
+                <th scope="col"><?= __('info') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($exams as $exam): ?>
             <tr>
-                <td><?= $this->Number->format($exam->id) ?></td>
+                <?php /*<td><?= $this->Number->format($exam->id) ?></td>*/?>
                 <td><?= $exam->has('professorship') ? $this->Html->link($exam->professorship->course->name.' - '.$exam->professorship->professor->name.' ('.$exam->professorship->start_date.'-'.$exam->professorship->end_date.')', ['controller' => 'Professorships', 'action' => 'view', $exam->professorship->id]) : '' ?></td>
-                <td><?= h($exam->url) ?></td>
+                <td><?= $this->Html->link('link',$exam->url) ?></td>
                 <td><?= h($exam->path) ?></td>
                 <td><?= h($exam->isExercise) ?></td>
                 <td><?= h($exam->date) ?></td>
                 <td><?= h($exam->info) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $exam->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $exam->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $exam->id], ['confirm' => __('Are you sure you want to delete # {0}?', $exam->id)]) ?>
-                </td>
+                    <?= $this->Html->link('<i class="fa fa-fw fa-eye"></i>', ['action' => 'view', $exam->id],['class'=>'btn btn-xs btn-primary','escape'=>false]) ?>
+                    <?= $this->Html->link('<i class="fa fa-fw fa-edit"></i>', ['action' => 'edit', $exam->id],['class'=>'btn btn-xs btn-warning','escape'=>false]) ?>
+                    <?= $this->Form->postLink('<i class="fa fa-fw fa-trash"></i>', ['action' => 'delete', $exam->id], ['confirm' => __('Are you sure you want to delete # {0}?', $exam->id),'class'=>'btn btn-xs btn-danger','escape'=>false]) ?>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+    <?php /*
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
@@ -66,5 +69,19 @@
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
+    */?>
     <?php endif;?>
 </div>
+
+<script>
+$(document).ready(function(){
+	$('#examsTable').DataTable({
+		"columnDefs": [
+			{ "searchable": false, "orderable": false, "targets": [1,2,3,6] }
+		],
+		"drawCallback": function( settings ) {
+			$('[data-toggle="popover"]').popover(); 
+	    }
+	});
+});
+</script>
