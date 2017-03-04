@@ -26,11 +26,37 @@ class SolutionsController extends AppController
      */
     public function index()
     {
+    	/*
         $this->paginate = [
             'contain' => ['Exams']
         ];
         $solutions = $this->paginate($this->Solutions);
+        */
+    	$solutions = $this->Solutions->find('all',['contain'=>['Exams'=>['Professorships'=>['Courses','Professors']]]]);
+    	foreach($solutions as $solution){
+    		$solution->author = TableRegistry::get('PhpbbUsers')->find()->where(['user_id'=>$solution->author])->first();
+    	}
+        
+        $query = $this->Solutions->find();
+        $bestAdders = $query->select([
+        		'count' => $query->func()->count('*'),
+        		'user' => 'addedBy'
+        ])->where(['addedBy IS NOT'=>'NULL'])
+        ->group('addedBy')->limit(5)->all();
+        
+        $query2 = $this->Solutions->find();
+        $bestAuthors = $query2->select([
+        		'count' => $query2->func()->count('*'),
+        		'user' => 'author'
+        ])->where(['author IS NOT'=>'NULL'])
+        ->group('author')->limit(5)->all();
+        
+        foreach($bestAuthors as $author){
+        	$author['user'] = TableRegistry::get('PhpbbUsers')->find()->where(['user_id'=>$author['user']])->first();
+        }
 
+        $this->set('bestAdders',$bestAdders);
+        $this->set('bestAuthors',$bestAuthors);
         $this->set(compact('solutions'));
         $this->set('_serialize', ['solutions']);
     }
