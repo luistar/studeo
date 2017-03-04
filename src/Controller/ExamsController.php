@@ -32,10 +32,10 @@ class ExamsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
+        /*$this->paginate = [
             'contain' => ['Professorships'=>['Courses','Professors']]
-        ];
-        $exams = $this->paginate($this->Exams);
+        ];*/
+        $exams = $this->Exams->find('all',['contain' => ['Professorships'=>['Courses','Professors']]]);
         
         $examsCount = $this->Exams->find('all')->count();
 		

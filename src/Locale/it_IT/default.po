@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2017-02-28 10:21+0100\n"
-"PO-Revision-Date: 2017-02-28 10:22+0100\n"
+"POT-Creation-Date: 2017-03-04 13:33+0100\n"
+"PO-Revision-Date: 2017-03-04 13:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: it_IT\n"
@@ -39,7 +39,7 @@ msgstr "L'insegnamento è stato eliminato."
 msgid "The course could not be deleted. Please, try again."
 msgstr "L'insegnamento non può essere eliminato. Riprova."
 
-#: Controller/ExamsControllerphp:76
+#: Controller/ExamsControllerphp:79
 msgid ""
 "No professorships yet. You cannot add exams until there is at least one "
 "professorship."
@@ -47,39 +47,39 @@ msgstr ""
 "Non sono ancora presenti cattedre. Non puoi aggiungere tracce finché non è "
 "presente almeno una cattedra."
 
-#: Controller/ExamsControllerphp:96;224
+#: Controller/ExamsControllerphp:99;227
 msgid "Move file error."
 msgstr "Errore durante la copia del file."
 
-#: Controller/ExamsControllerphp:97;225
+#: Controller/ExamsControllerphp:100;228
 msgid "Could not save file in save path."
 msgstr "Impossibile salvare il file nel path di salvataggio."
 
-#: Controller/ExamsControllerphp:105;138;233
+#: Controller/ExamsControllerphp:108;141;236
 msgid "The exam has been saved."
 msgstr "La traccia è stata salvata."
 
-#: Controller/ExamsControllerphp:112;240
+#: Controller/ExamsControllerphp:115;243
 msgid "Invalid file type."
 msgstr "File non valido."
 
-#: Controller/ExamsControllerphp:113;142;241
+#: Controller/ExamsControllerphp:116;145;244
 msgid "The exam could not be saved. Please, try again."
 msgstr "Impossibile salvare la traccia. Riprova."
 
-#: Controller/ExamsControllerphp:161
+#: Controller/ExamsControllerphp:164
 msgid "The exam has been deleted."
 msgstr "La traccia è stata eliminata."
 
-#: Controller/ExamsControllerphp:163
+#: Controller/ExamsControllerphp:166
 msgid "The exam could not be deleted. Please, try again."
 msgstr "Impossibile eliminare la traccia."
 
-#: Controller/ExamsControllerphp:179
+#: Controller/ExamsControllerphp:182
 msgid "Download failed: invalid exam."
 msgstr "Download fallito: traccia non valida."
 
-#: Controller/ExamsControllerphp:204
+#: Controller/ExamsControllerphp:207
 msgid "Invalid professorship."
 msgstr "Cattedra non valida."
 
@@ -151,30 +151,30 @@ msgstr "La propedeuticità è stata eliminata."
 msgid "The requirement could not be deleted. Please, try again."
 msgstr "Impossibile eliminare la propedeuticità. Riprova."
 
-#: Controller/SolutionsControllerphp:70
+#: Controller/SolutionsControllerphp:96
 msgid ""
 "No exams yet. You cannot add solutions until there is at least one exam."
 msgstr ""
 "Ancora nessuna traccia inserita. Non puoi aggiungere soluzioni finché non è "
 "presente almeno una traccia."
 
-#: Controller/SolutionsControllerphp:78;103;152
+#: Controller/SolutionsControllerphp:104;129;178
 msgid "The solution has been saved."
 msgstr "La soluzione è stata salvata."
 
-#: Controller/SolutionsControllerphp:82;107;156
+#: Controller/SolutionsControllerphp:108;133;182
 msgid "The solution could not be saved. Please, try again."
 msgstr "Impossibile salvare la soluzione. Riprova."
 
-#: Controller/SolutionsControllerphp:126
+#: Controller/SolutionsControllerphp:152
 msgid "The solution has been deleted."
 msgstr "La soluzione è stata eliminata."
 
-#: Controller/SolutionsControllerphp:128
+#: Controller/SolutionsControllerphp:154
 msgid "The solution could not be deleted. Please, try again."
 msgstr "Impossibile eliminare la soluzione. Riprova."
 
-#: Controller/SolutionsControllerphp:143
+#: Controller/SolutionsControllerphp:169
 msgid "Invalid exam."
 msgstr "Traccia non valida."
 
@@ -185,7 +185,7 @@ msgstr "Un insegnamento non può essere propedeutico a se stesso!"
 #: Template/Courses/addctp:7 Template/Courses/editctp:10
 #: Template/Courses/viewctp:15 Template/Exams/addctp:11
 #: Template/Exams/add_to_professorshipctp:10 Template/Exams/editctp:10
-#: Template/Exams/indexctp:11 Template/Exams/viewctp:12
+#: Template/Exams/indexctp:14 Template/Exams/viewctp:12
 #: Template/Professors/editctp:11 Template/Professors/viewctp:13
 #: Template/Professorships/addctp:8 Template/Professorships/editctp:12
 #: Template/Professorships/indexctp:13 Template/Professorships/viewctp:12
@@ -197,13 +197,13 @@ msgstr "Elenca insegnamenti"
 
 #: Template/Courses/addctp:8 Template/Courses/editctp:11
 #: Template/Courses/indexctp:10 Template/Courses/viewctp:16
-#: Template/Exams/indexctp:13
+#: Template/Exams/indexctp:16
 msgid "List Professorships"
 msgstr "Elenca cattedre"
 
 #: Template/Courses/addctp:9 Template/Courses/editctp:12
 #: Template/Courses/indexctp:11 Template/Courses/viewctp:18
-#: Template/Exams/editctp:12 Template/Exams/indexctp:14
+#: Template/Exams/editctp:12 Template/Exams/indexctp:17
 #: Template/Exams/viewctp:14 Template/Professorships/editctp:10
 #: Template/Professorships/indexctp:11 Template/Professorships/viewctp:10
 msgid "New Professorship"
@@ -225,13 +225,13 @@ msgid "Submit"
 msgstr "Invia"
 
 #: Template/Courses/editctp:8 Template/Courses/viewctp:12
-#: Template/Exams/editctp:8 Template/Exams/indexctp:53 Template/Exams/viewctp:9
+#: Template/Exams/editctp:8 Template/Exams/viewctp:9
 #: Template/Professors/editctp:8 Template/Professors/indexctp:62
 #: Template/Professors/viewctp:10 Template/Professorships/editctp:9
 #: Template/Professorships/indexctp:44 Template/Professorships/viewctp:9
 #: Template/Requirements/editctp:7 Template/Requirements/indexctp:33
 #: Template/Requirements/viewctp:9 Template/Solutions/editctp:8
-#: Template/Solutions/indexctp:40 Template/Solutions/viewctp:10
+#: Template/Solutions/viewctp:10
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Element/formctp:33
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:105
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:170
@@ -295,11 +295,10 @@ msgid "Inactive courses"
 msgstr "Insegnamenti inattivi"
 
 #: Template/Courses/viewctp:11 Template/Element/coursesBlockDisplayctp:29
-#: Template/Exams/indexctp:52 Template/Exams/viewctp:8
-#: Template/Professors/indexctp:61 Template/Professors/viewctp:9
-#: Template/Professorships/indexctp:43 Template/Professorships/viewctp:8
-#: Template/Requirements/indexctp:32 Template/Requirements/viewctp:8
-#: Template/Solutions/indexctp:39 Template/Solutions/viewctp:9
+#: Template/Exams/viewctp:8 Template/Professors/indexctp:61
+#: Template/Professors/viewctp:9 Template/Professorships/indexctp:43
+#: Template/Professorships/viewctp:8 Template/Requirements/indexctp:32
+#: Template/Requirements/viewctp:8 Template/Solutions/viewctp:9
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:104
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:169
 msgid "Edit"
@@ -358,7 +357,8 @@ msgid "Exercise"
 msgstr "Esercizio"
 
 #: Template/Element/examsDisplayGroupctp:15
-#: Template/Solutions/add_to_examctp:12 Template/Solutions/viewctp:21
+#: Template/Solutions/add_to_examctp:12 Template/Solutions/indexctp:23
+#: Template/Solutions/viewctp:21
 msgid "Exam"
 msgstr "Traccia"
 
@@ -374,15 +374,15 @@ msgstr "Download"
 msgid "Add solution"
 msgstr "Aggiungi soluzione"
 
-#: Template/Element/examsDisplayGroupctp:31
+#: Template/Element/examsDisplayGroupctp:36
 msgid "Solution"
 msgstr "Soluzione"
 
-#: Template/Element/examsDisplayGroupctp:31
+#: Template/Element/examsDisplayGroupctp:36
 msgid "by"
 msgstr "di"
 
-#: Template/Element/examsDisplayGroupctp:42
+#: Template/Element/examsDisplayGroupctp:53
 msgid "There are no exams for this professorship yet!"
 msgstr "Non ci sono ancora tracce associate a questa cattedra!"
 
@@ -397,13 +397,13 @@ msgstr[1] "trovate"
 msgid "Professors"
 msgstr "Docenti"
 
-#: Template/Element/navbarctp:35 Template/Exams/indexctp:19
+#: Template/Element/navbarctp:35 Template/Exams/indexctp:22
 #: Template/Pages/homectp:25
 msgid "Exams"
 msgstr "Tracce"
 
 #: Template/Element/navbarctp:38 Template/Exams/viewctp:53
-#: Template/Pages/homectp:28 Template/Solutions/indexctp:9
+#: Template/Pages/homectp:28 Template/Solutions/indexctp:12;75
 msgid "Solutions"
 msgstr "Soluzioni"
 
@@ -461,7 +461,8 @@ msgid "Flag used to mark everything that is not a written exam."
 msgstr ""
 "Flag utilizzato per contrassegnare tutto ciò che non è una prova scritta."
 
-#: Template/Exams/editctp:9 Template/Exams/indexctp:9 Template/Exams/viewctp:10
+#: Template/Exams/editctp:9 Template/Exams/indexctp:12
+#: Template/Exams/viewctp:10
 msgid "New Exam"
 msgstr "Nuova traccia"
 
@@ -469,11 +470,11 @@ msgstr "Nuova traccia"
 msgid "Edit Exam"
 msgstr "Modifica traccia"
 
-#: Template/Exams/indexctp:21
+#: Template/Exams/indexctp:24
 msgid "Studeo is currently managing {0} exams"
-msgstr "Studeo sta correntemente gestendo {0} esami"
+msgstr "Studeo sta correntemente gestendo {0} tracce"
 
-#: Template/Exams/indexctp:22
+#: Template/Exams/indexctp:25
 msgid ""
 "You can access the exams and all related functionality by selecting the {0} "
 "you're interested in."
@@ -481,75 +482,53 @@ msgstr ""
 "Puoi accedere alle tracce e a tutte le funzionalità correlate selezionando "
 "il {0} che ti interessa."
 
-#: Template/Exams/indexctp:23 Template/Solutions/addctp:28
-#: Template/Solutions/indexctp:13
+#: Template/Exams/indexctp:26 Template/Solutions/addctp:28
+#: Template/Solutions/indexctp:16
 msgid "course"
 msgstr "corso"
 
-#: Template/Exams/indexctp:37 Template/Professors/indexctp:24
+#: Template/Exams/indexctp:34 Template/Exams/viewctp:22
+msgid "Professorship"
+msgstr "Cattedra"
+
+#: Template/Exams/indexctp:35 Template/Solutions/indexctp:27
+msgid "url"
+msgstr "url"
+
+#: Template/Exams/indexctp:36
+msgid "path"
+msgstr "path"
+
+#: Template/Exams/indexctp:37
+msgid "isExercise"
+msgstr "isEsercizio"
+
+#: Template/Exams/indexctp:38 Template/Exams/viewctp:42
+msgid "Date"
+msgstr "Data"
+
+#: Template/Exams/indexctp:39 Template/Solutions/viewctp:45
+msgid "info"
+msgstr "info"
+
+#: Template/Exams/indexctp:40 Template/Professors/indexctp:24
 #: Template/Professorships/indexctp:29 Template/Requirements/indexctp:21
-#: Template/Solutions/indexctp:25
+#: Template/Solutions/indexctp:28
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Element/formctp:30
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:42;68
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:63;159
 msgid "Actions"
 msgstr "Azioni"
 
-#: Template/Exams/indexctp:51 Template/Professorships/indexctp:42
-#: Template/Requirements/indexctp:31 Template/Solutions/indexctp:38
-#: Template/Solutions/viewctp:13
-#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:103
-#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:168
-msgid "View"
-msgstr "Visualizza"
-
-#: Template/Exams/indexctp:53 Template/Professors/editctp:8
+#: Template/Exams/indexctp:56 Template/Professors/editctp:8
 #: Template/Professors/viewctp:10 Template/Professorships/editctp:9
 #: Template/Professorships/indexctp:44 Template/Professorships/viewctp:9
-#: Template/Requirements/indexctp:33 Template/Solutions/indexctp:40
+#: Template/Requirements/indexctp:33 Template/Solutions/indexctp:50
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Element/formctp:35
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:105
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:65;170
 msgid "Are you sure you want to delete # {0}?"
 msgstr "Sei sicuro di voler eliminare # {0}?"
-
-#: Template/Exams/indexctp:61 Template/Requirements/indexctp:41
-#: Template/Solutions/indexctp:48
-#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:113
-msgid "first"
-msgstr "prima"
-
-#: Template/Exams/indexctp:62 Template/Requirements/indexctp:42
-#: Template/Solutions/indexctp:49
-#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:114
-msgid "previous"
-msgstr "precedente"
-
-#: Template/Exams/indexctp:64 Template/Requirements/indexctp:44
-#: Template/Solutions/indexctp:51
-#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:116
-msgid "next"
-msgstr "successiva"
-
-#: Template/Exams/indexctp:65 Template/Requirements/indexctp:45
-#: Template/Solutions/indexctp:52
-#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:117
-msgid "last"
-msgstr "ultima"
-
-#: Template/Exams/indexctp:67 Template/Requirements/indexctp:47
-#: Template/Solutions/indexctp:54
-#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:119
-msgid ""
-"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
-"total"
-msgstr ""
-"Pagina {{page}} di {{pages}}, visualizzati {{current}} elementi di {{count}} "
-"totali"
-
-#: Template/Exams/viewctp:22
-msgid "Professorship"
-msgstr "Cattedra"
 
 #: Template/Exams/viewctp:26 Template/Solutions/viewctp:29
 msgid "Url"
@@ -566,10 +545,6 @@ msgstr "Info"
 #: Template/Exams/viewctp:38 Template/Solutions/viewctp:33
 msgid "Id"
 msgstr "Id"
-
-#: Template/Exams/viewctp:42
-msgid "Date"
-msgstr "Data"
 
 #: Template/Exams/viewctp:46
 msgid "IsExercise"
@@ -745,6 +720,13 @@ msgstr "Docente"
 msgid "Edit Professorship"
 msgstr "Modifica cattedra"
 
+#: Template/Professorships/indexctp:42 Template/Requirements/indexctp:31
+#: Template/Solutions/viewctp:13
+#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:103
+#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:168
+msgid "View"
+msgstr "Visualizza"
+
 #: Template/Requirements/addctp:7 Template/Requirements/editctp:8
 #: Template/Requirements/viewctp:10
 msgid "List Requirements"
@@ -761,6 +743,35 @@ msgstr "Modifica propedeuticità"
 #: Template/Requirements/indexctp:8
 msgid "New Requirement"
 msgstr "Nuova propedeuticità"
+
+#: Template/Requirements/indexctp:41
+#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:113
+msgid "first"
+msgstr "prima"
+
+#: Template/Requirements/indexctp:42
+#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:114
+msgid "previous"
+msgstr "precedente"
+
+#: Template/Requirements/indexctp:44
+#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:116
+msgid "next"
+msgstr "successiva"
+
+#: Template/Requirements/indexctp:45
+#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:117
+msgid "last"
+msgstr "ultima"
+
+#: Template/Requirements/indexctp:47
+#: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/indexctp:119
+msgid ""
+"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
+"total"
+msgstr ""
+"Pagina {{page}} di {{pages}}, visualizzati {{current}} elementi di {{count}} "
+"totali"
 
 #: Template/Requirements/viewctp:22
 msgid "Required For"
@@ -816,11 +827,11 @@ msgstr ""
 msgid "Edit Solution"
 msgstr "Modifica soluzione"
 
-#: Template/Solutions/indexctp:11
+#: Template/Solutions/indexctp:14
 msgid "Studeo is currently managing {0} solutions"
 msgstr "Studeo sta correntemente gestendo {0} soluzioni"
 
-#: Template/Solutions/indexctp:12
+#: Template/Solutions/indexctp:15
 msgid ""
 "You can access the solutions and add your own solution by selecting the {0} "
 "you're interested in."
@@ -828,21 +839,21 @@ msgstr ""
 "Puoi accedere alle soluzioni e aggiungerne di nuove selezionando il {0} che "
 "ti interessa."
 
+#: Template/Solutions/indexctp:24;75 Template/Solutions/viewctp:37
+msgid "Author"
+msgstr "Autore"
+
+#: Template/Solutions/indexctp:70
+msgid "Most prolific authors"
+msgstr "Autori più attivi"
+
 #: Template/Solutions/viewctp:25
 msgid "AuthorAlt"
 msgstr "Autore (alternativo)"
 
-#: Template/Solutions/viewctp:37
-msgid "Author"
-msgstr "Autore"
-
 #: Template/Solutions/viewctp:41
 msgid "AddedBy"
 msgstr "Aggiunto da"
-
-#: Template/Solutions/viewctp:45
-msgid "info"
-msgstr "info"
 
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Element/formctp:39
 #: C:/wamp64/www/studeo/vendor/cakephp/bake/src/Template/Bake/Template/viewctp:66

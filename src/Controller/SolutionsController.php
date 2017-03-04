@@ -49,7 +49,7 @@ class SolutionsController extends AppController
         		'count' => $query2->func()->count('*'),
         		'user' => 'author'
         ])->where(['author IS NOT'=>'NULL'])
-        ->group('author')->limit(5)->all();
+        ->group('author')->orderDesc('count')->limit(5)->all();
         
         foreach($bestAuthors as $author){
         	$author['user'] = TableRegistry::get('PhpbbUsers')->find()->where(['user_id'=>$author['user']])->first();

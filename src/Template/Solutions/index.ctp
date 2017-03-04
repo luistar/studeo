@@ -20,8 +20,8 @@
         <thead>
             <tr>
                 <?php /*<th scope="col"><?= __('id') ?></th>*/?>
-                <th scope="col"><?= __('exam') ?></th>
-                <th scope="col"><?= __('author') ?></th>
+                <th scope="col"><?= __('Exam') ?></th>
+                <th scope="col"><?= __('Author') ?></th>
                 <?php /*<th scope="col"><?= __('authorAlt') ?></th>*/?>
                 <?php /*<th scope="col"><?= __('addedBy') ?></th>*/?>
                 <th scope="col"><?= __('url') ?></th>
@@ -69,7 +69,7 @@
 </div>
 <h3 class="page-header"><?=__("Most prolific authors")?></h3>
 <div class="row">
-	<div class="col-sm-8 col-lg-10">
+	<div class="col-sm-6 col-lg-8">
 		<table class="table">
 			<thead>
 				<tr><th></th><th><?=__('Author')?></th><th><?=__('Solutions')?></th></tr>
@@ -82,7 +82,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="col-sm-4 col-lg-2">
+	<div class="col-sm-6 col-lg-4">
 		<canvas id="authorsChart" style="/*max-width: 250px*/"></canvas>
 	</div>
 </div>
