@@ -72,12 +72,23 @@
 	<div class="col-sm-6 col-lg-8">
 		<table class="table">
 			<thead>
-				<tr><th></th><th><?=__('Author')?></th><th><?=__('Solutions')?></th></tr>
+				<tr><th></th><th></th><th><?=__('Author')?></th><th><?=__('Solutions')?></th></tr>
 			</thead>
 			<tbody>
 				<?php $count=0;?>
 				<?php foreach($bestAuthors as $author):?>
-					<tr><td><?=++$count?><td><?=$author->user->username?></td><td><?=$author->count?></td></tr>
+					<?php ++$count;?>
+					<tr><td>
+						<?php if($count==1):?>
+							<i class="fa fa-lg fa-trophy" style="color: #eca725"></i>
+						<?php endif;?>
+						<?php if($count==2):?>
+							<i class="fa fa-lg fa-trophy" style="color: #adadad"></i>
+						<?php endif;?>
+						<?php if($count==3):?>
+							<i class="fa fa-lg fa-trophy" style="color: #bb5204"></i>
+						<?php endif;?>
+						<td><?=$count?><td><?=$author->user->username?></td><td><?=$author->count?></td></tr>
 				<?php endforeach;?>
 			</tbody>
 		</table>
