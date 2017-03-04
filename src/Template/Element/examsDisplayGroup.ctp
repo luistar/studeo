@@ -23,14 +23,25 @@
 				<?= $this->Form->button('<i class="fa fa-fw fa-plus-circle"></i>'.__('Add solution'),
 						['class'=>'btn btn-xs btn-primary link-button pull-right studeo-action-button', 'escape'=>false,
 						 'data-link'=>$this->Url->build(['controller'=>'Solutions','action'=>'addToExam',$exam->id])])?>
+				<?php if($isAdmin):?>
+					<?= $this->Form->button('<i class="fa fa-edit"></i>',
+							['class'=>'btn btn-xs btn-warning link-button pull-right studeo-action-button', 'escape'=>false,
+							 'data-link'=>$this->Url->build(['controller'=>'Exams','action'=>'edit',$exam->id])])?>
+				<?php endif;?>
 			</a>
 			<?php if(!empty($exam->solutions)): ?>
 				<div class="list-group collapse studeo-solutions-list" id="exam-<?=$exam->id?>">
 					<?php foreach($exam->solutions as $solution): ?>
-						<?= $this->Html->link(
-								($solution->info ? h($solution->info) :__('Solution')).' '.__('by').' <strong>'. ($solution->author ? h($solution->userAuthor->username) : h($solution->authorAlt)).'</strong>',
-								$solution->url,['class'=>'list-group-item studeo-solution-item','escape'=>false]
-							)?>
+						<a href="<?=h($solution->url)?>" class="list-group-item studeo-solution-item">
+						<?= $solution->info ? h($solution->info) :__('Solution').' '.__('by').' <strong>'. ($solution->author ? h($solution->userAuthor->username) : h($solution->authorAlt)).'</strong>'?>
+						
+						<?php if($isAdmin):?>
+							<?= $this->Form->button('<i class="fa fa-edit"></i>',
+									['class'=>'btn btn-xs btn-warning link-button pull-right studeo-action-button', 'escape'=>false,
+									 'data-link'=>$this->Url->build(['controller'=>'Solutions','action'=>'edit',$solution->id])])?>
+						<?php endif;?>
+						
+						</a>
 					<?php endforeach; ?>
 			    </div>
 			<?php endif;?>
