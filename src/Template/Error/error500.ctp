@@ -72,7 +72,7 @@ endif;
 			<p>
 				Prova a <a href="javascript:document.location.reload(true);">ricaricare la pagina</a>.<br>
 				Se il problema persiste, segnalare il problema allo
-				<?= $this->Html->link('staff',['controller'=>'Pages','action'=>'display','contacts'])?> indicando le funzionalità affette dal problema.
+				<?= $this->Html->link('staff',['controller'=>'Pages','action'=>'display','contacts'])?> indicando le funzionalit&agrave; affette dal problema.
 			</p>	
 		</div>
 	</div>
