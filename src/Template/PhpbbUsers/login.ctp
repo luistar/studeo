@@ -28,6 +28,7 @@
 		]);
 		echo $this->Form->input('user_password',['label'=>'Password','type'=>'password']);
 		echo $this->Form->button(__('Login'),['class'=>'btn btn-primary']);
+		echo $this->Html->link(__('Register'),'https://www.informatica-unina.com/forum/ucp.php?mode=register',['style'=>'margin-left: 5px;', 'class'=>'btn btn-primary']);
 		?>
 		</fieldset>
 	<?php echo $this->Form->end(); ?>
